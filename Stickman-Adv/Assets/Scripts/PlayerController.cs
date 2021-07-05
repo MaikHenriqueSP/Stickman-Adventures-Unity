@@ -30,8 +30,6 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void FixedUpdate() {
-
-         
+    private void FixedUpdate() {         
     }
 }

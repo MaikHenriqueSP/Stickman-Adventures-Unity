@@ -782,4 +782,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 5.5
-  JumpSpeed: 0
+  JumpSpeed: 3
