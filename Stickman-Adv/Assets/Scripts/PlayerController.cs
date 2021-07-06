@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D Rigidbody2D;
     public float MovementSpeed;
     public float JumpSpeed;
+    private bool IsPlayerOnTheGround;
 
     
     void Start()
@@ -29,6 +30,30 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void FixedUpdate() {         
+    private void FixedUpdate() 
+    {         
+        DetectIfPlayerIsOnTheGround();
+    }
+
+    void DetectIfPlayerIsOnTheGround() 
+    {
+        IsPlayerOnTheGround = false;
+
+        int groundLayer = 1 << LayerMask.NameToLayer("Ground");
+        float groundDetectionDistance = 0.05f;
+
+        Vector3 boxColliderCenter = BoxCollider2D.bounds.center;
+        boxColliderCenter.y = BoxCollider2D.bounds.min.y + (BoxCollider2D.bounds.extents.y / 4f); //Gets 1/4 of the lower half of the player box collider
+        
+        Vector3 boxSize = BoxCollider2D.bounds.size;
+        float collisionAngle = 0f;
+        Vector2 collisionDetectionDirection = Vector2.down;
+
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(boxColliderCenter, boxSize, collisionAngle, collisionDetectionDirection, groundDetectionDistance, groundLayer);
+
+        if (raycastHit2D.collider != null) {
+            IsPlayerOnTheGround = true;
+        }
+
     }
 }
