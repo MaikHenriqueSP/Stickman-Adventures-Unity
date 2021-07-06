@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
         float horizontalMovement = Input.GetAxisRaw("Horizontal");
         Rigidbody2D.velocity = new Vector2(horizontalMovement * MovementSpeed, Rigidbody2D.velocity.y);
 
-            Debug.Log(Input.GetKeyDown(KeyCode.Space));
         if (Input.GetKeyDown(KeyCode.Space)) {
             Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, JumpSpeed);
         }
