@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D Rigidbody2D;
     public float MovementSpeed;
     public float JumpSpeed;
-    private bool IsPlayerOnTheGround;
+    private bool IsPlayerOnTheGround = false;
 
     
     void Start()
@@ -24,7 +24,8 @@ public class PlayerController : MonoBehaviour
         float horizontalMovement = Input.GetAxisRaw("Horizontal");
         Rigidbody2D.velocity = new Vector2(horizontalMovement * MovementSpeed, Rigidbody2D.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (IsPlayerOnTheGround && Input.GetKeyDown(KeyCode.Space)) {
+
             Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, JumpSpeed);
         }
         
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour
         IsPlayerOnTheGround = false;
 
         int groundLayer = 1 << LayerMask.NameToLayer("Ground");
-        float groundDetectionDistance = 0.05f;
+        float groundDetectionDistance = 0.04f;
 
         Vector3 boxColliderCenter = BoxCollider2D.bounds.center;
         boxColliderCenter.y = BoxCollider2D.bounds.min.y + (BoxCollider2D.bounds.extents.y / 4f); //Gets 1/4 of the lower half of the player box collider
