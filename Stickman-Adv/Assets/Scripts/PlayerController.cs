@@ -67,42 +67,25 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateAnimation()
     {
+        string nextAnimationName = "";
+
         if (IsPlayerOnTheGround) 
         {
             if (horizontalMovement != 0)
             {
-                if (isShooting)
-                {
-                    animator.Play("Player_Run_Shoot");
-                }
-                else 
-                {
-                    animator.Play("Player_Run");
-                }
+                nextAnimationName = isShooting ? "Player_Run_Shoot" : "Player_Run";
             } 
             else
             {
-                if (isShooting)
-                {
-                    animator.Play("Player_Idle_Shoot");
-                }
-                else
-                {
-                    animator.Play("Player_Idle");
-                }
+                nextAnimationName = isShooting ? "Player_Idle_Shoot" : "Player_Idle";
             }
         } 
         else 
         {
-            if (isShooting)
-            {
-                animator.Play("Player_Jump_Shoot");
-            } 
-            else
-            {
-                animator.Play("Player_Jump");
-            }
+            nextAnimationName = isShooting ? "Player_Jump_Shoot" : "Player_Jump";            
         }
+
+        animator.Play(nextAnimationName);
     }
 
     private void UpdateShooting()
