@@ -16,6 +16,12 @@ public class PlayerController : MonoBehaviour
 
     private bool isTurnedRight;
 
+    //Shoot related variables
+    private bool isShooting;
+    private bool isShootingKeyPressed;
+    private bool isShootingKeyReleased;
+    private float shootingStartInstant;
+
     
     void Start()
     {
@@ -28,12 +34,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMovement = Input.GetAxisRaw("Horizontal");
-        isJumping = Input.GetKeyDown(KeyCode.Space);
-
+        UpdateInputs();
+        UpdateShooting();
         UpdateMovement();   
         UpdateAnimation();
         UpdateDirection();
+    }
+
+    private void UpdateInputs()
+    {
+        horizontalMovement = Input.GetAxisRaw("Horizontal");
+        isJumping = Input.GetKeyDown(KeyCode.Space);
+        isShootingKeyPressed = Input.GetKeyDown(KeyCode.C);
     }
 
     private void FixedUpdate() 
@@ -59,17 +71,60 @@ public class PlayerController : MonoBehaviour
         {
             if (horizontalMovement != 0)
             {
-                animator.Play("Player_Run");
+                if (isShooting)
+                {
+                    animator.Play("Player_Run_Shoot");
+                }
+                else 
+                {
+                    animator.Play("Player_Run");
+                }
             } 
             else
             {
-                animator.Play("Player_Idle");
+                if (isShooting)
+                {
+                    animator.Play("Player_Idle_Shoot");
+                }
+                else
+                {
+                    animator.Play("Player_Idle");
+                }
             }
         } 
         else 
         {
-            animator.Play("Player_Jump");
+            if (isShooting)
+            {
+                animator.Play("Player_Jump_Shoot");
+            } 
+            else
+            {
+                animator.Play("Player_Jump");
+            }
         }
+    }
+
+    private void UpdateShooting()
+    {
+        if (isShootingKeyPressed && !isShootingKeyReleased)
+        {
+            isShooting = true;
+            isShootingKeyReleased = true;
+            shootingStartInstant = Time.time;
+        }
+
+        if (isShooting && isShootingKeyReleased)
+        {
+            float shootingTimeLength = Time.time - shootingStartInstant;
+
+            if (shootingTimeLength >= 0.35f)
+            {
+                isShooting = false;
+                isShootingKeyReleased = false;               
+            }
+        }
+        
     }
 
     private void UpdateDirection() 
