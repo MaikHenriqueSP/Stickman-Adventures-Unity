@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: 8502484ea6c3094469fc66d0ccde71fe
+guid: ffc99100b40e1ec4abde9112d361800d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7773031391787181946
-    second: Player_Idle_1
+      213: -7681515697786324152
+    second: Player-stopped-shoot-1
   - first:
-      213: -1426790471357470633
-    second: Player_Idle_2
+      213: 7270629911691396358
+    second: sprite-sheet-shoot_1
   - first:
-      213: -2506210909196879853
-    second: Player_Run_1
+      213: 8084463670729419957
+    second: Player-run-shoot-2
   - first:
-      213: -8907015550746980148
-    second: Player_Run_2
+      213: 2894702884696193581
+    second: Player-run-shoot-3
   - first:
-      213: -3085487725770422062
-    second: Player_Run_3
+      213: 7099948383443156090
+    second: Player-run-shoot-4
   - first:
-      213: -7371053094594084745
-    second: Player_Run_4
+      213: -1696527223560265108
+    second: Player-run-shoot-1
   - first:
-      213: -3062665138650254500
-    second: Player_Jump
+      213: -8572638746381699266
+    second: Player-jump-shoot
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,148 +124,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Idle_1
+      name: Player-stopped-shoot-1
       rect:
         serializedVersion: 2
-        x: 145
+        x: 34
+        y: 4
+        width: 441
+        height: 508
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84bfbd8db26c56590800000000000000
+      internalID: -7681515697786324152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-sheet-shoot_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 470
+        width: 5
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60502bb126776e460800000000000000
+      internalID: 7270629911691396358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player-run-shoot-2
+      rect:
+        serializedVersion: 2
+        x: 1054
         y: 0
-        width: 215
-        height: 474
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 446
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a776f671eda5fdb60800000000000000
-      internalID: 7773031391787181946
+      spriteID: 5bca06d00e8c13070800000000000000
+      internalID: 8084463670729419957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_2
+      name: Player-run-shoot-3
       rect:
         serializedVersion: 2
-        x: 639
+        x: 1573
         y: 0
-        width: 250
-        height: 484
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 441
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75863d130a5033ce0800000000000000
-      internalID: -1426790471357470633
+      spriteID: d2a7d94dfec0c2820800000000000000
+      internalID: 2894702884696193581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Run_1
+      name: Player-run-shoot-4
       rect:
         serializedVersion: 2
-        x: 1097
-        y: 5
-        width: 371
-        height: 474
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2103
+        y: 0
+        width: 441
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3187c11e476283dd0800000000000000
-      internalID: -2506210909196879853
+      spriteID: a7cfcb60075188260800000000000000
+      internalID: 7099948383443156090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Run_2
+      name: Player-run-shoot-1
       rect:
         serializedVersion: 2
-        x: 1683
-        y: 7
-        width: 196
+        x: 535
+        y: 0
+        width: 441
         height: 468
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc098d84c8ce36480800000000000000
-      internalID: -8907015550746980148
+      spriteID: c6229ef8a79b478e0800000000000000
+      internalID: -1696527223560265108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Run_3
+      name: Player-jump-shoot
       rect:
         serializedVersion: 2
-        x: 2102
-        y: 10
-        width: 376
-        height: 460
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2595
+        y: 0
+        width: 441
+        height: 458
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d840a2d2452e25d0800000000000000
-      internalID: -3085487725770422062
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Run_4
-      rect:
-        serializedVersion: 2
-        x: 2728
-        y: 5
-        width: 196
-        height: 470
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7700d249342c4b990800000000000000
-      internalID: -7371053094594084745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Jump
-      rect:
-        serializedVersion: 2
-        x: 3097
-        y: 12
-        width: 413
-        height: 449
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5377c8784a3f75d0800000000000000
-      internalID: -3062665138650254500
+      spriteID: e373b2eda7ed70980800000000000000
+      internalID: -8572638746381699266
       vertices: []
       indices: 
       edges: []
