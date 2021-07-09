@@ -41,13 +41,12 @@ public class BulletController : MonoBehaviour
             EnemyController enemy = other.GetComponent<EnemyController>();
             if (enemy != null)
             {
-                Debug.Log($"{Damage} <--");
                 enemy.ReceiveDamage(Damage);
             }
         }
         if (!other.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject, 0.01f);
+            Destroy(gameObject, 0.02f);
         }
     }
 
