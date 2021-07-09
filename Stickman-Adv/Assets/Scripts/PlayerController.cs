@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour
     {
         if (IsTakingDamage) 
         {
-            Debug.Log("Playing damage animation in the player");
             return;
         }
 
@@ -186,25 +185,30 @@ public class PlayerController : MonoBehaviour
     {
         if (!IsInvincible)
         {
-            HandleReceivedDamage();
+            HandleReceivedDamage(damage);
         }
     }
 
-    public void HandleReceivedDamage()
+    public void HandleReceivedDamage(int damageReceived)
     {
-        CurretLifePoints -= Damage;
+        CurretLifePoints -= damageReceived;
 
         if (CurretLifePoints <= 0)
         {
             Destroy(gameObject);
         }
-        else
+        else if (!IsTakingDamage)
         {
-            if (!IsTakingDamage)
-            {
-                IsTakingDamage = true;
-                IsInvincible = true;
-            }
+            IsTakingDamage = true;
+            IsInvincible = true;
+            animator.Play("Player_Hit");
         }
+    }
+
+    //Called by animation event in Player_Hit animation
+    public void StopHitAnimation()
+    { 
+        IsTakingDamage = false;
+        IsInvincible = false;
     }
 }
