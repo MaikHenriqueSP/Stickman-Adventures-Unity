@@ -187,8 +187,15 @@ public class PlayerController : MonoBehaviour
         if (!IsInvincible)
         {
             CurretLifePoints -= damageReceived;
+            updateHealthbar();
             HandleReceivedDamage(enemyHorizontalPosition);
         }
+    }
+
+    private void updateHealthbar() {
+        float remainingLifePointsPercentage = CurretLifePoints / (float) LifePoints;
+        Healthbar.HealthbarSingleton.SetValue(remainingLifePointsPercentage);
+
     }
 
     public void HandleReceivedDamage(float enemyHorizontalPosition)
