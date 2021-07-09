@@ -306,7 +306,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -396,23 +395,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c1c1f76f1c81a340adb55bccfddac6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 1684759280}
-  SlideEffectFactor: 0.25
-  SlideFactor: {x: 5.53, y: 0, z: 0}
-  LowerBoundLimit: {x: -2.51, y: 0, z: 0}
-  UpperBoundLimit: {x: 23.1, y: 2.52, z: 0}
 --- !u!1 &589949273
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +697,7 @@ GameObject:
   - component: {fileID: 1600125394}
   - component: {fileID: 1600125393}
   - component: {fileID: 1600125392}
+  - component: {fileID: 1600125396}
   m_Layer: 7
   m_Name: Dummy
   m_TagString: Enemy
@@ -835,6 +818,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1600125396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600125391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2f23276d1bf20488ccd00b83831035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LifePoints: 20
+  CurretLifePoints: 20
+  isInvincible: 0
+  TouchDamage: 2
 --- !u!1 &1684759278
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +986,10 @@ MonoBehaviour:
   Damage: 0
   bulletPrefab: {fileID: 8515895161336593039, guid: 813aa19d6eddcef408d5de41cdbdc28e, type: 3}
   bulletGizmod: {fileID: 638393558}
+  LifePoints: 10
+  CurretLifePoints: 0
+  IsInvincible: 0
+  IsTakingDamage: 0
 --- !u!95 &1684759284
 Animator:
   serializedVersion: 3
@@ -1031,7 +1034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1815646587}
   - component: {fileID: 1815646588}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isTurnedRight;
 
-    //Shoot related variables
+    //Shooting related variables
     private bool isShooting;
     private bool isShootingKeyPressed;
     private bool isShootingKeyReleased;
@@ -27,18 +27,31 @@ public class PlayerController : MonoBehaviour
 
     public Transform bulletGizmod;
 
-    
+    //Damage related variables
+    public int LifePoints;
+    public int CurretLifePoints;
+    public bool IsInvincible;
+    public bool IsTakingDamage;
+
+
     void Start()
     {
         BoxCollider2D = GetComponent<BoxCollider2D>();
         Rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();        
         isTurnedRight = true;
+        CurretLifePoints = LifePoints;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (IsTakingDamage) 
+        {
+            Debug.Log("Playing damage animation in the player");
+            return;
+        }
+
         UpdateInputs();
         UpdateShooting();
         UpdateMovement();   
@@ -166,5 +179,32 @@ public class PlayerController : MonoBehaviour
         bulletController.ShootDirection = shootDirection;
         bulletController.Damage = this.Damage;
         bulletController.Shoot();
+    }
+
+    //Damage related methods
+    public void ReceiveDamage(int damage)
+    {
+        if (!IsInvincible)
+        {
+            HandleReceivedDamage();
+        }
+    }
+
+    public void HandleReceivedDamage()
+    {
+        CurretLifePoints -= Damage;
+
+        if (CurretLifePoints <= 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            if (!IsTakingDamage)
+            {
+                IsTakingDamage = true;
+                IsInvincible = true;
+            }
+        }
     }
 }
