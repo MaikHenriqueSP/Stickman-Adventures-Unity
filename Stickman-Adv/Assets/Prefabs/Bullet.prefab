@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DurationTime: 5
   ShootDirection: {x: 0, y: 0}
-  Damage: 1
+  Damage: 2
   speed: 10
 --- !u!58 &4365653548612730191
 CircleCollider2D:

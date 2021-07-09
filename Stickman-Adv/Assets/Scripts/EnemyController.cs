@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
 
     public void ReceiveDamage(int damage)
     {
+        Debug.Log($"{damage}");
         if (!isInvincible)
         {
             CurretLifePoints -= damage;

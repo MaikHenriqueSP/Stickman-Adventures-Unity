@@ -36,7 +36,19 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-     //   Destroy(gameObject);
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            EnemyController enemy = other.GetComponent<EnemyController>();
+            if (enemy != null)
+            {
+                Debug.Log($"{Damage} <--");
+                enemy.ReceiveDamage(Damage);
+            }
+        }
+        if (!other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject, 0.01f);
+        }
     }
 
     public void SetShootDirection(Vector2 direction) 
