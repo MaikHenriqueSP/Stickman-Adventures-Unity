@@ -852,6 +852,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 5.5
   JumpSpeed: 5
+  Damage: 0
+  bulletPrefab: {fileID: 8515895161336593039, guid: 813aa19d6eddcef408d5de41cdbdc28e, type: 3}
+  bulletGizmod: {fileID: 638393558}
 --- !u!95 &1684759284
 Animator:
   serializedVersion: 3

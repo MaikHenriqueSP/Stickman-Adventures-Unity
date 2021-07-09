@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7168840271541407218}
   - component: {fileID: 3340909322303338261}
   - component: {fileID: 7162553925331342171}
-  - component: {fileID: 7437575650576455305}
   - component: {fileID: 3151554315433029338}
+  - component: {fileID: 4365653548612730191}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -106,32 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 6
---- !u!61 &7437575650576455305
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8515895161336593039}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.006, y: -0.006}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.409, y: 0.408}
-  m_EdgeRadius: 0
 --- !u!114 &3151554315433029338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,3 +118,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c326267b6fa3d4bb307e823552d343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DurationTime: 5
+  ShootDirection: {x: 0, y: 0}
+  Damage: 1
+  speed: 10
+--- !u!58 &4365653548612730191
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515895161336593039}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.012270212, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.21774697

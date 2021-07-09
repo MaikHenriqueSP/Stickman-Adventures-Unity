@@ -21,6 +21,11 @@ public class PlayerController : MonoBehaviour
     private bool isShootingKeyPressed;
     private bool isShootingKeyReleased;
     private float shootingStartInstant;
+    public int Damage;
+
+    public GameObject bulletPrefab;
+
+    public Transform bulletGizmod;
 
     
     void Start()
@@ -95,6 +100,11 @@ public class PlayerController : MonoBehaviour
             isShooting = true;
             isShootingKeyReleased = true;
             shootingStartInstant = Time.time;
+            Invoke("Shoot", 0.1f);
+        }
+
+        if (isShooting && !isShootingKeyPressed)
+        {
         }
 
         if (isShooting && isShootingKeyReleased)
@@ -144,6 +154,17 @@ public class PlayerController : MonoBehaviour
         {
             IsPlayerOnTheGround = true;
         }
+    }
 
+    void Shoot() 
+    {
+        GameObject bullet = Instantiate(bulletPrefab, bulletGizmod.position, Quaternion.identity);
+        bullet.name = bulletPrefab.name;
+
+        BulletController bulletController = bullet.GetComponent<BulletController>();
+        Vector2 shootDirection = isTurnedRight ? Vector2.right : Vector2.left;
+        bulletController.ShootDirection = shootDirection;
+        bulletController.Damage = this.Damage;
+        bulletController.Shoot();
     }
 }
