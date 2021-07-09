@@ -336,8 +336,8 @@ MonoBehaviour:
   Player: {fileID: 1684759280}
   SlideEffectFactor: 0.25
   SlideFactor: {x: 5.53, y: 0, z: 0}
-  LowerBoundLimit: {x: -2.51, y: 0, z: 0}
-  UpperBoundLimit: {x: 23.1, y: 2.52, z: 0}
+  LowerBoundLimit: {x: 0.79, y: 0, z: 0}
+  UpperBoundLimit: {x: 19.78, y: 2.52, z: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 5.5
-  JumpSpeed: 5
+  JumpSpeed: 7
   Damage: 0
   bulletPrefab: {fileID: 8515895161336593039, guid: 813aa19d6eddcef408d5de41cdbdc28e, type: 3}
   bulletGizmod: {fileID: 638393558}

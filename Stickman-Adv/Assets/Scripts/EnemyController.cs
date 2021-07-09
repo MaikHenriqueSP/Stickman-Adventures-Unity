@@ -37,7 +37,8 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
-            player.ReceiveDamage(TouchDamage);
+            float enemyHorizontalPosition = transform.position.x;
+            player.ReceiveDamage(TouchDamage, enemyHorizontalPosition);
         }
     }
 

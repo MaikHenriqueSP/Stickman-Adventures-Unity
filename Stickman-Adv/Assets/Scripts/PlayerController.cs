@@ -181,18 +181,18 @@ public class PlayerController : MonoBehaviour
     }
 
     //Damage related methods
-    public void ReceiveDamage(int damage)
+    public void ReceiveDamage(int damageReceived, float enemyHorizontalPosition)
     {
+
         if (!IsInvincible)
         {
-            HandleReceivedDamage(damage);
+            CurretLifePoints -= damageReceived;
+            HandleReceivedDamage(enemyHorizontalPosition);
         }
     }
 
-    public void HandleReceivedDamage(int damageReceived)
+    public void HandleReceivedDamage(float enemyHorizontalPosition)
     {
-        CurretLifePoints -= damageReceived;
-
         if (CurretLifePoints <= 0)
         {
             Destroy(gameObject);
@@ -201,8 +201,18 @@ public class PlayerController : MonoBehaviour
         {
             IsTakingDamage = true;
             IsInvincible = true;
+            PushPlayerWhenIsTakingDamage(enemyHorizontalPosition);
             animator.Play("Player_Hit");
         }
+    }
+
+    private void PushPlayerWhenIsTakingDamage(float enemyHorizontalPosition) 
+    {
+        int hitDirection = (transform.position.x > enemyHorizontalPosition) ? 1 : -1;
+        Vector2 forceDirection = new Vector2(4.50f * hitDirection, 3.50f);
+        
+        Rigidbody2D.velocity = Vector2.zero;
+        Rigidbody2D.AddForce(forceDirection, ForceMode2D.Impulse);
     }
 
     //Called by animation event in Player_Hit animation
