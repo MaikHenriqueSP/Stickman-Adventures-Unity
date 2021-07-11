@@ -16,6 +16,11 @@ public class JumpAttackBehavior : StateMachineBehaviour
     
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (player == null)
+        {
+            return;
+        }
+        
         Vector2 target = new Vector2(player.position.x, animator.transform.parent.position.y);
         animator.transform.parent.position = Vector2.MoveTowards(animator.transform.parent.position, target, speed * Time.deltaTime);
     }

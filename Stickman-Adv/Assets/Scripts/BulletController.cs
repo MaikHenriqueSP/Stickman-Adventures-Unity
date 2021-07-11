@@ -44,6 +44,7 @@ public class BulletController : MonoBehaviour
                 enemy.ReceiveDamage(Damage);
             }
         }
+
         if (!other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject, 0.02f);
