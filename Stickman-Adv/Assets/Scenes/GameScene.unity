@@ -190,9 +190,9 @@ GameObject:
   m_Component:
   - component: {fileID: 53059386}
   - component: {fileID: 53059387}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallRight
-  m_TagString: Untagged
+  m_TagString: RightWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,9 +247,9 @@ GameObject:
   m_Component:
   - component: {fileID: 159286163}
   - component: {fileID: 159286164}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallLeft
-  m_TagString: Untagged
+  m_TagString: LeftWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -378,7 +378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 374384744}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BossMover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +393,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374384743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: 25, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1235547831}
@@ -988,6 +988,7 @@ Transform:
   m_LocalScale: {x: 5.4, y: 4.47, z: 1}
   m_Children:
   - {fileID: 1438527219}
+  - {fileID: 1752439322}
   m_Father: {fileID: 374384744}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1022,8 +1023,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b130babdbb5e1234e8a6bee518f2f237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaximumLifePoints: 10
-  CurrentLifePoints: 10
+  LifePoints: 10
+  CurretLifePoints: 10
+  isInvincible: 0
   TouchDamage: 1
 --- !u!1 &1414506158
 GameObject:
@@ -1599,7 +1601,7 @@ MonoBehaviour:
   bulletGizmod: {fileID: 638393558}
   LifePoints: 10
   CurretLifePoints: 0
-  IsInvincible: 0
+  IsInvincible: 1
   IsTakingDamage: 0
 --- !u!95 &1684759284
 Animator:
@@ -1635,6 +1637,36 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!1 &1752439321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1752439322}
+  m_Layer: 7
+  m_Name: WallCheck
+  m_TagString: WallCheck
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1752439322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752439321}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1235547831}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1815646586
 GameObject:
   m_ObjectHideFlags: 0

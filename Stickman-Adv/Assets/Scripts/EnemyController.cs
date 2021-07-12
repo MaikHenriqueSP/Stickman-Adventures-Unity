@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
         CurretLifePoints = LifePoints;        
     }
 
-    public void ReceiveDamage(int damage)
+    public virtual void ReceiveDamage(int damage)
     {
         if (!isInvincible)
         {
