@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class BossController : EnemyController
 {
-    /*
-    public Transform wallCheck;
-    public float wallCheckRadius;
+    private Animator animator;
 
-    //Ground layer
-    public LayerMask GroundLayer;
-    public bool IsTouchingWall;
+    void Start()
+    {
+        animator = GetComponent<Animator>();        
+    }
 
-
-    /// <summary>
-    /// Update is called every frame, if the MonoBehaviour is enabled.
-    /// </summary>
     void Update()
     {
-        IsTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, GroundLayer );
+        if (CurrentLifePoints <= (LifePoints / 2))
+        {
+            animator.SetTrigger("Rolling");
+        }
+
+        if (CurrentLifePoints <= 0)
+        {
+            animator.SetTrigger("Dead");
+        }
+
     }
-*/
+
 }

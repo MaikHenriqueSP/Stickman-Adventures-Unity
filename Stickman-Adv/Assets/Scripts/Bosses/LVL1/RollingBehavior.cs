@@ -7,16 +7,12 @@ public class RollingBehavior : StateMachineBehaviour
     private Transform playerTransform;
     public float rollingSpeed = 3f;
     private bool isGoingLeft;
-
     private Transform wallCheck;
     public float wallCheckRadius;
-
     public LayerMask GroundLayer;
     public bool IsTouchingWall;
-
     private Transform leftWall;
     private Transform rightWall;
-
     private Transform targetTransform;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -27,8 +23,10 @@ public class RollingBehavior : StateMachineBehaviour
         leftWall = GameObject.FindGameObjectWithTag("LeftWall").GetComponent<Transform>();
         rightWall = GameObject.FindGameObjectWithTag("RightWall").GetComponent<Transform>();
         
-        isGoingLeft = playerTransform.position.x < animator.transform.parent.position.x;
-        targetTransform = leftWall;
+        //isGoingLeft = playerTransform.position.x < animator.transform.parent.position.x;
+        //targetTransform = leftWall;        
+        //Debug.Log("OnStateEnter");
+        pickTheFirstDirection(animator);
     }
 
     
@@ -42,6 +40,7 @@ public class RollingBehavior : StateMachineBehaviour
         IsTouchingWall = Mathf.Abs(wallCheck.position.x - targetTransform.position.x) < 0.5f;
 
         if (IsTouchingWall) {
+            Debug.Log("Touching wall");
             isGoingLeft = !isGoingLeft;
             updateTargetTransform(animator);
         }
@@ -50,7 +49,29 @@ public class RollingBehavior : StateMachineBehaviour
         animator.transform.parent.position = Vector2.MoveTowards(animator.transform.parent.position, target, rollingSpeed * Time.deltaTime);
         rollingSpeed += Time.deltaTime * 0.25f;
 
+    }
 
+    void pickTheFirstDirection(Animator animator) {
+        var leftWallX = leftWall.position.x;
+        var rightWallX = rightWall.position.x;
+
+        var gameObjX = animator.transform.parent.position.x;
+
+        bool isLeftWallTheMostDistant = Mathf.Abs(leftWallX - gameObjX) >= Mathf.Abs(rightWallX - gameObjX);
+
+        if (isLeftWallTheMostDistant)
+        {
+            isGoingLeft = true;
+            targetTransform = leftWall;
+        }
+        else
+        {
+            isGoingLeft = false;
+            targetTransform = rightWall;
+
+        }
+
+        
     }
 
     void updateTargetTransform(Animator animator) 
@@ -64,14 +85,8 @@ public class RollingBehavior : StateMachineBehaviour
             animator.transform.parent.Rotate(0f, -180f, 0f);    
         }
 
-    }
+        animator.SetTrigger("idle");
 
-
-
-    
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-    
     }
 
     
