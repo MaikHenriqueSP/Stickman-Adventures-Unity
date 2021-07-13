@@ -515,10 +515,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1684759280}
-  SlideEffectFactor: 0.25
+  Enemy: {fileID: 374384744}
+  SlideEffectFactor: 0.15
   SlideFactor: {x: 5.53, y: 0, z: 0}
   LowerBoundLimit: {x: 0.79, y: 0, z: 0}
   UpperBoundLimit: {x: 19.78, y: 2.52, z: 0}
+  SwitchSideTolerante: 7
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
