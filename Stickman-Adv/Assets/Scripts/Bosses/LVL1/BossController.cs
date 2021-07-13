@@ -8,19 +8,21 @@ public class BossController : EnemyController
 
     void Start()
     {
+        base.Start();
         animator = GetComponent<Animator>();        
     }
 
     void Update()
     {
-        if (CurrentLifePoints <= (LifePoints / 2))
+        float halfLifePoints = LifePoints / 2;
+        if (CurrentLifePoints <= halfLifePoints && CurrentLifePoints > 0)
         {
-            animator.SetTrigger("Rolling");
+            animator.SetTrigger("rolling");
         }
 
         if (CurrentLifePoints <= 0)
         {
-            animator.SetTrigger("Dead");
+            animator.SetTrigger("dead");
         }
 
     }

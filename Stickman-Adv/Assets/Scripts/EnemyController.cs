@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     public bool isInvincible;
     public int TouchDamage;
 
-    void Start()
+    protected void Start()
     {
         CurrentLifePoints = LifePoints;        
     }
