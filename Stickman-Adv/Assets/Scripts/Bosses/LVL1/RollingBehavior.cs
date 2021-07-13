@@ -23,9 +23,6 @@ public class RollingBehavior : StateMachineBehaviour
         leftWall = GameObject.FindGameObjectWithTag("LeftWall").GetComponent<Transform>();
         rightWall = GameObject.FindGameObjectWithTag("RightWall").GetComponent<Transform>();
         
-        //isGoingLeft = playerTransform.position.x < animator.transform.parent.position.x;
-        //targetTransform = leftWall;        
-        //Debug.Log("OnStateEnter");
         pickTheFirstDirection(animator);
     }
 
@@ -40,7 +37,6 @@ public class RollingBehavior : StateMachineBehaviour
         IsTouchingWall = Mathf.Abs(wallCheck.position.x - targetTransform.position.x) < 0.5f;
 
         if (IsTouchingWall) {
-            Debug.Log("Touching wall");
             isGoingLeft = !isGoingLeft;
             updateTargetTransform(animator);
         }
@@ -89,7 +85,6 @@ public class RollingBehavior : StateMachineBehaviour
         if (isGoingLeft)
         {
             targetTransform = leftWall;
-//            animator.transform.parent.Rotate(0f, 180f, 0f);    
         } else {
             targetTransform = rightWall;
         }
