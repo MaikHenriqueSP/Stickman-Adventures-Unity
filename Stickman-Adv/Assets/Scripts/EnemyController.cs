@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
     {
         if (CurrentLifePoints <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 

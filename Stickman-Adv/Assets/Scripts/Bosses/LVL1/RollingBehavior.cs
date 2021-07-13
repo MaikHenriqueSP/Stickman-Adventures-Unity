@@ -58,16 +58,26 @@ public class RollingBehavior : StateMachineBehaviour
         var gameObjX = animator.transform.parent.position.x;
 
         bool isLeftWallTheMostDistant = Mathf.Abs(leftWallX - gameObjX) >= Mathf.Abs(rightWallX - gameObjX);
+        bool isWallCheckTurnedLeft = wallCheck.position.x < gameObjX;
 
         if (isLeftWallTheMostDistant)
         {
             isGoingLeft = true;
             targetTransform = leftWall;
+
+            if (!isWallCheckTurnedLeft)
+            {
+                animator.transform.parent.Rotate(0f, 180f, 0f); 
+            }
         }
         else
         {
             isGoingLeft = false;
             targetTransform = rightWall;
+            if (isWallCheckTurnedLeft)
+            {
+                animator.transform.parent.Rotate(0f, 180f, 0f); 
+            }
 
         }
 
@@ -79,11 +89,11 @@ public class RollingBehavior : StateMachineBehaviour
         if (isGoingLeft)
         {
             targetTransform = leftWall;
-            animator.transform.parent.Rotate(0f, 180f, 0f);    
+//            animator.transform.parent.Rotate(0f, 180f, 0f);    
         } else {
             targetTransform = rightWall;
-            animator.transform.parent.Rotate(0f, -180f, 0f);    
         }
+        animator.transform.parent.Rotate(0f, 180f, 0f);    
 
         animator.SetTrigger("idle");
 
