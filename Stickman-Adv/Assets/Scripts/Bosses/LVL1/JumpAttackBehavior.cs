@@ -10,8 +10,7 @@ public class JumpAttackBehavior : StateMachineBehaviour
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-    
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();    
     }
     
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

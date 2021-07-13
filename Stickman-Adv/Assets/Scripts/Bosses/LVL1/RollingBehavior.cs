@@ -15,8 +15,18 @@ public class RollingBehavior : StateMachineBehaviour
     private Transform rightWall;
     private Transform targetTransform;
 
+    private BossController boss;
+
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {        
+    {
+        boss = animator.GetComponent<BossController>();
+        boss.BecomeUnbeatable();
+
+        if (boss.IsDead())
+        {
+            animator.SetTrigger("dead");
+        }
+
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         wallCheck = GameObject.FindGameObjectWithTag("WallCheck").GetComponent<Transform>();
 
@@ -44,7 +54,11 @@ public class RollingBehavior : StateMachineBehaviour
         Vector2 target = new Vector2(targetTransform.position.x, animator.transform.parent.position.y);
         animator.transform.parent.position = Vector2.MoveTowards(animator.transform.parent.position, target, rollingSpeed * Time.deltaTime);
         rollingSpeed += Time.deltaTime * 0.25f;
+    }
 
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        boss.BecomeBeatable();
     }
 
     void pickTheFirstDirection(Animator animator) {

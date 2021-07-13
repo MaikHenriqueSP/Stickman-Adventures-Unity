@@ -9,22 +9,40 @@ public class BossController : EnemyController
     void Start()
     {
         base.Start();
-        animator = GetComponent<Animator>();        
+        animator = GetComponent<Animator>(); 
     }
 
     void Update()
     {
-        float halfLifePoints = LifePoints / 2;
-        if (CurrentLifePoints <= halfLifePoints && CurrentLifePoints > 0)
+        
+        if (CurrentLifePoints <= HalfBossLife() && CurrentLifePoints > 0)
         {
             animator.SetTrigger("rolling");
         }
-
-        if (CurrentLifePoints <= 0)
+        else if (IsDead())
         {
             animator.SetTrigger("dead");
         }
+    }
 
+    public float HalfBossLife()
+    {
+        return LifePoints / 2;
+    }
+
+    public void BecomeUnbeatable()
+    {
+        isInvincible = true;
+    }
+
+    public void BecomeBeatable()
+    {
+        isInvincible = false;
+    }
+
+    public bool IsDead()
+    {
+        return CurrentLifePoints <= 0;
     }
 
 }
