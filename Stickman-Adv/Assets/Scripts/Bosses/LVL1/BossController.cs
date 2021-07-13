@@ -25,6 +25,21 @@ public class BossController : EnemyController
         }
     }
 
+    public override  void ReceiveDamage(int damage)
+    {
+        if (!IsInvincible)
+        {
+            CurrentLifePoints -= damage;
+            updateHealthbar();
+        }
+    }
+
+    private void updateHealthbar() {
+        float remainingLifePointsPercentage = CurrentLifePoints / (float) LifePoints;
+        BossHealthBar.BossHealthbarSingleton.SetValue(remainingLifePointsPercentage);
+    }
+
+
     public float HalfBossLife()
     {
         return LifePoints / 2;
@@ -32,12 +47,12 @@ public class BossController : EnemyController
 
     public void BecomeUnbeatable()
     {
-        isInvincible = true;
+        IsInvincible = true;
     }
 
     public void BecomeBeatable()
     {
-        isInvincible = false;
+        IsInvincible = false;
     }
 
     public bool IsDead()

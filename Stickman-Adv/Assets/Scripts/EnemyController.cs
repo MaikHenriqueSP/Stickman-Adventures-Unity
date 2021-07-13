@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     public int LifePoints;
     public int CurrentLifePoints;
-    public bool isInvincible;
+    public bool IsInvincible;
     public int TouchDamage;
 
     protected void Start()
@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
 
     public virtual void ReceiveDamage(int damage)
     {
-        if (!isInvincible)
+        if (!IsInvincible)
         {
             CurrentLifePoints -= damage;
             CheckAndDestroyIfDefeated();
@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
     {
         if (CurrentLifePoints <= 0)
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
