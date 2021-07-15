@@ -5,28 +5,27 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public int LifePoints;
-    public int CurretLifePoints;
-    public bool isInvincible;
+    public int CurrentLifePoints;
+    public bool IsInvincible;
     public int TouchDamage;
 
-    // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
-        CurretLifePoints = LifePoints;        
+        CurrentLifePoints = LifePoints;        
     }
 
-    public void ReceiveDamage(int damage)
+    public virtual void ReceiveDamage(int damage)
     {
-        if (!isInvincible)
+        if (!IsInvincible)
         {
-            CurretLifePoints -= damage;
+            CurrentLifePoints -= damage;
             CheckAndDestroyIfDefeated();
         }
     }
 
     public void CheckAndDestroyIfDefeated()
     {
-        if (CurretLifePoints <= 0)
+        if (CurrentLifePoints <= 0)
         {
             Destroy(gameObject);
         }
