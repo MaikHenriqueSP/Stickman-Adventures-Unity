@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     //Damage related variables
     public int LifePoints;
-    public int CurretLifePoints;
+    public int CurrentLifePoints;
     public bool IsInvincible;
     public bool IsTakingDamage;
 
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         Rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();        
         isTurnedRight = true;
-        CurretLifePoints = LifePoints;
+        CurrentLifePoints = LifePoints;
     }
 
     // Update is called once per frame
@@ -186,22 +186,22 @@ public class PlayerController : MonoBehaviour
 
         if (!IsInvincible)
         {
-            CurretLifePoints -= damageReceived;
+            CurrentLifePoints -= damageReceived;
             updateHealthbar();
             HandleReceivedDamage(enemyHorizontalPosition);
         }
     }
 
     private void updateHealthbar() {
-        float remainingLifePointsPercentage = CurretLifePoints / (float) LifePoints;
+        float remainingLifePointsPercentage = CurrentLifePoints / (float) LifePoints;
         Healthbar.HealthbarSingleton.SetValue(remainingLifePointsPercentage);
     }
 
     public void HandleReceivedDamage(float enemyHorizontalPosition)
     {
-        if (CurretLifePoints <= 0)
+        if (CurrentLifePoints <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         else if (!IsTakingDamage)
         {
@@ -226,5 +226,10 @@ public class PlayerController : MonoBehaviour
     { 
         IsTakingDamage = false;
         IsInvincible = false;
+    }
+
+    public bool IsPlayerDead()
+    {
+        return CurrentLifePoints <= 0;
     }
 }
