@@ -8,6 +8,7 @@ TagManager:
   - WallCheck
   - LeftWall
   - RightWall
+  - PlayButton
   layers:
   - Default
   - TransparentFX

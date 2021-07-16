@@ -38,6 +38,8 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         IsGamePaused = true;
+
+        setSelectedGameObject(firstPauseButton);
     }
 
     private void setSelectedGameObject(GameObject toBeSelected)
@@ -48,6 +50,10 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        Time.timeScale = 1f;
+        IsGamePaused = false;
+        PauseMenuUI.SetActive(false);
+        
         SceneManager.LoadScene("Menu");
     }
 
