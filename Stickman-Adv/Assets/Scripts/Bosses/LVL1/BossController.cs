@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossController : EnemyController
 {
     private Animator animator;
+    public Animator cameraAnimator;
 
     void Start()
     {
@@ -59,5 +60,12 @@ public class BossController : EnemyController
     {
         return CurrentLifePoints <= 0;
     }
+
+
+    public void ShakeCamera()
+    {
+        cameraAnimator.SetTrigger("Earthquake");
+    }
+
 
 }
