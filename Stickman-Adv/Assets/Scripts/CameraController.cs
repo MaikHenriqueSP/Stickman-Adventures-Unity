@@ -24,8 +24,6 @@ public class CameraController : MonoBehaviour
 
         Vector3 cameraPosition = transform.position;
         Vector3 playerPosition = Player.position;
-
-        Debug.Log(IsPlayerToLeftOfTheEnemy());
         
         if (IsPlayerToLeftOfTheEnemy())
         {
