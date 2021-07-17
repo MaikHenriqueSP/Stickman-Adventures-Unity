@@ -10,6 +10,7 @@ public class BulletController : MonoBehaviour
     public int Damage = 1;
     private float BulletLifeSpanTime;
 
+    public GameObject ParticleExplosion;
     public GameObject HitExplosion;
 
     public float speed;
@@ -41,7 +42,9 @@ public class BulletController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             EnemyController enemy = other.GetComponent<EnemyController>();
+            Instantiate(ParticleExplosion, transform.position, Quaternion.identity);
             Instantiate(HitExplosion, transform.position, Quaternion.identity);
+            
             if (enemy != null)
             {
                 enemy.ReceiveDamage(Damage);
