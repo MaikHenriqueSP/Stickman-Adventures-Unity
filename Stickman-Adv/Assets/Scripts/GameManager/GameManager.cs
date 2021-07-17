@@ -25,8 +25,10 @@ public class GameManager : MonoBehaviour
 
         if (player.IsPlayerDead())
         {
-            gameOverMenu.StartGameOverMenu();
+            IsGameOver = true;
             Debug.Log("Player is dead");
+
+            gameOverMenu.StartGameOverMenu();
         }
 
         

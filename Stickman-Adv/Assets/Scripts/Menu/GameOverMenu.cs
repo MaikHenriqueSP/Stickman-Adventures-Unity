@@ -19,15 +19,19 @@ public class GameOverMenu : MonoBehaviour
    public void StartGameOverMenu()
    {
         GameOverMenuUI.SetActive(true);
-        Time.timeScale = 0f;       
+        Time.timeScale = 0f;
+        setFirstSelectedButton();
    }
+
+    private void setFirstSelectedButton()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstSelectedButton);
+    }
 
 
     public void LoadMenu()
-    {
-        //Time.timeScale = 1f;
-        //GameOverMenuUI.SetActive(false);
-        
+    {        
         SceneManager.LoadScene("Menu");
     }
 

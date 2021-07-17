@@ -38,11 +38,11 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         IsGamePaused = true;
+        setFirstSelectedButton();
 
-        setSelectedGameObject(firstPauseButton);
     }
 
-    private void setSelectedGameObject(GameObject toBeSelected)
+    private void setFirstSelectedButton()
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(firstPauseButton);
