@@ -2259,7 +2259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifePoints: 10
   CurrentLifePoints: 0
-  IsInvincible: 0
+  IsInvincible: 1
   TouchDamage: 1
 --- !u!1 &1272472583
 GameObject:
@@ -3493,7 +3493,7 @@ MonoBehaviour:
   bulletGizmod: {fileID: 638393558}
   LifePoints: 1
   CurrentLifePoints: 0
-  IsInvincible: 0
+  IsInvincible: 1
   IsTakingDamage: 0
 --- !u!95 &1684759284
 Animator:
