@@ -121,6 +121,7 @@ MonoBehaviour:
   DurationTime: 5
   ShootDirection: {x: 0, y: 0}
   Damage: 2
+  HitExplosion: {fileID: 745602967377557416, guid: 21b36b053e762ee49abe944c25fa9e3d, type: 3}
   speed: 10
 --- !u!58 &4365653548612730191
 CircleCollider2D:
