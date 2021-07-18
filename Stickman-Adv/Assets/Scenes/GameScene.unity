@@ -4058,7 +4058,7 @@ GameObject:
   - component: {fileID: 1860816849}
   - component: {fileID: 1860816850}
   m_Layer: 0
-  m_Name: Clouds
+  m_Name: CloudSpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4103,7 +4103,7 @@ MonoBehaviour:
   spawnIntervalMax: 10
   minCloudsSpeed: 0.5
   maxCloudSpeed: 2
-  minCloudScale: 0.8
+  minCloudScale: 0.7
   maxCloudScale: 1.2
   heightVariationFactor: 2
   minStartClouds: 1

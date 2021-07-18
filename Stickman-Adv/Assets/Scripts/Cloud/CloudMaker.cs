@@ -53,11 +53,7 @@ public class CloudMaker : MonoBehaviour
         
         float cloudOpacity = UnityEngine.Random.Range(0.4f, 1.0f);
 
-        cloud.transform.position = new Vector2(cloudXPosition, cloudYposition);
-        cloud.transform.localScale = new Vector2(cloudScale, cloudScale);
-
-        cloud.GetComponent<CloudBehavior>().Move(cloudSpeed, endPoint.transform.position.x, cloudOpacity);
-        
+        cloud.GetComponent<CloudBehavior>().Move(speed: cloudSpeed, deadEndX: endPoint.transform.position.x, scale: cloudScale, xPosition: cloudXPosition, yPosition: cloudYposition, alpha: cloudOpacity);        
     }
 
     private void preSpawnCloud() {

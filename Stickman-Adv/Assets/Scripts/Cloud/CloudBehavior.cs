@@ -21,12 +21,25 @@ public class CloudBehavior : MonoBehaviour
             Destroy(gameObject);
         }        
     }    
-    public void Move(float speed, float deadEndX, float alpha)
+    public void Move(float speed, float deadEndX, float scale, float xPosition, float yPosition, float alpha)
     {
-        Debug.Log(alpha);
         this.rigidbody2D.velocity = Vector3.right * speed;
         this.deadEndX = deadEndX;
+
+        SetPosition(xPosition, yPosition);
+        SetScale(scale);
         SetAlpha(alpha);
+    }
+
+
+    private void SetPosition(float xPosition, float yPosition)
+    {
+        transform.position = new Vector2(xPosition, yPosition);
+    }
+
+    private void SetScale(float scale)
+    {
+        transform.localScale = new Vector2(scale, scale);
     }
 
     private void SetAlpha(float alpha)
