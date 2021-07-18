@@ -33,7 +33,7 @@ public class CloudMaker : MonoBehaviour
     {
         for(;;)
         {
-            float nextSpawnTime = generateSpawnTime();
+            float nextSpawnTime = UnityEngine.Random.Range(spawnIntervalMin, spawnIntervalMax);
             SpawnCloud();
             
             yield return new WaitForSeconds(nextSpawnTime);
@@ -50,11 +50,13 @@ public class CloudMaker : MonoBehaviour
 
         float cloudXPosition = xPosition ?? startPoint.transform.position.x;
         float cloudYposition = UnityEngine.Random.Range(startPoint.transform.position.y - heightVariationFactor, startPoint.transform.position.y + heightVariationFactor);
+        
+        float cloudOpacity = UnityEngine.Random.Range(0.4f, 1.0f);
 
-        cloud.transform.position = new Vector2(cloudXPosition,cloudYposition);
+        cloud.transform.position = new Vector2(cloudXPosition, cloudYposition);
         cloud.transform.localScale = new Vector2(cloudScale, cloudScale);
 
-        cloud.GetComponent<CloudBehavior>().Move(cloudSpeed, endPoint.transform.position.x);
+        cloud.GetComponent<CloudBehavior>().Move(cloudSpeed, endPoint.transform.position.x, cloudOpacity);
         
     }
 
@@ -63,18 +65,11 @@ public class CloudMaker : MonoBehaviour
         float xStart = startPoint.transform.position.x;
         float xFinish = endPoint.transform.position.x;
 
-        Debug.Log($"{xStart} - {xFinish}");
-
         for (int i = 0; i < numberOfClouds; i++)
         {
             float xPosition = UnityEngine.Random.Range(xStart, xFinish);
-            Debug.Log($"{xPosition}");
             SpawnCloud(xPosition);
         }
     }
 
-    private float generateSpawnTime()
-    {
-        return UnityEngine.Random.Range(spawnIntervalMin, spawnIntervalMax);
-    }
 }
