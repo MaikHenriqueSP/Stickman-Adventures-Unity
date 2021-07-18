@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class CloudBehavior : MonoBehaviour
 {
-    private float speed = 2f;
+    private float speed;
     private Rigidbody2D rigidbody2D;
-    void Start()
+    private float deadEndX;
+    void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        rigidbody2D.velocity = Vector3.right * speed;
+    }
+
+    public void Move(float speed, float deadEndX)
+    {
+        this.rigidbody2D.velocity = Vector3.right * speed;
+        this.deadEndX = deadEndX;
+    }
+
+    void Update()
+    {
+        if (transform.position.x > deadEndX)
+        {
+            Destroy(gameObject);
+        }        
     }
 
 }
