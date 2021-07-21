@@ -166,7 +166,14 @@ AnimationClip:
     path: WallCheck
   m_ScaleCurves: []
   m_FloatCurves: []
-  m_PPtrCurves: []
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 192454500139917738, guid: 93840bc2cd7269a4eb7e2cfe4c5f0c1d, type: 3}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
   m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
@@ -188,7 +195,15 @@ AnimationClip:
       typeID: 4
       customType: 4
       isPPtrCurve: 0
-    pptrCurveMapping: []
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 192454500139917738, guid: 93840bc2cd7269a4eb7e2cfe4c5f0c1d, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
