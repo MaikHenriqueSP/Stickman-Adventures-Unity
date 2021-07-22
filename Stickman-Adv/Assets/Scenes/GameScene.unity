@@ -3637,7 +3637,7 @@ MonoBehaviour:
   bulletGizmod: {fileID: 638393558}
   LifePoints: 10
   CurrentLifePoints: 0
-  IsInvincible: 0
+  IsInvincible: 1
   IsTakingDamage: 0
 --- !u!95 &1684759284
 Animator:
