@@ -2274,7 +2274,7 @@ Transform:
   m_GameObject: {fileID: 1235547827}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.235, z: 0}
-  m_LocalScale: {x: 6.4, y: 5.47, z: 1}
+  m_LocalScale: {x: 5.4, y: 5.4, z: 1}
   m_Children:
   - {fileID: 1438527219}
   - {fileID: 1752439322}
@@ -3635,9 +3635,9 @@ MonoBehaviour:
   Damage: 1
   bulletPrefab: {fileID: 8515895161336593039, guid: 813aa19d6eddcef408d5de41cdbdc28e, type: 3}
   bulletGizmod: {fileID: 638393558}
-  LifePoints: 1
+  LifePoints: 10
   CurrentLifePoints: 0
-  IsInvincible: 1
+  IsInvincible: 0
   IsTakingDamage: 0
 --- !u!95 &1684759284
 Animator:
