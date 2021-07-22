@@ -2183,9 +2183,9 @@ GameObject:
   - component: {fileID: 1235547831}
   - component: {fileID: 1235547830}
   - component: {fileID: 1235547829}
-  - component: {fileID: 1235547828}
   - component: {fileID: 1235547832}
   - component: {fileID: 1235547833}
+  - component: {fileID: 1235547834}
   m_Layer: 7
   m_Name: Boss-lvl-1
   m_TagString: Enemy
@@ -2193,32 +2193,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1235547828
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1235547827}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7792969, y: 0.9732609}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!50 &1235547829
 Rigidbody2D:
   serializedVersion: 4
@@ -2343,6 +2317,22 @@ MonoBehaviour:
   IsInvincible: 1
   TouchDamage: 1
   cameraAnimator: {fileID: 519420033}
+--- !u!58 &1235547834
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235547827}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.4866304
 --- !u!1 &1272472583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2872,7 +2862,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1438527219}
-  - component: {fileID: 1438527220}
+  - component: {fileID: 1438527221}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: Untagged
@@ -2894,8 +2884,8 @@ Transform:
   m_Father: {fileID: 1235547831}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1438527220
-BoxCollider2D:
+--- !u!58 &1438527221
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2908,18 +2898,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
 --- !u!1 &1475651141
 GameObject:
   m_ObjectHideFlags: 0
