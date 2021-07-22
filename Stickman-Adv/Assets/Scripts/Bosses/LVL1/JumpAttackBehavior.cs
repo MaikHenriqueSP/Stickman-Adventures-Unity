@@ -9,8 +9,6 @@ public class JumpAttackBehavior : StateMachineBehaviour
     public float speed;
     private bool isTurnedLeft;
 
-    public float turnedDistanceToleranceFactor = 3f;
-
     private Animator animator;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -34,7 +32,7 @@ public class JumpAttackBehavior : StateMachineBehaviour
     
     private void LookAtThePlayer() 
     {
-        bool isPlayerToTheLeftOfTheBoss = player.position.x <= animator.transform.parent.position.x + turnedDistanceToleranceFactor;
+        bool isPlayerToTheLeftOfTheBoss = player.position.x <= animator.transform.parent.position.x;
         if (isPlayerToTheLeftOfTheBoss && !isTurnedLeft)
         {
             RotateOnY();
