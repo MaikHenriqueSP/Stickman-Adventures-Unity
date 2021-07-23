@@ -35,6 +35,15 @@ public class BulletController : MonoBehaviour
     {
         rigidbody2D.velocity = ShootDirection * speed;
         BulletLifeSpanTime = DurationTime;
+        UpdateBulletDirection();        
+    }
+
+    private void UpdateBulletDirection()
+    {
+        if (ShootDirection.x < 0)
+        {
+            gameObject.transform.Rotate(0f, 180f, 0f);  
+        }        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
