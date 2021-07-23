@@ -15,6 +15,6 @@ public class BossAudioManager : MonoBehaviour
 
     public void PlayRollingSound()
     {
-        Rolling.Play();
+        Rolling.PlayDelayed(0.5f);
     }
 }

@@ -14,7 +14,6 @@ public class RollingBehavior : StateMachineBehaviour
     private Transform leftWall;
     private Transform rightWall;
     private Transform targetTransform;
-
     private BossController boss;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
