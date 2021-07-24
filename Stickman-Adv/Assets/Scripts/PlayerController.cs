@@ -133,7 +133,11 @@ public class PlayerController : MonoBehaviour
     {
         string nextAnimationName = "";
 
-        if (IsPlayerOnTheGround) 
+        if (isRolling)
+        {
+            nextAnimationName = "Player_Rolling";
+        }
+        else if (IsPlayerOnTheGround) 
         {
             if (horizontalMovement != 0)
             {
