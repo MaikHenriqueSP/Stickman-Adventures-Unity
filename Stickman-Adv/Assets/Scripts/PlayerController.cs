@@ -141,16 +141,16 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateDirection() 
     {
-        if (horizontalMovement > 0 && !isTurnedRight)
+        if ((horizontalMovement > 0 && !isTurnedRight) || (horizontalMovement < 0 && isTurnedRight))
         {
-            isTurnedRight = !isTurnedRight;
-            transform.Rotate(0f, horizontalMovement * 180f, 0f);            
+            RotateY();
         }
-        else if (horizontalMovement < 0 && isTurnedRight) 
-        {
-            isTurnedRight = !isTurnedRight;
-            transform.Rotate(0f, horizontalMovement * 180f, 0f);            
-        }
+    }
+
+    private void RotateY()
+    {
+        isTurnedRight = !isTurnedRight;
+        transform.Rotate(0f, horizontalMovement * 180f, 0f);
     }
 
     void DetectIfPlayerIsOnTheGround() 
