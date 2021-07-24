@@ -12,7 +12,11 @@ public class PlayerController : MonoBehaviour
     Animator animator;
 
     private float horizontalMovement;
+
+    //Jumping
     private bool isJumping;
+    public int NumberOfJumps;
+    private int currentNumberOfJumps;
 
     private bool isTurnedRight;
 
@@ -44,9 +48,9 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();        
         isTurnedRight = true;
         CurrentLifePoints = LifePoints;
+        currentNumberOfJumps = NumberOfJumps;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (IsTakingDamage) 
@@ -80,10 +84,14 @@ public class PlayerController : MonoBehaviour
         if (IsPlayerOnTheGround && isJumping) 
         {
             Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, JumpSpeed);
+            currentNumberOfJumps--;
+        } 
+        else if (isJumping && !IsPlayerOnTheGround && currentNumberOfJumps > 1)
+        {
+            Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, JumpSpeed);
+            currentNumberOfJumps--;
         }
     }
-
-
 
     private void UpdateAnimation()
     {
@@ -116,10 +124,6 @@ public class PlayerController : MonoBehaviour
             isShootingKeyReleased = true;
             shootingStartInstant = Time.time;
             Invoke("Shoot", 0.1f);
-        }
-
-        if (isShooting && !isShootingKeyPressed)
-        {
         }
 
         if (isShooting && isShootingKeyReleased)
@@ -157,7 +161,7 @@ public class PlayerController : MonoBehaviour
         float groundDetectionDistance = 0.04f;
 
         Vector3 boxColliderCenter = BoxCollider2D.bounds.center;
-        boxColliderCenter.y = BoxCollider2D.bounds.min.y + (BoxCollider2D.bounds.extents.y / 2f); //Gets 1/4 of the lower half of the player box collider
+        boxColliderCenter.y = BoxCollider2D.bounds.min.y + (BoxCollider2D.bounds.extents.y / 2f);
         
         Vector3 boxSize = BoxCollider2D.bounds.size;
         float collisionAngle = 0f;
@@ -168,6 +172,7 @@ public class PlayerController : MonoBehaviour
         if (raycastHit2D.collider != null) 
         {
             IsPlayerOnTheGround = true;
+            currentNumberOfJumps = NumberOfJumps;
         }
     }
 
@@ -204,7 +209,6 @@ public class PlayerController : MonoBehaviour
     {
         if (CurrentLifePoints <= 0)
         {
-            //Destroy(gameObject);
             WinSound.Play();
         }
         else if (!IsTakingDamage)
