@@ -41,10 +41,11 @@ public class PlayerController : MonoBehaviour
     public AudioSource WinSound;
 
     //Dash Rolling
-    public float rollingDistance = 10f;
+    public float rollingDistance;
     private bool isRolling;
     private float doubleTapCoolDown;
-    private float lastHorizontalMovement;
+    private KeyCode lastHorizontalKeyCodeMovement;
+    public float IntervalBetweenTapsForRollingDash;
 
     void Start()
     {
@@ -58,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (IsTakingDamage) 
+        if (IsTakingDamage || isRolling) 
         {
             return;
         }
@@ -72,7 +73,6 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateInputs()
     {
-        lastHorizontalMovement = horizontalMovement;
         horizontalMovement = Input.GetAxisRaw("Horizontal");
         isJumping = Input.GetKeyDown(KeyCode.Space);
         isShootingKeyPressed = Input.GetKeyDown(KeyCode.C);
@@ -87,11 +87,46 @@ public class PlayerController : MonoBehaviour
     {
         Rigidbody2D.velocity = new Vector2(horizontalMovement * MovementSpeed, Rigidbody2D.velocity.y);
 
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            TryDash(KeyCode.A);
+        } 
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            TryDash(KeyCode.D);
+        }
+
         if ((IsPlayerOnTheGround && isJumping) || (isJumping && !IsPlayerOnTheGround && currentNumberOfJumps > 1)) 
         {
             Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, JumpSpeed);
             currentNumberOfJumps--;
         } 
+    }
+
+    private void TryDash(KeyCode keyCode)
+    {
+        if (IsPlayerOnTheGround && doubleTapCoolDown > Time.time && lastHorizontalKeyCodeMovement == keyCode)
+        {
+            StartCoroutine(RollDash());
+        }
+        else
+        {
+            doubleTapCoolDown = CalculateDoubleTapCoolDown();
+        }
+        lastHorizontalKeyCodeMovement = keyCode;
+    }
+
+    private float CalculateDoubleTapCoolDown()
+    {
+        return Time.time + IntervalBetweenTapsForRollingDash;
+    }
+
+    private IEnumerator RollDash()
+    {
+        isRolling = true;
+        Rigidbody2D.AddForce(new Vector2(rollingDistance * horizontalMovement, 0f), ForceMode2D.Impulse);
+        yield return new WaitForSeconds(0.4f);
+        isRolling = false;
     }
 
     private void UpdateAnimation()

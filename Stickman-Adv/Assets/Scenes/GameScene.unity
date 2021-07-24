@@ -4888,6 +4888,8 @@ MonoBehaviour:
   IsInvincible: 1
   IsTakingDamage: 0
   WinSound: {fileID: 1684759286}
+  rollingDistance: 15
+  IntervalBetweenTapsForRollingDash: 0.4
 --- !u!95 &1684759284
 Animator:
   serializedVersion: 3
