@@ -51,12 +51,14 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.CompareTag("Enemy") && renderer.enabled)
         {
             EnemyController enemy = other.GetComponent<EnemyController>();
             Instantiate(ParticleExplosion, transform.position, Quaternion.identity);
             Instantiate(HitExplosion, transform.position, Quaternion.identity);
             Explosion.Play();
+            Debug.Log("HIT");
             
             if (enemy != null)
             {
@@ -67,7 +69,6 @@ public class BulletController : MonoBehaviour
         if (!other.gameObject.CompareTag("Player"))
         {
             renderer.enabled = false;
-            //Destroy(gameObject, 0.02f);
             Destroy(gameObject, 2f);
         }
     }
