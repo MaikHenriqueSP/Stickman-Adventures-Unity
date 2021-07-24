@@ -40,6 +40,11 @@ public class PlayerController : MonoBehaviour
     //Sound
     public AudioSource WinSound;
 
+    //Dash Rolling
+    public float rollingDistance = 10f;
+    private bool isRolling;
+    private float doubleTapCoolDown;
+    private float lastHorizontalMovement;
 
     void Start()
     {
@@ -67,6 +72,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateInputs()
     {
+        lastHorizontalMovement = horizontalMovement;
         horizontalMovement = Input.GetAxisRaw("Horizontal");
         isJumping = Input.GetKeyDown(KeyCode.Space);
         isShootingKeyPressed = Input.GetKeyDown(KeyCode.C);
@@ -81,16 +87,11 @@ public class PlayerController : MonoBehaviour
     {
         Rigidbody2D.velocity = new Vector2(horizontalMovement * MovementSpeed, Rigidbody2D.velocity.y);
 
-        if (IsPlayerOnTheGround && isJumping) 
+        if ((IsPlayerOnTheGround && isJumping) || (isJumping && !IsPlayerOnTheGround && currentNumberOfJumps > 1)) 
         {
             Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, JumpSpeed);
             currentNumberOfJumps--;
         } 
-        else if (isJumping && !IsPlayerOnTheGround && currentNumberOfJumps > 1)
-        {
-            Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, JumpSpeed);
-            currentNumberOfJumps--;
-        }
     }
 
     private void UpdateAnimation()
@@ -135,8 +136,7 @@ public class PlayerController : MonoBehaviour
                 isShooting = false;
                 isShootingKeyReleased = false;               
             }
-        }
-        
+        }        
     }
 
     private void UpdateDirection() 
@@ -191,7 +191,6 @@ public class PlayerController : MonoBehaviour
     //Damage related methods
     public void ReceiveDamage(int damageReceived, float enemyHorizontalPosition)
     {
-
         if (!IsInvincible)
         {
             CurrentLifePoints -= damageReceived;
