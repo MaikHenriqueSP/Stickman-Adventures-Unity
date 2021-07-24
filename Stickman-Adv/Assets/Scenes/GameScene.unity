@@ -271,7 +271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9.000183, y: 65.20007}
+  m_AnchoredPosition: {x: -9.000244, y: 65.20007}
   m_SizeDelta: {x: -546.1652, y: -276.4597}
   m_Pivot: {x: 0.50000006, y: 0.50000006}
 --- !u!114 &81372537
@@ -4879,6 +4879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 5.5
   JumpSpeed: 7
+  NumberOfJumps: 2
   Damage: 1
   bulletPrefab: {fileID: 8515895161336593039, guid: 813aa19d6eddcef408d5de41cdbdc28e, type: 3}
   bulletGizmod: {fileID: 638393558}
@@ -4887,6 +4888,8 @@ MonoBehaviour:
   IsInvincible: 1
   IsTakingDamage: 0
   WinSound: {fileID: 1684759286}
+  rollingDistance: 15
+  IntervalBetweenTapsForRollingDash: 0.4
 --- !u!95 &1684759284
 Animator:
   serializedVersion: 3

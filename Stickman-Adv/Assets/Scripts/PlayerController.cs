@@ -12,7 +12,11 @@ public class PlayerController : MonoBehaviour
     Animator animator;
 
     private float horizontalMovement;
+
+    //Jumping
     private bool isJumping;
+    public int NumberOfJumps;
+    private int currentNumberOfJumps;
 
     private bool isTurnedRight;
 
@@ -36,6 +40,12 @@ public class PlayerController : MonoBehaviour
     //Sound
     public AudioSource WinSound;
 
+    //Dash Rolling
+    public float rollingDistance;
+    private bool isRolling;
+    private float doubleTapCoolDown;
+    private KeyCode lastHorizontalKeyCodeMovement;
+    public float IntervalBetweenTapsForRollingDash;
 
     void Start()
     {
@@ -44,12 +54,12 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();        
         isTurnedRight = true;
         CurrentLifePoints = LifePoints;
+        currentNumberOfJumps = NumberOfJumps;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (IsTakingDamage) 
+        if (IsTakingDamage || isRolling) 
         {
             return;
         }
@@ -77,19 +87,57 @@ public class PlayerController : MonoBehaviour
     {
         Rigidbody2D.velocity = new Vector2(horizontalMovement * MovementSpeed, Rigidbody2D.velocity.y);
 
-        if (IsPlayerOnTheGround && isJumping) 
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            TryDash(KeyCode.A);
+        } 
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            TryDash(KeyCode.D);
+        }
+
+        if ((IsPlayerOnTheGround && isJumping) || (isJumping && !IsPlayerOnTheGround && currentNumberOfJumps > 1)) 
         {
             Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, JumpSpeed);
-        }
+            currentNumberOfJumps--;
+        } 
     }
 
+    private void TryDash(KeyCode keyCode)
+    {
+        if (IsPlayerOnTheGround && doubleTapCoolDown > Time.time && lastHorizontalKeyCodeMovement == keyCode)
+        {
+            StartCoroutine(RollDash());
+        }
+        else
+        {
+            doubleTapCoolDown = CalculateDoubleTapCoolDown();
+        }
+        lastHorizontalKeyCodeMovement = keyCode;
+    }
 
+    private float CalculateDoubleTapCoolDown()
+    {
+        return Time.time + IntervalBetweenTapsForRollingDash;
+    }
+
+    private IEnumerator RollDash()
+    {
+        isRolling = true;
+        Rigidbody2D.AddForce(new Vector2(rollingDistance * horizontalMovement, 0f), ForceMode2D.Impulse);
+        yield return new WaitForSeconds(0.4f);
+        isRolling = false;
+    }
 
     private void UpdateAnimation()
     {
         string nextAnimationName = "";
 
-        if (IsPlayerOnTheGround) 
+        if (isRolling)
+        {
+            nextAnimationName = "Player_Rolling";
+        }
+        else if (IsPlayerOnTheGround) 
         {
             if (horizontalMovement != 0)
             {
@@ -118,10 +166,6 @@ public class PlayerController : MonoBehaviour
             Invoke("Shoot", 0.1f);
         }
 
-        if (isShooting && !isShootingKeyPressed)
-        {
-        }
-
         if (isShooting && isShootingKeyReleased)
         {
             float shootingTimeLength = Time.time - shootingStartInstant;
@@ -131,22 +175,21 @@ public class PlayerController : MonoBehaviour
                 isShooting = false;
                 isShootingKeyReleased = false;               
             }
-        }
-        
+        }        
     }
 
     private void UpdateDirection() 
     {
-        if (horizontalMovement > 0 && !isTurnedRight)
+        if ((horizontalMovement > 0 && !isTurnedRight) || (horizontalMovement < 0 && isTurnedRight))
         {
-            isTurnedRight = !isTurnedRight;
-            transform.Rotate(0f, horizontalMovement * 180f, 0f);            
+            RotateY();
         }
-        else if (horizontalMovement < 0 && isTurnedRight) 
-        {
-            isTurnedRight = !isTurnedRight;
-            transform.Rotate(0f, horizontalMovement * 180f, 0f);            
-        }
+    }
+
+    private void RotateY()
+    {
+        isTurnedRight = !isTurnedRight;
+        transform.Rotate(0f, horizontalMovement * 180f, 0f);
     }
 
     void DetectIfPlayerIsOnTheGround() 
@@ -157,7 +200,7 @@ public class PlayerController : MonoBehaviour
         float groundDetectionDistance = 0.04f;
 
         Vector3 boxColliderCenter = BoxCollider2D.bounds.center;
-        boxColliderCenter.y = BoxCollider2D.bounds.min.y + (BoxCollider2D.bounds.extents.y / 2f); //Gets 1/4 of the lower half of the player box collider
+        boxColliderCenter.y = BoxCollider2D.bounds.min.y + (BoxCollider2D.bounds.extents.y / 2f);
         
         Vector3 boxSize = BoxCollider2D.bounds.size;
         float collisionAngle = 0f;
@@ -168,6 +211,7 @@ public class PlayerController : MonoBehaviour
         if (raycastHit2D.collider != null) 
         {
             IsPlayerOnTheGround = true;
+            currentNumberOfJumps = NumberOfJumps;
         }
     }
 
@@ -186,7 +230,6 @@ public class PlayerController : MonoBehaviour
     //Damage related methods
     public void ReceiveDamage(int damageReceived, float enemyHorizontalPosition)
     {
-
         if (!IsInvincible)
         {
             CurrentLifePoints -= damageReceived;
@@ -204,7 +247,6 @@ public class PlayerController : MonoBehaviour
     {
         if (CurrentLifePoints <= 0)
         {
-            //Destroy(gameObject);
             WinSound.Play();
         }
         else if (!IsTakingDamage)
