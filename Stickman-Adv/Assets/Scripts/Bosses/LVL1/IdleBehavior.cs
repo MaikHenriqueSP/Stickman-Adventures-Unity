@@ -5,12 +5,13 @@ using UnityEngine;
 public class IdleBehavior : StateMachineBehaviour
 {
 
-    public float duration = 15f;
+    public float duration;
     private BossController boss;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         boss = animator.GetComponent<BossController>();
+        boss.BecomeBeatable();
 
         if (boss.IsDead())
         {
@@ -38,6 +39,7 @@ public class IdleBehavior : StateMachineBehaviour
         {
             animator.SetTrigger("dead");
         }
+        boss.BecomeUnbeatable();
     }
     
 }
