@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 8c9284778f501264f8cf0ce9e3c4c869, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f43edab261342d48bd30886867de816, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   Damage: 2
   ParticleExplosion: {fileID: 745602967377557416, guid: 303ae040fc69b1444933acf5d8f6cceb, type: 3}
   HitExplosion: {fileID: 5834891745031241817, guid: 953164b701c0abe4f96126083b4d9df7, type: 3}
-  speed: 10
+  speed: 15
   Explosion: {fileID: 2069553260071066715}
 --- !u!58 &4365653548612730191
 CircleCollider2D:

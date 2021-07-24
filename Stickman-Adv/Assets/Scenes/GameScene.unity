@@ -2778,7 +2778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b130babdbb5e1234e8a6bee518f2f237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifePoints: 10
+  LifePoints: 30
   CurrentLifePoints: 0
   IsInvincible: 1
   TouchDamage: 1
@@ -4883,7 +4883,7 @@ MonoBehaviour:
   Damage: 1
   bulletPrefab: {fileID: 8515895161336593039, guid: 813aa19d6eddcef408d5de41cdbdc28e, type: 3}
   bulletGizmod: {fileID: 638393558}
-  LifePoints: 10
+  LifePoints: 15
   CurrentLifePoints: 0
   IsInvincible: 1
   IsTakingDamage: 0
