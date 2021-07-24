@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
     public bool IsInvincible;
     public bool IsTakingDamage;
 
+    //Sound
+    public AudioSource WinSound;
+
 
     void Start()
     {
@@ -202,6 +205,7 @@ public class PlayerController : MonoBehaviour
         if (CurrentLifePoints <= 0)
         {
             //Destroy(gameObject);
+            WinSound.Play();
         }
         else if (!IsTakingDamage)
         {

@@ -14,10 +14,13 @@ public class BulletController : MonoBehaviour
     public GameObject HitExplosion;
 
     public float speed;
-    
+
+    public AudioSource Explosion;
+    private Renderer renderer;
     void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();        
+        renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -48,11 +51,12 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") && renderer.enabled)
         {
             EnemyController enemy = other.GetComponent<EnemyController>();
             Instantiate(ParticleExplosion, transform.position, Quaternion.identity);
             Instantiate(HitExplosion, transform.position, Quaternion.identity);
+            Explosion.Play();
             
             if (enemy != null)
             {
@@ -62,10 +66,10 @@ public class BulletController : MonoBehaviour
 
         if (!other.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject, 0.02f);
+            renderer.enabled = false;
+            Destroy(gameObject, 1f);
         }
     }
-
     public void SetShootDirection(Vector2 direction) 
     {
         this.ShootDirection = direction;
