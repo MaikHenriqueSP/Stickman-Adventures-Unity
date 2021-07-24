@@ -6,6 +6,7 @@ public class BossAudioManager : MonoBehaviour
 {
     public AudioSource Earthquake;
     public AudioSource Rolling;
+    public AudioSource PlayerWin;
 
 
     public void PlayEarthquakeSound()
@@ -16,5 +17,10 @@ public class BossAudioManager : MonoBehaviour
     public void PlayRollingSound()
     {
         Rolling.PlayDelayed(0.5f);
+    }
+
+    public void PlayPlayerWinSound()
+    {
+        PlayerWin.Play();
     }
 }
