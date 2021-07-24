@@ -306,7 +306,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.001
   m_TransitionOffset: 0
   m_ExitTime: 1
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3c9891629f99d45be1bfc0f46cdafd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rollingSpeed: 10
+  rollingSpeed: 15
   wallCheckRadius: 0.005
   GroundLayer:
     serializedVersion: 2
