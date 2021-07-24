@@ -261,7 +261,7 @@ public class PlayerController : MonoBehaviour
     private void PushPlayerWhenIsTakingDamage(float enemyHorizontalPosition) 
     {
         int hitDirection = (transform.position.x > enemyHorizontalPosition) ? 1 : -1;
-        Vector2 forceDirection = new Vector2(4.50f * hitDirection, 3.50f);
+        Vector2 forceDirection = new Vector2(17.50f * hitDirection, 3.50f);
         
         Rigidbody2D.velocity = Vector2.zero;
         Rigidbody2D.AddForce(forceDirection, ForceMode2D.Impulse);

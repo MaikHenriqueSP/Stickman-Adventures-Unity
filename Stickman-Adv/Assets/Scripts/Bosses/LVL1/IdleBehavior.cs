@@ -6,6 +6,8 @@ public class IdleBehavior : StateMachineBehaviour
 {
 
     public float duration;
+    private float passedTime;
+    
     private BossController boss;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -17,19 +19,21 @@ public class IdleBehavior : StateMachineBehaviour
         {
             animator.SetTrigger("dead");
         }
+
+        passedTime = duration;        
     
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        duration -= Time.deltaTime;
-        if (boss.IsDead())
-        {
-            animator.SetTrigger("dead");
-        } 
-        else if (duration <= 0)
+        passedTime -= Time.deltaTime;
+        if (passedTime <= 0)
         {
             animator.SetTrigger("rolling");
+        }
+        else if (boss.IsDead())
+        {
+            animator.SetTrigger("dead");
         }    
     }
 

@@ -2780,7 +2780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifePoints: 30
   CurrentLifePoints: 0
-  IsInvincible: 1
+  IsInvincible: 0
   TouchDamage: 1
   cameraAnimator: {fileID: 519420033}
 --- !u!58 &1235547834
@@ -4877,7 +4877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f16c9a69c7fa84048aa5472aa17c9c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 7.5
+  MovementSpeed: 7
   JumpSpeed: 16.65
   NumberOfJumps: 2
   Damage: 1
@@ -4885,7 +4885,7 @@ MonoBehaviour:
   bulletGizmod: {fileID: 638393558}
   LifePoints: 15
   CurrentLifePoints: 0
-  IsInvincible: 1
+  IsInvincible: 0
   IsTakingDamage: 0
   WinSound: {fileID: 1684759286}
   rollingDistance: 15
