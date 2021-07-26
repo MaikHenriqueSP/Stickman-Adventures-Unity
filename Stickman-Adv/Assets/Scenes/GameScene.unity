@@ -2269,6 +2269,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04f03737d046144d95ba032fa2d0355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - SpeakerName: 
+      phrase: 
 --- !u!61 &801149091
 BoxCollider2D:
   m_ObjectHideFlags: 0

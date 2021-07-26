@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-
     public Dialogue dialogue;
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Triggering dialogue");
+		    FindObjectOfType<DialogManager>().InitDialog(dialogue);
         }
         
     }
