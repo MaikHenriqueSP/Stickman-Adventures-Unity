@@ -1286,7 +1286,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 409691370}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2096862894}
+        m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
+        m_MethodName: NextSentence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &409691370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2406,8 +2418,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - SpeakerName: 
-      phrase: 
+    - SpeakerName: Nobody
+      phrase: I'm nobody
+    - SpeakerName: John
+      phrase: I'm joao vick
+    - SpeakerName: John
+      phrase: Where's my goddam dog?
 --- !u!61 &801149091
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6460,3 +6476,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fdd7d70215aa447862990757ae1f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speakerName: {fileID: 236489925}
+  dialogContent: {fileID: 1120238501}
