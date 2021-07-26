@@ -2444,6 +2444,7 @@ MonoBehaviour:
       phrase: I'm joao vick
     - SpeakerName: John
       phrase: Where's my goddam dog?
+  dialogManager: {fileID: 2096862894}
 --- !u!61 &801149091
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6499,3 +6500,4 @@ MonoBehaviour:
   speakerName: {fileID: 236489925}
   dialogContent: {fileID: 1120238501}
   dialogAnimator: {fileID: 646134730}
+  playerController: {fileID: 1684759283}

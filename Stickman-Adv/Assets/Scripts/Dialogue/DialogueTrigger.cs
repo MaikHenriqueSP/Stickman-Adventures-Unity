@@ -5,13 +5,13 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+    public DialogManager dialogManager;
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-		    FindObjectOfType<DialogManager>().InitDialog(dialogue);
-        }
-        
+		    dialogManager.InitDialog(dialogue);
+        }        
     }
 
 }

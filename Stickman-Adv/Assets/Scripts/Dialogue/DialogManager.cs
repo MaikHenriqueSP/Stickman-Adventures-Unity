@@ -11,12 +11,14 @@ public class DialogManager : MonoBehaviour
 
     public Animator dialogAnimator;
 
-
     private Queue<Sentence> sentences;
+
+    public PlayerController playerController;
     public void InitDialog(Dialogue dialog)
     {
         sentences = new Queue<Sentence>(dialog.sentences);
         dialogAnimator.SetTrigger("Open_Dialog");
+        playerController.Freeze();
     }
 
     public void NextSentence()
@@ -29,7 +31,6 @@ public class DialogManager : MonoBehaviour
 
         StopAllCoroutines();
         StartCoroutine(TypeSentences(sentences.Dequeue()));
-
     }
 
     private IEnumerator TypeSentences (Sentence sentence )
@@ -46,6 +47,7 @@ public class DialogManager : MonoBehaviour
 
     private void FinishDialog()
     {
+        playerController.UnFreeze();
         dialogAnimator.SetTrigger("Close_Dialog");
     }
 

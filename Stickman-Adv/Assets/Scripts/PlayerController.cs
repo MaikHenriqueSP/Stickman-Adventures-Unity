@@ -278,4 +278,17 @@ public class PlayerController : MonoBehaviour
     {
         return CurrentLifePoints <= 0;
     }
+
+    public void Freeze()
+    {
+        Rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+        animator.Play("Player_Idle");
+        animator.speed = 0;
+    }
+
+    public void UnFreeze()
+    {
+        Rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;        
+        animator.speed = 1;
+    }
 }
