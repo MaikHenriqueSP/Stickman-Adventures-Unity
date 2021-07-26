@@ -6498,3 +6498,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: {fileID: 236489925}
   dialogContent: {fileID: 1120238501}
+  dialogAnimator: {fileID: 646134730}

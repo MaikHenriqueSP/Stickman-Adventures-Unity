@@ -9,17 +9,21 @@ public class DialogManager : MonoBehaviour
     public TMP_Text speakerName;
     public TMP_Text dialogContent;
 
+    public Animator dialogAnimator;
+
 
     private Queue<Sentence> sentences;
     public void InitDialog(Dialogue dialog)
     {
         sentences = new Queue<Sentence>(dialog.sentences);
+        dialogAnimator.SetTrigger("Open_Dialog");
     }
 
     public void NextSentence()
     {
         if (sentences.Count == 0)
         {
+            FinishDialog();
             return;
         }
 
@@ -38,6 +42,12 @@ public class DialogManager : MonoBehaviour
             dialogContent.text += character;
             yield return null;
         }
-
     }
+
+    private void FinishDialog()
+    {
+        dialogAnimator.SetTrigger("Close_Dialog");
+    }
+
+
 }
