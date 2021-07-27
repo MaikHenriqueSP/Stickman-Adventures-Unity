@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float JumpSpeed;
     private bool IsPlayerOnTheGround = false;
     Animator animator;
+    private bool isFrozen;
 
     private float horizontalMovement;
 
@@ -59,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (IsTakingDamage || isRolling) 
+        if (IsTakingDamage || isRolling || isFrozen) 
         {
             return;
         }
@@ -277,5 +278,16 @@ public class PlayerController : MonoBehaviour
     public bool IsPlayerDead()
     {
         return CurrentLifePoints <= 0;
+    }
+
+    public void Freeze()
+    {
+        animator.Play("Player_Idle");
+        isFrozen = true;
+    }
+
+    public void UnFreeze()
+    {
+        isFrozen = false;
     }
 }
