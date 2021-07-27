@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float JumpSpeed;
     private bool IsPlayerOnTheGround = false;
     Animator animator;
+    private bool isFrozen;
 
     private float horizontalMovement;
 
@@ -59,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (IsTakingDamage || isRolling) 
+        if (IsTakingDamage || isRolling || isFrozen) 
         {
             return;
         }
@@ -281,14 +282,12 @@ public class PlayerController : MonoBehaviour
 
     public void Freeze()
     {
-        Rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
         animator.Play("Player_Idle");
-        animator.speed = 0;
+        isFrozen = true;
     }
 
     public void UnFreeze()
     {
-        Rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;        
-        animator.speed = 1;
+        isFrozen = false;
     }
 }
