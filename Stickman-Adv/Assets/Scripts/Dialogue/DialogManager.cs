@@ -6,19 +6,23 @@ using TMPro;
 public class DialogManager : MonoBehaviour
 {
 
-    public TMP_Text speakerName;
-    public TMP_Text dialogContent;
+    public TMP_Text SpeakerName;
+    public TMP_Text DialogContent;
 
-    public Animator dialogAnimator;
+    public Animator DialogAnimator;
 
     private Queue<Sentence> sentences;
 
-    public PlayerController playerController;
+    public PlayerController PlayerController;
+    public BossController BossController;
+
     public void InitDialog(Dialogue dialog)
     {
         sentences = new Queue<Sentence>(dialog.sentences);
-        dialogAnimator.SetTrigger("Open_Dialog");
-        playerController.Freeze();
+        NextSentence();
+        DialogAnimator.SetTrigger("Open_Dialog");
+        PlayerController.Freeze();
+
     }
 
     public void NextSentence()
@@ -35,20 +39,21 @@ public class DialogManager : MonoBehaviour
 
     private IEnumerator TypeSentences (Sentence sentence )
     {
-        speakerName.text = sentence.SpeakerName;
-        dialogContent.text = "";
+        SpeakerName.text = sentence.SpeakerName;
+        DialogContent.text = "";
 
         foreach (char character in sentence.phrase.ToCharArray())
         {
-            dialogContent.text += character;
+            DialogContent.text += character;
             yield return null;
         }
     }
 
     private void FinishDialog()
     {
-        playerController.UnFreeze();
-        dialogAnimator.SetTrigger("Close_Dialog");
+        PlayerController.UnFreeze();
+        BossController.UnFreeze();
+        DialogAnimator.SetTrigger("Close_Dialog");
     }
 
 

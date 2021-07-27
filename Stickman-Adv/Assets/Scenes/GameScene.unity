@@ -1145,7 +1145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &374384744
 Transform:
   m_ObjectHideFlags: 0
@@ -2418,7 +2418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801149088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.9401488, y: -2.76, z: -11.653625}
+  m_LocalPosition: {x: 7.455255, y: -2.76, z: -11.653625}
   m_LocalScale: {x: 1, y: 0.9, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2443,7 +2443,7 @@ MonoBehaviour:
     - SpeakerName: John
       phrase: I'm joao vick
     - SpeakerName: John
-      phrase: Where's my goddam dog?
+      phrase: Where's my goddamn dog?
   dialogManager: {fileID: 2096862894}
 --- !u!61 &801149091
 BoxCollider2D:
@@ -2458,7 +2458,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.45525503, y: -0.30034167}
+  m_Offset: {x: -0.45525503, y: 8.146019}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2469,7 +2469,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2602105, y: 0.39931667}
+  m_Size: {x: 0.2602105, y: 17.292038}
   m_EdgeRadius: 0
 --- !u!1 &867696185
 GameObject:
@@ -6497,7 +6497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fdd7d70215aa447862990757ae1f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speakerName: {fileID: 236489925}
-  dialogContent: {fileID: 1120238501}
-  dialogAnimator: {fileID: 646134730}
-  playerController: {fileID: 1684759283}
+  SpeakerName: {fileID: 236489925}
+  DialogContent: {fileID: 1120238501}
+  DialogAnimator: {fileID: 646134730}
+  PlayerController: {fileID: 1684759283}
+  BossController: {fileID: 1235547833}
