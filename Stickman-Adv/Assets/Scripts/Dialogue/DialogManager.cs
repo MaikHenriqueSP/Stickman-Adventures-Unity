@@ -22,7 +22,15 @@ public class DialogManager : MonoBehaviour
         NextSentence();
         DialogAnimator.SetTrigger("Open_Dialog");
         PlayerController.Freeze();
-
+    }
+    void Update()
+    {
+        bool isContinuingDialogThroughKeyBoard = Input.GetKeyDown(KeyCode.Space);
+        
+        if (isContinuingDialogThroughKeyBoard)
+        {
+            NextSentence();
+        }        
     }
 
     public void NextSentence()
