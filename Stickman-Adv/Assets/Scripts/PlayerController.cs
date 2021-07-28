@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
     private void RotateY()
     {
         isTurnedRight = !isTurnedRight;
-        transform.Rotate(0f, horizontalMovement * 180f, 0f);
+        transform.Rotate(0f, 180f, 0f);
     }
 
     void DetectIfPlayerIsOnTheGround() 

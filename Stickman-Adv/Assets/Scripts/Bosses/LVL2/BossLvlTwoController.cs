@@ -9,11 +9,15 @@ public class BossLvlTwoController : EnemyController
     public float RetreatDistance;
     private Rigidbody2D rigidbody2D;
     public float movementSpeed;
+    private bool isPlayerToTheLeft;
+    private bool isTurnedLeft;
 
     private Animator animator;
     void Start()
     {
         base.Start();
+        isPlayerToTheLeft = true;
+        isTurnedLeft = true;
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
@@ -22,6 +26,18 @@ public class BossLvlTwoController : EnemyController
     void Update()
     {
         Move();
+        TurnToPlayer();
+    }
+
+    private void TurnToPlayer()
+    {        
+        isPlayerToTheLeft = player.transform.position.x < transform.position.x;
+
+        if ( (isPlayerToTheLeft && !isTurnedLeft) || (!isPlayerToTheLeft && isTurnedLeft)  )
+        {
+            transform.Rotate(0f, 180f, 0f);
+            isTurnedLeft = !isTurnedLeft;
+        }
     }
 
     public void Move()
@@ -29,22 +45,24 @@ public class BossLvlTwoController : EnemyController
         float playerXPosition = player.transform.position.x;
         float currentXPosition = transform.position.x;
         float distance = Mathf.Abs(playerXPosition - currentXPosition);
+
         if (distance > TargetDistanceToPlayer)
         {
             animator.Play("Boss_Walking");
-            rigidbody2D.velocity = new Vector2(playerXPosition * movementSpeed, rigidbody2D.velocity.y);
-        } else if (distance < RetreatDistance)
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed * Time.deltaTime );
+        } else
         {
-            animator.Play("Boss_Walking");
-            rigidbody2D.velocity = new Vector2(playerXPosition * movementSpeed * (-1), rigidbody2D.velocity.y);
-        } else 
-        {
-            //animator.Play("Boss_Idle");
+            animator.Play("Boss_Idle");
             rigidbody2D.velocity = Vector2.zero;
         }
     }
 
-    public override void ReceiveDamage(int damage)
+    private void Turn()
+    {
+        transform.Rotate(0f, 180f, 0f);
+    }
+
+    public void ReceiveDamage(int damage)
     {
         if (!IsInvincible)
         {
