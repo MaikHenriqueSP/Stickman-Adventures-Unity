@@ -12,9 +12,17 @@ public class BossLvlTwoController : EnemyController
     private bool isPlayerToTheLeft;
     private bool isTurnedLeft;
 
+    //Shooting related variables
+    public GameObject ShurikenPrefab;
+    public Transform ShurikenGizmod;
+    public int ShurikenDamage;
+    private bool isShooting;
+
+
     private Animator animator;
     void Start()
     {
+
         base.Start();
         isPlayerToTheLeft = true;
         isTurnedLeft = true;
@@ -25,8 +33,16 @@ public class BossLvlTwoController : EnemyController
     // Update is called once per frame
     void Update()
     {
+        if (isShooting)
+        {
+            return;
+        }
+
+        /*
+            Shoot();
         Move();
         TurnToPlayer();
+        */
     }
 
     private void TurnToPlayer()
@@ -57,10 +73,18 @@ public class BossLvlTwoController : EnemyController
         }
     }
 
-    private void Turn()
+    private void Shoot()
     {
-        transform.Rotate(0f, 180f, 0f);
+        animator.Play("Boss_Throw");
+        GameObject shuriken = Instantiate(ShurikenPrefab, ShurikenGizmod.position, Quaternion.identity);
+        ShurikenController shurikenController = shuriken.GetComponent<ShurikenController>();
+        Vector2 shootDirection = isTurnedLeft ? Vector2.left : Vector2.right;
+
+        shurikenController.ShootDirection = shootDirection;
+        shurikenController.Damage = ShurikenDamage;
+        shurikenController.Shoot();
     }
+
 
     public void ReceiveDamage(int damage)
     {

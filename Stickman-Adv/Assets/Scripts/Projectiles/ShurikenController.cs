@@ -47,7 +47,7 @@ public class ShurikenController : MonoBehaviour
 
         if (!other.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject, 0.02f);
+           //Destroy(gameObject, 0.02f);
         }
     }
     public void SetShootDirection(Vector2 direction) 
