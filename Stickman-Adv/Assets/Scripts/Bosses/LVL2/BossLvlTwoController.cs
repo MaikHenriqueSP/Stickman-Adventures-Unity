@@ -83,7 +83,7 @@ public class BossLvlTwoController : EnemyController
         if (distance > TargetDistanceToPlayer)
         {
             WaitForAnimation("Boss_Walking");
-            rigidbody2D.velocity = Vector2.left * movementSpeed;
+            rigidbody2D.velocity = isPlayerToTheLeft ? Vector2.left * movementSpeed : Vector2.right * movementSpeed;
         } else
         {
             WaitForAnimation("Boss_Idle");
