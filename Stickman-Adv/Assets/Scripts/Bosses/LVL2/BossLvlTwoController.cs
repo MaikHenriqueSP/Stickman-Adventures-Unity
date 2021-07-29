@@ -40,6 +40,7 @@ public class BossLvlTwoController : EnemyController
             actionTimer -= Time.deltaTime;
             return;
         }
+        IsInvincible = false;
 
         TurnToPlayer();
         ChooseNextAction();
@@ -49,10 +50,14 @@ public class BossLvlTwoController : EnemyController
     {
         var probs = Random.Range(0.0f, 1.0f);
 
-        if (probs > 0.2)
+        if (probs > 0.2 && probs <= 0.5)
         {
             Move();
-        } else
+        }  else if (probs > 0.5)
+        {
+            Defend();
+        }        
+        else
         {
             Shoot();
         }
@@ -87,6 +92,12 @@ public class BossLvlTwoController : EnemyController
 
     }
 
+    public void Defend()
+    {
+        IsInvincible = true;
+        WaitForAnimation("Boss_Defend");    
+    }
+
     private void Shoot()
     {
         WaitForAnimation("Boss_Throw");
@@ -108,10 +119,8 @@ public class BossLvlTwoController : EnemyController
         animator.Play(animationClipName);
         AnimatorClipInfo[] animationInfo = animator.GetCurrentAnimatorClipInfo(0);
 
-        actionTimer= animationInfo[0].clip.length;
-                
+        actionTimer= animationInfo[0].clip.length;                
     }
-
 
     public void ReceiveDamage(int damage)
     {
