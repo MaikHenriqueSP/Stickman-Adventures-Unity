@@ -76,19 +76,48 @@ public class BossLvlTwoController : EnemyController
     }
     private void ChooseNextAction()
     {
-        var probs = Random.Range(0.0f, 1.0f);
+        var probability = Random.Range(0.0f, 1.0f) * 100;
 
-        if (probs > 0.2 && probs <= 0.5)
+        //if shoot was detected (shoot delay)// do something else
+
+        if (IsPlayerFarAway())
         {
-            Move();
-        }  else if (probs > 0.5)
+            if (probability <= 60)
+            {
+                Move();
+            } 
+            else if (probability <= 90)
+            {
+                //Jump();
+            }
+            else if (probability <= 95) //@TODO: AND shoot delay
+            {
+                Shoot();
+            }
+            else if (probability <= 100)
+            {
+                 Defend();
+            }
+        } else
         {
-            Defend();
-        }        
-        else
-        {
-            Shoot();
+            if (probability <= 50) //@TODO: and shoot delay
+            {
+                Shoot();
+            }
+            else if (probability <= 75)
+            {
+                Defend();
+            }
+            else if (probability <= 85)
+            {
+                //Jump();
+            }
+            else if (probability <= 100)
+            {
+                Move();
+            }
         }
+
     }
 
     private void TurnToPlayer()
@@ -104,11 +133,7 @@ public class BossLvlTwoController : EnemyController
 
     public void Move()
     {
-        float playerXPosition = player.transform.position.x;
-        float currentXPosition = transform.position.x;
-        float distance = Mathf.Abs(playerXPosition - currentXPosition);
-
-        if (distance > TargetDistanceToPlayer)
+        if (IsPlayerFarAway())
         {
             WaitForAnimation("Boss_Walking");
             rigidbody2D.velocity = isPlayerToTheLeft ? Vector2.left * movementSpeed : Vector2.right * movementSpeed;
@@ -117,7 +142,15 @@ public class BossLvlTwoController : EnemyController
             WaitForAnimation("Boss_Idle");
             rigidbody2D.velocity = Vector2.zero;
         }
+    }
 
+    private bool IsPlayerFarAway()
+    {
+        float playerXPosition = player.transform.position.x;
+        float currentXPosition = transform.position.x;
+        float distance = Mathf.Abs(playerXPosition - currentXPosition);
+        
+        return distance > TargetDistanceToPlayer;
     }
 
     public void Defend()
