@@ -23,6 +23,9 @@ public class BossLvlTwoController : EnemyController
     private Animator animator;
     private float actionTimer;
 
+    //Field of view
+    public float viewDistance;
+
     void Start()
     {
         base.Start();
@@ -35,17 +38,42 @@ public class BossLvlTwoController : EnemyController
     // Update is called once per frame
     void Update()
     {
+        Collision();
         if (actionTimer > 0)
         {
             actionTimer -= Time.deltaTime;
             return;
         }
+
         IsInvincible = false;
 
         TurnToPlayer();
         ChooseNextAction();
     }
 
+    void Collision()
+    {
+        Vector2 boxScale = new Vector2(1f , transform.localScale.y);
+        Vector2 direction = Vector2.right;
+        float horizontalLengthCollider = transform.localScale.x;
+        Vector2 startPosition = new Vector2(transform.position.x + horizontalLengthCollider , transform.position.y / 2);
+        
+        if (isTurnedLeft)
+        {
+            direction = Vector2.left;
+            startPosition = new Vector2(transform.position.x - horizontalLengthCollider, transform.position.y / 2);
+        }
+
+        RaycastHit2D hitInfo = Physics2D.BoxCast(startPosition, boxScale, 0f,  direction, viewDistance);
+
+        if (hitInfo.collider != null)
+        {   
+            if (hitInfo.collider.CompareTag("Bullet"))         
+            {
+                Debug.Log($"Hit by: {hitInfo.collider.tag} - At the position: {hitInfo.collider.transform.position.x}");
+            }
+        }
+    }
     private void ChooseNextAction()
     {
         var probs = Random.Range(0.0f, 1.0f);

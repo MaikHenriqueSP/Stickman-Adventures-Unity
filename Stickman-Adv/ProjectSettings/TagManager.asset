@@ -9,6 +9,7 @@ TagManager:
   - LeftWall
   - RightWall
   - PlayButton
+  - Bullet
   layers:
   - Default
   - TransparentFX

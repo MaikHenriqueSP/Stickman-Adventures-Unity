@@ -289,17 +289,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0510f2106ff8f1c47a47b9e816519d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifePoints: 0
+  LifePoints: 10
   CurrentLifePoints: 0
   IsInvincible: 0
   TouchDamage: 0
   player: {fileID: 585336905}
   TargetDistanceToPlayer: 8
   RetreatDistance: 6
-  movementSpeed: 6
+  movementSpeed: 0
   ShurikenPrefab: {fileID: 609177897253989816, guid: 606cfcc56df0c32478bc806b44e6aa4a, type: 3}
   ShurikenGizmod: {fileID: 1081783394}
   ShurikenDamage: 0
+  viewDistance: 0.5
 --- !u!1001 &425469697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,6 +308,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 681565053668095343, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: IsInvincible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 681565054710221642, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_RootOrder
       value: 2
