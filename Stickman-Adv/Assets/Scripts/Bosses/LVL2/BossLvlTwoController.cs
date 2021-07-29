@@ -19,10 +19,12 @@ public class BossLvlTwoController : EnemyController
     private bool isShooting;
 
 
+    //Animation related variables
     private Animator animator;
+    private float actionTimer;
+
     void Start()
     {
-
         base.Start();
         isPlayerToTheLeft = true;
         isTurnedLeft = true;
@@ -33,16 +35,27 @@ public class BossLvlTwoController : EnemyController
     // Update is called once per frame
     void Update()
     {
-        if (isShooting)
+        if (actionTimer > 0)
         {
+            actionTimer -= Time.deltaTime;
             return;
         }
 
-        /*
-            Shoot();
-        Move();
         TurnToPlayer();
-        */
+        ChooseNextAction();
+    }
+
+    private void ChooseNextAction()
+    {
+        var probs = Random.Range(0.0f, 1.0f);
+
+        if (probs > 0.2)
+        {
+            Move();
+        } else
+        {
+            Shoot();
+        }
     }
 
     private void TurnToPlayer()
@@ -64,25 +77,39 @@ public class BossLvlTwoController : EnemyController
 
         if (distance > TargetDistanceToPlayer)
         {
-            animator.Play("Boss_Walking");
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed * Time.deltaTime );
+            WaitForAnimation("Boss_Walking");
+            //transform.position = Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed * Time.deltaTime );
+            rigidbody2D.velocity = Vector2.left * movementSpeed;
         } else
         {
-            animator.Play("Boss_Idle");
+            WaitForAnimation("Boss_Idle");
             rigidbody2D.velocity = Vector2.zero;
         }
+
     }
 
     private void Shoot()
     {
-        animator.Play("Boss_Throw");
+        WaitForAnimation("Boss_Throw");
+ 
         GameObject shuriken = Instantiate(ShurikenPrefab, ShurikenGizmod.position, Quaternion.identity);
         ShurikenController shurikenController = shuriken.GetComponent<ShurikenController>();
         Vector2 shootDirection = isTurnedLeft ? Vector2.left : Vector2.right;
 
         shurikenController.ShootDirection = shootDirection;
         shurikenController.Damage = ShurikenDamage;
+
         shurikenController.Shoot();
+
+    }
+
+    private void WaitForAnimation(string animationClipName)
+    {
+        animator.Play(animationClipName);
+        AnimatorClipInfo[] animationInfo = animator.GetCurrentAnimatorClipInfo(0);
+
+        actionTimer= animationInfo[0].clip.length;
+                
     }
 
 

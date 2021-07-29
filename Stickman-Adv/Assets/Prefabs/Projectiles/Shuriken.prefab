@@ -102,7 +102,7 @@ MonoBehaviour:
   Rigidbody2D: {fileID: 0}
   speed: 30
   ShootDirection: {x: 0, y: 0}
-  DurationTime: 5
+  DurationTime: 2
 --- !u!50 &609177897253989813
 Rigidbody2D:
   serializedVersion: 4

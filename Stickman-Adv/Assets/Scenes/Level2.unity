@@ -300,7 +300,6 @@ MonoBehaviour:
   ShurikenPrefab: {fileID: 609177897253989816, guid: 606cfcc56df0c32478bc806b44e6aa4a, type: 3}
   ShurikenGizmod: {fileID: 1081783394}
   ShurikenDamage: 0
-  ShootingTimeSpan: 2
 --- !u!1001 &425469697
 PrefabInstance:
   m_ObjectHideFlags: 0
