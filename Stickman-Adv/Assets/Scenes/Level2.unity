@@ -296,11 +296,12 @@ MonoBehaviour:
   player: {fileID: 585336905}
   TargetDistanceToPlayer: 8
   RetreatDistance: 6
-  movementSpeed: 0
+  movementSpeed: 6
   ShurikenPrefab: {fileID: 609177897253989816, guid: 606cfcc56df0c32478bc806b44e6aa4a, type: 3}
   ShurikenGizmod: {fileID: 1081783394}
   ShurikenDamage: 0
   viewDistance: 0.5
+  shotReactionDelay: 0.5
 --- !u!1001 &425469697
 PrefabInstance:
   m_ObjectHideFlags: 0

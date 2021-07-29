@@ -26,19 +26,36 @@ public class BossLvlTwoController : EnemyController
     //Field of view
     public float viewDistance;
 
+    //Shooting detection
+    public float shotReactionDelay = 0.5f;
+    private float reactionWindowWhenShotAt;
+    private bool isDefendingFromShot;
+
     void Start()
     {
         base.Start();
+        reactionWindowWhenShotAt = 0;
         isPlayerToTheLeft = true;
         isTurnedLeft = true;
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Collision();
+        reactionWindowWhenShotAt -= Time.deltaTime;
+
+        if (reactionWindowWhenShotAt > 0 && !isDefendingFromShot)
+        {
+            actionTimer = 0;
+        }
+
+        if (reactionWindowWhenShotAt <= 0)
+        {
+            isDefendingFromShot = false;
+        }
+
         if (actionTimer > 0)
         {
             actionTimer -= Time.deltaTime;
@@ -70,7 +87,7 @@ public class BossLvlTwoController : EnemyController
         {   
             if (hitInfo.collider.CompareTag("Bullet"))         
             {
-                Debug.Log($"Hit by: {hitInfo.collider.tag} - At the position: {hitInfo.collider.transform.position.x}");
+                reactionWindowWhenShotAt = shotReactionDelay;
             }
         }
     }
@@ -78,7 +95,28 @@ public class BossLvlTwoController : EnemyController
     {
         var probability = Random.Range(0.0f, 1.0f) * 100;
 
-        //if shoot was detected (shoot delay)// do something else
+        if (isDefendingFromShot)
+        {
+            return;
+        }
+
+        if (reactionWindowWhenShotAt > 0 && !isDefendingFromShot) {
+            isDefendingFromShot = true;
+            if (probability <= 40)
+            {
+                Debug.Log("Jump to defend");
+            }
+            else if (probability <= 80)
+            {
+                Debug.Log("Blocking attack");
+                Defend();
+            }
+            else if (probability <= 100)
+            {
+               Shoot();
+            }
+            return;
+        }
 
         if (IsPlayerFarAway())
         {
@@ -156,7 +194,7 @@ public class BossLvlTwoController : EnemyController
     public void Defend()
     {
         IsInvincible = true;
-        WaitForAnimation("Boss_Defend");    
+        WaitForAnimation("Boss_Defend", 0.3f);    
     }
 
     private void Shoot()
@@ -175,12 +213,12 @@ public class BossLvlTwoController : EnemyController
         shurikenController.Shoot();
     }
 
-    private void WaitForAnimation(string animationClipName)
+    private void WaitForAnimation(string animationClipName, float? preDefinedActionTimer = null)
     {
         animator.Play(animationClipName);
         AnimatorClipInfo[] animationInfo = animator.GetCurrentAnimatorClipInfo(0);
 
-        actionTimer= animationInfo[0].clip.length;                
+        actionTimer = preDefinedActionTimer ?? animationInfo[0].clip.length;
     }
 
     public void ReceiveDamage(int damage)
