@@ -78,7 +78,6 @@ public class BossLvlTwoController : EnemyController
         if (distance > TargetDistanceToPlayer)
         {
             WaitForAnimation("Boss_Walking");
-            //transform.position = Vector2.MoveTowards(transform.position, player.transform.position, movementSpeed * Time.deltaTime );
             rigidbody2D.velocity = Vector2.left * movementSpeed;
         } else
         {
@@ -91,16 +90,17 @@ public class BossLvlTwoController : EnemyController
     private void Shoot()
     {
         WaitForAnimation("Boss_Throw");
- 
+    }
+
+    //Called at the end of the Boss_Throw animation
+    public void ThrowShuriken()
+    {
         GameObject shuriken = Instantiate(ShurikenPrefab, ShurikenGizmod.position, Quaternion.identity);
         ShurikenController shurikenController = shuriken.GetComponent<ShurikenController>();
         Vector2 shootDirection = isTurnedLeft ? Vector2.left : Vector2.right;
-
         shurikenController.ShootDirection = shootDirection;
         shurikenController.Damage = ShurikenDamage;
-
         shurikenController.Shoot();
-
     }
 
     private void WaitForAnimation(string animationClipName)
