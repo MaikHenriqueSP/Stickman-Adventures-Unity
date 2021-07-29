@@ -18,7 +18,6 @@ public class BossLvlTwoController : EnemyController
     public int ShurikenDamage;
     private bool isShooting;
 
-
     //Animation related variables
     private Animator animator;
     private float actionTimer;
