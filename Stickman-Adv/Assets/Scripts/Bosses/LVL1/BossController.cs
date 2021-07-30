@@ -26,7 +26,7 @@ public class BossController : EnemyController
         }
     }
 
-    public override  void ReceiveDamage(int damage)
+    public override void ReceiveDamage(int damage)
     {
         if (!IsInvincible)
         {

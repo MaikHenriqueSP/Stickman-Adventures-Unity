@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
     private void RotateY()
     {
         isTurnedRight = !isTurnedRight;
-        transform.Rotate(0f, horizontalMovement * 180f, 0f);
+        transform.Rotate(0f, 180f, 0f);
     }
 
     void DetectIfPlayerIsOnTheGround() 
@@ -241,7 +241,7 @@ public class PlayerController : MonoBehaviour
 
     private void updateHealthbar() {
         float remainingLifePointsPercentage = CurrentLifePoints / (float) LifePoints;
-        Healthbar.HealthbarSingleton.SetValue(remainingLifePointsPercentage);
+//        Healthbar.HealthbarSingleton.SetValue(remainingLifePointsPercentage);
     }
 
     public void HandleReceivedDamage(float enemyHorizontalPosition)
