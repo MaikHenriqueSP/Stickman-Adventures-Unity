@@ -284,7 +284,6 @@ public class BossLvlTwoController : EnemyController
 
     public override void ReceiveDamage(int damage)
     {
-        Debug.Log("Receiving damage");
         if (!IsInvincible)
         {
             CurrentLifePoints -= damage;

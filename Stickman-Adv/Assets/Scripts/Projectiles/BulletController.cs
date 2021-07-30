@@ -53,10 +53,11 @@ public class BulletController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") && renderer.enabled)
         {
-            EnemyController enemy = other.GetComponent<EnemyController>();
+            EnemyController enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyController>();
             Instantiate(ParticleExplosion, transform.position, Quaternion.identity);
             Instantiate(HitExplosion, transform.position, Quaternion.identity);
             Explosion.Play();
+
             
             if (enemy != null)
             {
