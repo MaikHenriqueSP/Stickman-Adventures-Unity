@@ -28,7 +28,7 @@ TextureImporter:
     second: ninja_2_tnt_7
   - first:
       213: 40285774939247520
-    second: ninja_2_tnt_8
+    second: Ninja_2_Melee_1
   - first:
       213: 2373016276263032684
     second: ninja_2_tnt_9
@@ -61,16 +61,16 @@ TextureImporter:
     second: ninja_2_tnt_19
   - first:
       213: -6284808071448884974
-    second: Ninja_2_Dying_1
+    second: Ninja_2_Dying_2
   - first:
       213: -4416017324148802565
     second: ninja_2_tnt_21
   - first:
       213: -8554383352512158422
-    second: ninja_2_tnt_22
+    second: Ninja_2_Dying_1
   - first:
       213: -8773772667601635581
-    second: Ninja_2_Dying_2
+    second: Ninja_2_Dying_4
   - first:
       213: 6465737305192074048
     second: Ninja_2_Dying_3
@@ -352,7 +352,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ninja_2_tnt_8
+      name: Ninja_2_Melee_1
       rect:
         serializedVersion: 2
         x: 272
@@ -361,7 +361,7 @@ TextureImporter:
         height: 103
       alignment: 7
       pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 30}
+      border: {x: 16, y: 2, z: 4, w: 33}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -382,7 +382,7 @@ TextureImporter:
         height: 85
       alignment: 7
       pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 2, y: 20, z: 0, w: 5}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -399,11 +399,11 @@ TextureImporter:
         serializedVersion: 2
         x: 530
         y: 456
-        width: 90
+        width: 98
         height: 82
       alignment: 7
       pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 2, y: 17, z: 37, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -583,16 +583,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_2_Dying_1
+      name: Ninja_2_Dying_2
       rect:
         serializedVersion: 2
         x: 407
         y: 194
         width: 121
-        height: 78
+        height: 68
       alignment: 9
       pivot: {x: 0.5032023, y: 0.009226481}
-      border: {x: 0, y: 6, z: 0, w: 0}
+      border: {x: 15, y: 6, z: 67, w: 5}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -613,7 +613,7 @@ TextureImporter:
         height: 74
       alignment: 7
       pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 1, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -625,16 +625,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ninja_2_tnt_22
+      name: Ninja_2_Dying_1
       rect:
         serializedVersion: 2
-        x: 549
+        x: 548
         y: 333
-        width: 63
+        width: 64
         height: 78
       alignment: 7
       pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 31, w: 0}
+      border: {x: 4, y: 2, z: 33, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -646,7 +646,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja_2_Dying_2
+      name: Ninja_2_Dying_4
       rect:
         serializedVersion: 2
         x: 539
