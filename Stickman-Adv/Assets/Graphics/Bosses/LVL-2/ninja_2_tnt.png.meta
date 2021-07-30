@@ -31,10 +31,10 @@ TextureImporter:
     second: Ninja_2_Melee_1
   - first:
       213: 2373016276263032684
-    second: ninja_2_tnt_9
+    second: Ninja_2_Melee_2
   - first:
       213: -7913542310598928410
-    second: ninja_2_tnt_10
+    second: Ninja_2_Melee_3
   - first:
       213: 3000381263194961689
     second: ninja_2_tnt_11
@@ -46,7 +46,7 @@ TextureImporter:
     second: inja_2_Defend
   - first:
       213: -1216447260801790226
-    second: ninja_2_tnt_15
+    second: Ninja_2_Melee_4
   - first:
       213: 7602017210944949265
     second: Ninja_2_Throw_1
@@ -373,7 +373,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ninja_2_tnt_9
+      name: Ninja_2_Melee_2
       rect:
         serializedVersion: 2
         x: 404
@@ -394,7 +394,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ninja_2_tnt_10
+      name: Ninja_2_Melee_3
       rect:
         serializedVersion: 2
         x: 530
@@ -478,7 +478,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ninja_2_tnt_15
+      name: Ninja_2_Melee_4
       rect:
         serializedVersion: 2
         x: 148

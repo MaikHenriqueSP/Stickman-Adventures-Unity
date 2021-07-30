@@ -14,7 +14,9 @@ public class BossLvlTwoController : EnemyController
     private bool isPlayerToTheLeft;
     private bool isTurnedLeft;
     private bool IsJumping;
-    private bool IsDefeated;    
+    private bool IsDefeated;
+
+    public float MeleeAttackDistance;    
 
     //Shooting related variables
     public GameObject ShurikenPrefab;
@@ -147,6 +149,14 @@ public class BossLvlTwoController : EnemyController
             return;
         }
 
+        Debug.Log($"GetDistanceToPlayer(): {GetDistanceToPlayer()} - MeleeAttackDistance: {MeleeAttackDistance}");
+
+        if (GetDistanceToPlayer() < MeleeAttackDistance)
+        {
+            MeleeAttack();
+            return;
+        }
+
         var probability = Random.Range(0.0f, 1.0f) * 100;
 
         if (reactionWindowWhenShotAt > 0 && !isDefendingFromShot) {
@@ -230,6 +240,11 @@ public class BossLvlTwoController : EnemyController
         rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, JumpSpeed);
     }
 
+    public void MeleeAttack()
+    {
+        WaitForAnimation("Boss_Melee");
+    }
+
     public void Move()
     {
         if (IsPlayerFarAway())
@@ -245,11 +260,16 @@ public class BossLvlTwoController : EnemyController
 
     private bool IsPlayerFarAway()
     {
-        float playerXPosition = player.transform.position.x;
-        float currentXPosition = transform.position.x;
-        float distance = Mathf.Abs(playerXPosition - currentXPosition);
+        float distance = GetDistanceToPlayer();
         
         return distance > TargetDistanceToPlayer;
+    }
+
+    private float GetDistanceToPlayer()
+    {
+        float playerXPosition = player.transform.position.x;
+        float currentXPosition = transform.position.x;
+        return Mathf.Abs(playerXPosition - currentXPosition);
     }
 
     public void Defend()
