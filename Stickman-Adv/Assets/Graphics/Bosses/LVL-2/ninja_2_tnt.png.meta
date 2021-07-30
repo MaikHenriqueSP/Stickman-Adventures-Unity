@@ -61,7 +61,7 @@ TextureImporter:
     second: ninja_2_tnt_19
   - first:
       213: -6284808071448884974
-    second: ninja_2_tnt_20
+    second: Ninja_2_Dying_1
   - first:
       213: -4416017324148802565
     second: ninja_2_tnt_21
@@ -70,10 +70,10 @@ TextureImporter:
     second: ninja_2_tnt_22
   - first:
       213: -8773772667601635581
-    second: ninja_2_tnt_23
+    second: Ninja_2_Dying_2
   - first:
       213: 6465737305192074048
-    second: ninja_2_tnt_24
+    second: Ninja_2_Dying_3
   - first:
       213: 6298633698395333097
     second: ninja_2_tnt_25
@@ -583,7 +583,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ninja_2_tnt_20
+      name: Ninja_2_Dying_1
       rect:
         serializedVersion: 2
         x: 407
@@ -646,16 +646,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ninja_2_tnt_23
+      name: Ninja_2_Dying_2
       rect:
         serializedVersion: 2
         x: 539
         y: 190
         width: 101
-        height: 31
+        height: 62
       alignment: 7
       pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 38}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -667,7 +667,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ninja_2_tnt_24
+      name: Ninja_2_Dying_3
       rect:
         serializedVersion: 2
         x: 547

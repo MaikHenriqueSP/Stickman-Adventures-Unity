@@ -13,7 +13,8 @@ public class BossLvlTwoController : EnemyController
     public float JumpSpeed;
     private bool isPlayerToTheLeft;
     private bool isTurnedLeft;
-    public bool IsJumping;
+    private bool IsJumping;
+    private bool IsDefeated;    
 
     //Shooting related variables
     public GameObject ShurikenPrefab;
@@ -31,7 +32,7 @@ public class BossLvlTwoController : EnemyController
     //Shooting detection
     public float shotReactionDelay = 0.5f;
     private float reactionWindowWhenShotAt;
-    public bool isDefendingFromShot;
+    private bool isDefendingFromShot;
 
     void Start()
     {
@@ -48,6 +49,13 @@ public class BossLvlTwoController : EnemyController
     {
         TurnToPlayer();
         reactionWindowWhenShotAt -= Time.deltaTime;
+        UpdateDefeated();
+
+        if (IsDefeated)
+        {
+            return;
+        }
+
 
         if (reactionWindowWhenShotAt > 0 && !isDefendingFromShot)
         {
@@ -75,7 +83,17 @@ public class BossLvlTwoController : EnemyController
         CheckIfOnTheGround();  
     }
 
-    void DetectCollision()
+    private void UpdateDefeated()
+    {
+        if (CurrentLifePoints <= 0)
+        {
+            IsDefeated = true;
+            animator.Play("Boss_Dying");
+        }
+
+    }
+
+    private void DetectCollision()
     {
         Vector2 boxScale = new Vector2(1f , transform.localScale.y);
         Vector2 direction = Vector2.right;
@@ -100,7 +118,7 @@ public class BossLvlTwoController : EnemyController
         }
     }
 
-    void CheckIfOnTheGround() 
+    private void CheckIfOnTheGround() 
     {
         IsJumping = true;
 
@@ -124,23 +142,21 @@ public class BossLvlTwoController : EnemyController
 
     private void ChooseNextAction()
     {
-        var probability = Random.Range(0.0f, 1.0f) * 100;
-
         if (isDefendingFromShot || IsJumping)
         {
             return;
         }
 
+        var probability = Random.Range(0.0f, 1.0f) * 100;
+
         if (reactionWindowWhenShotAt > 0 && !isDefendingFromShot) {
             isDefendingFromShot = true;
             if (probability <= 40)
             {
-                Debug.Log("Jump to defend");
                 Jump();
             }
             else if (probability <= 80)
             {
-                Debug.Log("Blocking attack");
                 Defend();
             }
             else if (probability <= 100)
@@ -206,7 +222,6 @@ public class BossLvlTwoController : EnemyController
     {
         if (IsJumping)
         {
-            Debug.Log("Is jumping alread");
             return;
         }
 
@@ -267,8 +282,9 @@ public class BossLvlTwoController : EnemyController
         actionTimer = preDefinedActionTimer ?? animationInfo[0].clip.length;
     }
 
-    public void ReceiveDamage(int damage)
+    public override void ReceiveDamage(int damage)
     {
+        Debug.Log("Receiving damage");
         if (!IsInvincible)
         {
             CurrentLifePoints -= damage;
