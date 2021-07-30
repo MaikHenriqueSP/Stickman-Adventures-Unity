@@ -10,6 +10,7 @@ TagManager:
   - RightWall
   - PlayButton
   - Bullet
+  - Ground
   layers:
   - Default
   - TransparentFX

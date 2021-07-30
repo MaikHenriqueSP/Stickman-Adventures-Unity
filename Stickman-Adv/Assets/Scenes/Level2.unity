@@ -296,7 +296,8 @@ MonoBehaviour:
   player: {fileID: 585336905}
   TargetDistanceToPlayer: 8
   RetreatDistance: 6
-  movementSpeed: 6
+  MovementSpeed: 6
+  JumpSpeed: 6
   ShurikenPrefab: {fileID: 609177897253989816, guid: 606cfcc56df0c32478bc806b44e6aa4a, type: 3}
   ShurikenGizmod: {fileID: 1081783394}
   ShurikenDamage: 0
@@ -474,7 +475,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.5214286}
@@ -497,6 +498,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1811180020793555822, guid: b9c042e9ed355eb4889562ce6256d837, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 1811180021666151309, guid: b9c042e9ed355eb4889562ce6256d837, type: 3}
       propertyPath: m_Name
       value: Boundaries

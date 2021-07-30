@@ -8,9 +8,12 @@ public class BossLvlTwoController : EnemyController
     public float TargetDistanceToPlayer;
     public float RetreatDistance;
     private Rigidbody2D rigidbody2D;
-    public float movementSpeed;
+    private BoxCollider2D boxCollider2D;
+    public float MovementSpeed;
+    public float JumpSpeed;
     private bool isPlayerToTheLeft;
     private bool isTurnedLeft;
+    public bool IsJumping;
 
     //Shooting related variables
     public GameObject ShurikenPrefab;
@@ -28,7 +31,7 @@ public class BossLvlTwoController : EnemyController
     //Shooting detection
     public float shotReactionDelay = 0.5f;
     private float reactionWindowWhenShotAt;
-    private bool isDefendingFromShot;
+    public bool isDefendingFromShot;
 
     void Start()
     {
@@ -36,13 +39,14 @@ public class BossLvlTwoController : EnemyController
         reactionWindowWhenShotAt = 0;
         isPlayerToTheLeft = true;
         isTurnedLeft = true;
+        boxCollider2D = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        Collision();
+        TurnToPlayer();
         reactionWindowWhenShotAt -= Time.deltaTime;
 
         if (reactionWindowWhenShotAt > 0 && !isDefendingFromShot)
@@ -62,22 +66,27 @@ public class BossLvlTwoController : EnemyController
         }
 
         IsInvincible = false;
-
-        TurnToPlayer();
         ChooseNextAction();
     }
 
-    void Collision()
+    void FixedUpdate()
+    {
+        DetectCollision();
+        CheckIfOnTheGround();  
+    }
+
+    void DetectCollision()
     {
         Vector2 boxScale = new Vector2(1f , transform.localScale.y);
         Vector2 direction = Vector2.right;
         float horizontalLengthCollider = transform.localScale.x;
-        Vector2 startPosition = new Vector2(transform.position.x + horizontalLengthCollider , transform.position.y / 2);
+        float yBoxStartPosition = boxCollider2D.bounds.min.y;
+        Vector2 startPosition = new Vector2(transform.position.x + horizontalLengthCollider , yBoxStartPosition);
         
         if (isTurnedLeft)
         {
             direction = Vector2.left;
-            startPosition = new Vector2(transform.position.x - horizontalLengthCollider, transform.position.y / 2);
+            startPosition = new Vector2(transform.position.x - horizontalLengthCollider, yBoxStartPosition);
         }
 
         RaycastHit2D hitInfo = Physics2D.BoxCast(startPosition, boxScale, 0f,  direction, viewDistance);
@@ -90,11 +99,34 @@ public class BossLvlTwoController : EnemyController
             }
         }
     }
+
+    void CheckIfOnTheGround() 
+    {
+        IsJumping = true;
+
+        int groundLayer = 1 << LayerMask.NameToLayer("Ground");
+        float groundDetectionDistance = 0.05f;
+
+        Vector3 boxColliderCenter = boxCollider2D.bounds.center;
+        boxColliderCenter.y = boxCollider2D.bounds.min.y + boxCollider2D.bounds.extents.y;
+        
+        Vector3 boxSize = boxCollider2D.bounds.size;
+        float collisionAngle = 0f;
+        Vector2 collisionDetectionDirection = Vector2.down;
+
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(boxColliderCenter, boxSize, collisionAngle, collisionDetectionDirection, groundDetectionDistance, groundLayer);
+
+        if (raycastHit2D.collider != null) 
+        {
+            IsJumping = false;
+        }
+    }
+
     private void ChooseNextAction()
     {
         var probability = Random.Range(0.0f, 1.0f) * 100;
 
-        if (isDefendingFromShot)
+        if (isDefendingFromShot || IsJumping)
         {
             return;
         }
@@ -104,6 +136,7 @@ public class BossLvlTwoController : EnemyController
             if (probability <= 40)
             {
                 Debug.Log("Jump to defend");
+                Jump();
             }
             else if (probability <= 80)
             {
@@ -119,23 +152,24 @@ public class BossLvlTwoController : EnemyController
 
         if (IsPlayerFarAway())
         {
-            if (probability <= 60)
+            if (probability <= 90)
             {
-                Move();
+               Move();
             } 
-            else if (probability <= 90)
+            else if (probability <= 93)
             {
-                //Jump();
+                Jump();
             }
-            else if (probability <= 95) //@TODO: AND shoot delay
+            else if (probability <= 97) //@TODO: AND shoot delay
             {
                 Shoot();
             }
             else if (probability <= 100)
             {
-                 Defend();
+                Defend();
             }
-        } else
+        } 
+        else
         {
             if (probability <= 50) //@TODO: and shoot delay
             {
@@ -147,7 +181,7 @@ public class BossLvlTwoController : EnemyController
             }
             else if (probability <= 85)
             {
-                //Jump();
+                Jump();
             }
             else if (probability <= 100)
             {
@@ -168,16 +202,29 @@ public class BossLvlTwoController : EnemyController
         }
     }
 
+    public void Jump()
+    {
+        if (IsJumping)
+        {
+            Debug.Log("Is jumping alread");
+            return;
+        }
+
+        IsJumping = true;
+        WaitForAnimation("Boss_Jump");
+        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, JumpSpeed);
+    }
+
     public void Move()
     {
         if (IsPlayerFarAway())
         {
+            rigidbody2D.velocity = isPlayerToTheLeft ? Vector2.left * MovementSpeed : Vector2.right * MovementSpeed;
             WaitForAnimation("Boss_Walking");
-            rigidbody2D.velocity = isPlayerToTheLeft ? Vector2.left * movementSpeed : Vector2.right * movementSpeed;
         } else
         {
-            WaitForAnimation("Boss_Idle");
             rigidbody2D.velocity = Vector2.zero;
+            WaitForAnimation("Boss_Idle");
         }
     }
 
