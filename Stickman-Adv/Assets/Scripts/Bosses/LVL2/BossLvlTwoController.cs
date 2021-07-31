@@ -149,8 +149,6 @@ public class BossLvlTwoController : EnemyController
             return;
         }
 
-        Debug.Log($"GetDistanceToPlayer(): {GetDistanceToPlayer()} - MeleeAttackDistance: {MeleeAttackDistance}");
-
         if (GetDistanceToPlayer() < MeleeAttackDistance)
         {
             MeleeAttack();
