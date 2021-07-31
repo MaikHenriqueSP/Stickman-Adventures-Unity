@@ -8,7 +8,7 @@ public class StartMenu : MonoBehaviour
 
     public void PlayGameScene()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("LevelProgressScene");
     }
 
     public void Quit()

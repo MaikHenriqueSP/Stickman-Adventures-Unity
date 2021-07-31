@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelProgressScene.unity
     guid: e9d9c9b8ab34fb54eb0a9761df83e5f5
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
+    path: Assets/Scenes/Level-1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
+    path: Assets/Scenes/Level-2.unity
     guid: 6e99ff89937abc7499fa4722ddaecb15
   m_configObjects: {}

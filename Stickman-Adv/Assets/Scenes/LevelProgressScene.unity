@@ -759,6 +759,7 @@ MonoBehaviour:
   - {fileID: 1621453698}
   - {fileID: 1075123362}
   - {fileID: 1414599979}
+  SceneDuration: 5
 --- !u!1 &1855872242
 GameObject:
   m_ObjectHideFlags: 0
