@@ -25,15 +25,17 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadNextScene()
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        StartCoroutine(LoadLevel());
     }
 
-    private IEnumerator LoadLevel(int levelIndex)
+    private IEnumerator LoadLevel()
     {
+        yield return new WaitForSeconds(transitionDuration);
+
         transitionAnimatorController.SetTrigger("Exit");
 
         yield return new WaitForSeconds(transitionDuration);
 
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadScene("LevelProgressScene");
     }
 }

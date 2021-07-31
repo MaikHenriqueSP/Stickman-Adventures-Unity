@@ -5,12 +5,12 @@ using UnityEngine;
 public class LevelStateHolder : MonoBehaviour
 {
     public static int CurrentLevel {get; set;}
-    public void GoNextLevel()
+    public static void GoNextLevel()
     {
         CurrentLevel++;
     }
 
-    public void ResetLevel()
+    public static void ResetLevel()
     {
         CurrentLevel = 0;
     }

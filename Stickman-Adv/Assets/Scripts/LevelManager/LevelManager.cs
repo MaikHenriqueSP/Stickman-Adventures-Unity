@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     void Awake()
     {
         LevelsProgressUIs[LevelStateHolder.CurrentLevel].SetActive(true);
-        
+        LevelStateHolder.GoNextLevel();
+        //@TODO: Go to the next lvl
     }
 }
