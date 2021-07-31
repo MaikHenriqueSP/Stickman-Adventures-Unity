@@ -755,6 +755,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b606b185e172584abab21b8717af88f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelsProgressUIs:
+  - {fileID: 1621453698}
+  - {fileID: 1075123362}
+  - {fileID: 1414599979}
 --- !u!1 &1855872242
 GameObject:
   m_ObjectHideFlags: 0

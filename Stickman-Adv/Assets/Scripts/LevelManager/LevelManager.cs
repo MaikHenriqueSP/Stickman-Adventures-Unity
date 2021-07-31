@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LevelManager : MonoBehaviour
+{
+    public GameObject[] LevelsProgressUIs;
+    
+    void Awake()
+    {
+        LevelsProgressUIs[LevelStateHolder.CurrentLevel].SetActive(true);
+        
+    }
+}
