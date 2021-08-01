@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     private Transform player;
     private bool isPlayerToTheLeft;
     private bool isTurnedLeft;
+    private BoxCollider2D boxCollider2D;
 
     protected void Start()
     {
@@ -19,6 +20,7 @@ public class EnemyController : MonoBehaviour
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        boxCollider2D = GetComponent<BoxCollider2D>();
         isTurnedLeft = true;
     }
 
@@ -61,10 +63,31 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-
     public int HorizontalMoveTowardsPlayer()
     {
         return isPlayerToTheLeft ? - 1 : 1;
+    }
+
+    public bool IsOnTheGround() 
+    {
+        int groundLayer = 1 << LayerMask.NameToLayer("Ground");
+        float groundDetectionDistance = 0.05f;
+
+        Vector3 boxColliderCenter = boxCollider2D.bounds.center;
+        boxColliderCenter.y = boxCollider2D.bounds.min.y + boxCollider2D.bounds.extents.y;
+        
+        Vector3 boxSize = boxCollider2D.bounds.size;
+        float collisionAngle = 0f;
+        Vector2 collisionDetectionDirection = Vector2.down;
+
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(boxColliderCenter, boxSize, collisionAngle, collisionDetectionDirection, groundDetectionDistance, groundLayer);
+
+        if (raycastHit2D.collider != null) 
+        {
+           return true;
+        }
+
+        return false;
     }
 
 }

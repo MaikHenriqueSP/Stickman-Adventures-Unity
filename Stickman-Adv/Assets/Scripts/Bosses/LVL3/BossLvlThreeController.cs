@@ -18,6 +18,8 @@ public class BossLvlThreeController : EnemyController
         {
             //animator.SetTrigger("Anger");
         }        
+
+        //if detect bullet set jump with probability
     }    
 
     //Called at the end of idle animation

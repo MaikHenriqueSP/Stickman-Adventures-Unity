@@ -24,16 +24,20 @@ public class RunningBehavior : StateMachineBehaviour
         int horizontalDirection = bossController.HorizontalMoveTowardsPlayer();
         rigidbody2D.velocity = new Vector2(MovementSpeed * horizontalDirection, rigidbody2D.velocity.y);
 
-        if (Mathf.Abs(player.position.x - rigidbody2D.position.x) <= distanceToAttack)
+        if (IsCloseToThePlayer())
         {
-            Debug.Log("Attack");
-            //animator.SetTrigger("Jump");            
+            Debug.Log("Attack");            
         }
+    }
+
+    private void IsCloseToThePlayer()   //@TODO: refactor it to be reusable on enemy controller
+    {
+        return Mathf.Abs(player.position.x - rigidbody2D.position.x) <= distanceToAttack;
     }
     
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //animator.ResetTrigger("Attack");
-        //animator.ResetTrigger("Jump");
+        animator.ResetTrigger("Jump");
     }
 }
