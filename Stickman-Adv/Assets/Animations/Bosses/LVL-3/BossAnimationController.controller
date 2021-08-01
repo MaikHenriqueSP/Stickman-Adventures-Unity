@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 4
-  distanceToAttack: 3
+  distanceToAttack: 5
 --- !u!1101 &-29774729489531955
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
