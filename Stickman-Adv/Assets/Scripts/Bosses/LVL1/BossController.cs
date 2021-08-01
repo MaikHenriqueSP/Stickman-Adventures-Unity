@@ -14,8 +14,7 @@ public class BossController : EnemyController
     }
 
     void Update()
-    {
-        
+    {        
         if (CurrentLifePoints <= HalfBossLife() && CurrentLifePoints > 0)
         {
             animator.SetTrigger("rolling");
@@ -39,7 +38,6 @@ public class BossController : EnemyController
         float remainingLifePointsPercentage = CurrentLifePoints / (float) LifePoints;
         BossHealthBar.BossHealthbarSingleton.SetValue(remainingLifePointsPercentage);
     }
-
 
     public float HalfBossLife()
     {
@@ -71,6 +69,5 @@ public class BossController : EnemyController
     {
         animator.SetTrigger("jump");
     }
-
 
 }

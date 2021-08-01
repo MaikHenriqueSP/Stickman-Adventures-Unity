@@ -239,9 +239,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void updateHealthbar() {
+    private void updateHealthbar() 
+    {
         float remainingLifePointsPercentage = CurrentLifePoints / (float) LifePoints;
-//        Healthbar.HealthbarSingleton.SetValue(remainingLifePointsPercentage);
+//        Healthbar.HealthbarSingleton.SetValue(remainingLifePointsPercentage); @TODO: fix nullpointer 
     }
 
     public void HandleReceivedDamage(float enemyHorizontalPosition)
@@ -270,7 +271,7 @@ public class PlayerController : MonoBehaviour
 
     //Called by animation event in Player_Hit animation
     public void StopHitAnimation()
-    { 
+    {
         IsTakingDamage = false;
         IsInvincible = false;
     }

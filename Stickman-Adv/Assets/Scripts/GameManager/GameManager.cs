@@ -5,15 +5,15 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private PlayerController player;
+    private BossController boss;
     private GameOverMenu gameOverMenu;
     private bool IsGameOver;
-
-    public
 
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
-        gameOverMenu = GameObject.Find("Canvas").GetComponent<GameOverMenu>();       // 
+        boss = GameObject.Find("Boss-lvl-1").GetComponent<BossController>();
+        gameOverMenu = GameObject.Find("Canvas").GetComponent<GameOverMenu>();
     }
 
     void Update()
@@ -26,11 +26,12 @@ public class GameManager : MonoBehaviour
         if (player.IsPlayerDead())
         {
             IsGameOver = true;
-            Debug.Log("Player is dead");
-
             gameOverMenu.StartGameOverMenu();
         }
 
-        
+        if (boss.IsDead())
+        {
+            LevelLoader.Instance.LoadNextScene();
+        }
     }
 }

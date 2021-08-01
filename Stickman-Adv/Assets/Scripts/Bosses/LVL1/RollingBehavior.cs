@@ -45,7 +45,8 @@ public class RollingBehavior : StateMachineBehaviour
 
         IsTouchingWall = Mathf.Abs(wallCheck.position.x - targetTransform.position.x) < 0.5f;
 
-        if (IsTouchingWall) {
+        if (IsTouchingWall) 
+        {
             isGoingLeft = !isGoingLeft;
             updateTargetTransform(animator);
         }

@@ -8,7 +8,6 @@ public class BossAudioManager : MonoBehaviour
     public AudioSource Rolling;
     public AudioSource PlayerWin;
 
-
     public void PlayEarthquakeSound()
     {
         Earthquake.Play();
