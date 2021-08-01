@@ -8,7 +8,7 @@ public class RunningBehavior : StateMachineBehaviour
     private Transform player;
     private Rigidbody2D rigidbody2D;
     public float distanceToAttack;
-    BossLvlThreeController bossController;    
+    BossLvlThreeController bossController;
     
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -27,11 +27,13 @@ public class RunningBehavior : StateMachineBehaviour
         if (Mathf.Abs(player.position.x - rigidbody2D.position.x) <= distanceToAttack)
         {
             Debug.Log("Attack");
+            //animator.SetTrigger("Jump");            
         }
     }
     
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //animator.ResetTrigger("Attack");
+        //animator.ResetTrigger("Jump");
     }
 }
