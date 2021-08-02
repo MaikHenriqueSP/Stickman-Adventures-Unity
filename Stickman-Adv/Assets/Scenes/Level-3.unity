@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a21f3f3da66a834696e115f17b2718c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifePoints: 999
+  LifePoints: 10
   CurrentLifePoints: 0
   IsInvincible: 0
   TouchDamage: 0
