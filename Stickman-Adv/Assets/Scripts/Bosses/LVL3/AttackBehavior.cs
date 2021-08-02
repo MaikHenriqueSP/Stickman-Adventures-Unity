@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackBehavior : StateMachineBehaviour
 {
-    BossLvlThreeController bossController;
+    private BossLvlThreeController bossController;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
