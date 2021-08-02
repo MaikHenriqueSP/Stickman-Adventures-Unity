@@ -21,7 +21,16 @@ public class BossLvlThreeController : EnemyController
         if (CurrentLifePoints <= LifePoints / 2)
         {
             //animator.SetTrigger("Anger");
-        }        
+        }
+
+        IsBulletDetected();
+
+       // if (IsBulletDetected())
+      //  {
+     //       animator.SetTrigger("Jump");
+     //   }
+
+
 
         //if detect bullet set jump with probability
     }    

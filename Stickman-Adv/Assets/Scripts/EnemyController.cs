@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     private bool isPlayerToTheLeft;
     private bool isTurnedLeft;
     private BoxCollider2D boxCollider2D;
+    public float AllowedDistanceToPlayer;
 
     protected void Start()
     {
@@ -85,6 +86,34 @@ public class EnemyController : MonoBehaviour
         if (raycastHit2D.collider != null) 
         {
            return true;
+        }
+
+        return false;
+    }
+
+    public bool IsBulletDetected()
+    {
+        Vector2 boxScale = new Vector2(0.01f , transform.localScale.y * 2);
+        Vector2 direction = Vector2.right;
+        float horizontalLengthCollider = transform.localScale.x;
+        float yBoxStartPosition = boxCollider2D.bounds.min.y;
+        Vector2 startPosition = new Vector2(transform.position.x + horizontalLengthCollider , yBoxStartPosition);
+        
+        if (isTurnedLeft)
+        {
+            direction = Vector2.left;
+            startPosition = new Vector2(transform.position.x - horizontalLengthCollider, yBoxStartPosition);
+        }
+
+        RaycastHit2D hitInfo = Physics2D.BoxCast(startPosition, boxScale, 0f,  direction, AllowedDistanceToPlayer);
+
+        if (hitInfo.collider != null)
+        {   
+            Debug.Log(hitInfo.collider.name);
+            if (hitInfo.collider.CompareTag("Bullet"))         
+            {
+                return true;
+            }
         }
 
         return false;

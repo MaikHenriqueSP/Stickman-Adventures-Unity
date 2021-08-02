@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f89df7fd4e4e09479d688e782cbc9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 4
+  MovementSpeed: 0
   distanceToAttack: 5
 --- !u!1101 &-29774729489531955
 AnimatorStateTransition:
