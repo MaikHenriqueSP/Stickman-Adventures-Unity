@@ -30,42 +30,6 @@ public class BossLvlThreeController : EnemyController
             currentStage++;
         }
 
-        isBulletDetected = IsBulletDetected();
-
-        switch (currentStage) {
-            case 0:
-                ChooseFirstStageAction();
-                break;
-            case 1:
-                ChooseSecondaStageAction();
-                break;
-        }
-    }
-
-    private void ChooseFirstStageAction()
-    {
-        if (IsCloseToThePlayer())
-        {
-            animator.SetTrigger("Attack");
-        } else if (isBulletDetected)
-        {
-            var probability = Random.Range(0, 100);
-
-            if (probability < 50)
-            {
-                animator.SetTrigger("Jump");
-            }
-        } 
-        else 
-        {
-            animator.SetTrigger("Run");
-        }
-
-    }
-
-    private void ChooseSecondaStageAction()
-    {
-
     }
 
     //Called at the end of idle animation

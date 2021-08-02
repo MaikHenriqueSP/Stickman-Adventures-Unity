@@ -23,10 +23,21 @@ public class RunningBehavior : StateMachineBehaviour
         {
             animator.SetTrigger("Attack");
         }
+
+        if (bossController.IsBulletDetected())
+        {
+            var probability = Random.Range(0, 100);
+
+            if (probability < 50)
+            {
+                animator.SetTrigger("Jump");
+            }
+        } 
     }
     
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("Attack");
+        animator.ResetTrigger("Jump");
     }
 }
