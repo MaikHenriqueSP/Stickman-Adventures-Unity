@@ -93,10 +93,11 @@ public class EnemyController : MonoBehaviour
 
     public bool IsBulletDetected()
     {
-        Vector2 boxScale = new Vector2(0.01f , transform.localScale.y * 2);
+        Vector2 boxScale = new Vector2(0.01f , transform.localScale.y + Mathf.Abs(transform.localScale.y / 2));
+        Debug.Log(boxScale);
         Vector2 direction = Vector2.right;
         float horizontalLengthCollider = transform.localScale.x;
-        float yBoxStartPosition = boxCollider2D.bounds.min.y;
+        float yBoxStartPosition = boxCollider2D.bounds.max.y;
         Vector2 startPosition = new Vector2(transform.position.x + horizontalLengthCollider , yBoxStartPosition);
         
         if (isTurnedLeft)

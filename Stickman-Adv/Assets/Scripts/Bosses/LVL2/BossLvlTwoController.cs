@@ -155,7 +155,7 @@ public class BossLvlTwoController : EnemyController
             return;
         }
 
-        var probability = Random.Range(0.0f, 1.0f) * 100;
+        var probability = Random.Range(0, 100);
 
         if (reactionWindowWhenShotAt > 0 && !isDefendingFromShot) {
             isDefendingFromShot = true;
