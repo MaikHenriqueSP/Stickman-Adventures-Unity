@@ -11,6 +11,7 @@ TagManager:
   - PlayButton
   - Bullet
   - Ground
+  - Sword
   layers:
   - Default
   - TransparentFX
