@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackBehavior : StateMachineBehaviour
 {
     private BossLvlThreeController bossController;
+    public string RunTriggerName;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -17,7 +18,7 @@ public class AttackBehavior : StateMachineBehaviour
         
         if (!bossController.IsCloseToThePlayer())
         {
-            animator.SetTrigger("Run");
+            animator.SetTrigger(RunTriggerName);
         }
        
     }
@@ -25,7 +26,7 @@ public class AttackBehavior : StateMachineBehaviour
     
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("Run"); 
+        animator.ResetTrigger(RunTriggerName); 
     
     }
 

@@ -7,6 +7,9 @@ public class RunningBehavior : StateMachineBehaviour
     public float MovementSpeed;
     private Rigidbody2D rigidbody2D;
     BossLvlThreeController bossController;
+    public float ReactToBulletProbability;
+    public string AttackTriggerName;
+    public string ReactToBulletTriggerName;
     
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -21,23 +24,23 @@ public class RunningBehavior : StateMachineBehaviour
 
         if (bossController.IsCloseToThePlayer())
         {
-            animator.SetTrigger("Attack");
+            animator.SetTrigger(AttackTriggerName);
         }
 
         if (bossController.IsBulletDetected())
         {
             var probability = Random.Range(0, 100);
 
-            if (probability < 50)
+            if (probability < ReactToBulletProbability)
             {
-                animator.SetTrigger("Jump");
+                animator.SetTrigger(ReactToBulletTriggerName);
             }
         } 
     }
     
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("Attack");
-        animator.ResetTrigger("Jump");
+        animator.ResetTrigger(AttackTriggerName);
+        animator.ResetTrigger(ReactToBulletTriggerName);
     }
 }

@@ -109,7 +109,6 @@ public class EnemyController : MonoBehaviour
 
         if (hitInfo.collider != null)
         {   
-            Debug.Log(hitInfo.collider.name);
             if (hitInfo.collider.CompareTag("Bullet"))         
             {
                 return true;
