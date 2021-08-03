@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a782842b2e399bf4f8d8f8217e695357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RunTriggerName: Jump
+  RunTriggerName: Run
 --- !u!1107 &2088207410526376945
 AnimatorStateMachine:
   serializedVersion: 6

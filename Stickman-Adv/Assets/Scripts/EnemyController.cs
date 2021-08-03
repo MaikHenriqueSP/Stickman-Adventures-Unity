@@ -44,7 +44,6 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerController player = other.gameObject.GetComponent<PlayerController>();

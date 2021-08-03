@@ -42,4 +42,5 @@ public class BossLvlThreeController : EnemyController
     {
         return Mathf.Abs(player.position.x - rigidbody2D.position.x) <= minimumDistance;
     }
+
 }
