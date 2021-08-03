@@ -116,5 +116,11 @@ public class EnemyController : MonoBehaviour
 
         return false;
     }
+    
+    public bool GetIsTurnedLeft()
+    {
+        return isTurnedLeft;
+    }
+
 
 }
