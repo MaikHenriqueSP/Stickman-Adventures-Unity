@@ -10,6 +10,8 @@ public class RunningBehavior : StateMachineBehaviour
     public float ReactToBulletProbability;
     public string AttackTriggerName;
     public string ReactToBulletTriggerName;
+    protected float NextActionProbability;
+
     
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -25,17 +27,17 @@ public class RunningBehavior : StateMachineBehaviour
         if (bossController.IsCloseToThePlayer())
         {
             animator.SetTrigger(AttackTriggerName);
+            return;
         }
+        
+        NextActionProbability = Random.Range(0, 100);
 
-        if (bossController.IsBulletDetected())
+        if (bossController.IsBulletDetected() && NextActionProbability < ReactToBulletProbability)
         {
-            var probability = Random.Range(0, 100);
-
-            if (probability < ReactToBulletProbability)
-            {
-                animator.SetTrigger(ReactToBulletTriggerName);
-            }
+            animator.SetTrigger(ReactToBulletTriggerName);
+            return;
         } 
+
     }
     
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

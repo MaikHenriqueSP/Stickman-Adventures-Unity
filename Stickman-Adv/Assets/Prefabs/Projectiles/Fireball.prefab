@@ -155,6 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 3
-  speed: 12
+  speed: 15
   ShootDirection: {x: 0, y: 0}
   DurationTime: 5
