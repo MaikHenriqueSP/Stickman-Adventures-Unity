@@ -6,53 +6,54 @@ public class PlayerController : MonoBehaviour
 {
     private BoxCollider2D BoxCollider2D;
     private Rigidbody2D Rigidbody2D;
-    public float MovementSpeed;
-    public float JumpSpeed;
     private bool IsPlayerOnTheGround = false;
     Animator animator;
     private bool isFrozen;
 
+    [Header("Moving Settings")]
+    public float MovementSpeed;
+
     private float horizontalMovement;
 
-    //Jumping
-    private bool isJumping;
+    [Header("Jumping Settings")]
+    public float JumpSpeed;
     public int NumberOfJumps;
+    private bool isJumping;
     private int currentNumberOfJumps;
 
     private bool isTurnedRight;
 
-    //Shooting related variables
+    [Header("Shooting Settings")]
+    public int Damage;
+    public GameObject bulletPrefab;
+    public Transform bulletGizmod;
     private bool isShooting;
     private bool isShootingKeyPressed;
     private bool isShootingKeyReleased;
     private float shootingStartInstant;
-    public int Damage;
 
-    public GameObject bulletPrefab;
 
-    public Transform bulletGizmod;
-
-    //Damage related variables
+    [Header("Life Settings")]
     public int LifePoints;
     public int CurrentLifePoints;
     public bool IsInvincible;
     public bool IsTakingDamage;
 
-    //Sound
+    [Header("Sound Effect Settings")]
     public AudioSource WinSound;
 
-    //Dash Rolling
+    [Header("Dash Settings")]
+    public float IntervalBetweenTapsForRollingDash;
     public float rollingDistance;
     private bool isRolling;
     private float doubleTapCoolDown;
     private KeyCode lastHorizontalKeyCodeMovement;
-    public float IntervalBetweenTapsForRollingDash;
 
-    //Defending related variables
+    [Header("Defending Settings")]
+    public float DefendingCoolDown;
     public int DefendingAvailableLevel;
     private bool isDefending;
     private bool isDefendingKeyPressed;
-    public float DefendingCoolDown;
     private float defendingTimer;
 
     void Start()
