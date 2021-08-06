@@ -48,8 +48,16 @@ public class PlayerController : MonoBehaviour
     private KeyCode lastHorizontalKeyCodeMovement;
     public float IntervalBetweenTapsForRollingDash;
 
+    //Defending related variables
+    public int DefendingAvailableLevel;
+    private bool isDefending;
+    private bool isDefendingKeyPressed;
+    public float DefendingCoolDown;
+    private float defendingTimer;
+
     void Start()
     {
+        defendingTimer = DefendingCoolDown;
         BoxCollider2D = GetComponent<BoxCollider2D>();
         Rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();        
@@ -60,6 +68,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (isDefending)
+        {
+            UpdateDefending();
+            return;
+        }
+        
         if (IsTakingDamage || isRolling || isFrozen) 
         {
             return;
@@ -70,6 +84,7 @@ public class PlayerController : MonoBehaviour
         UpdateMovement();   
         UpdateAnimation();
         UpdateDirection();
+        UpdateDefending();
     }
 
     private void UpdateInputs()
@@ -77,6 +92,7 @@ public class PlayerController : MonoBehaviour
         horizontalMovement = Input.GetAxisRaw("Horizontal");
         isJumping = Input.GetKeyDown(KeyCode.Space);
         isShootingKeyPressed = Input.GetKeyDown(KeyCode.C);
+        isDefendingKeyPressed = Input.GetKeyDown(KeyCode.V);        
     }
 
     private void FixedUpdate() 
@@ -86,6 +102,7 @@ public class PlayerController : MonoBehaviour
     
     private void UpdateMovement()
     {
+  
         Rigidbody2D.velocity = new Vector2(horizontalMovement * MovementSpeed, Rigidbody2D.velocity.y);
 
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
@@ -130,11 +147,37 @@ public class PlayerController : MonoBehaviour
         isRolling = false;
     }
 
+    private void UpdateDefending()
+    {
+        if (isDefending)
+        {
+            defendingTimer -= Time.deltaTime;
+        }        
+        
+        if (defendingTimer <= 0 && isDefending)
+        {
+            isDefending = false;
+            defendingTimer = DefendingCoolDown;
+            return;
+        }
+        
+        if (isDefendingKeyPressed && !isDefending)
+        {
+            Debug.Log("calling defend");
+            Defend();
+        }
+    }
+
     private void UpdateAnimation()
     {
         string nextAnimationName = "";
 
-        if (isRolling)
+        if (isDefending)
+        {
+            Debug.Log("next anim");
+            nextAnimationName = "Player_Defend";
+        }
+        else if (isRolling)
         {
             nextAnimationName = "Player_Rolling";
         }
@@ -291,4 +334,23 @@ public class PlayerController : MonoBehaviour
     {
         isFrozen = false;
     }
+
+    public bool IsDefendingAvailable()
+    {
+        return LevelStateHolder.CurrentLevel >= DefendingAvailableLevel;
+    }
+
+    public void Defend()
+    {
+        IsInvincible = true;
+        isDefending = true;
+        animator.Play("Player_Defend");
+    }
+
+    //Called by animation event in Player_Defend animation
+    public void StopDefending()
+    {
+        IsTakingDamage = false;
+        IsInvincible = false;
+    }    
 }

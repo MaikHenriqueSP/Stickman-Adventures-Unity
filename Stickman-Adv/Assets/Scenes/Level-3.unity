@@ -319,7 +319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1317436827
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -624,9 +624,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 681565054710221640, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221640, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 1.1899999
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221640, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 1.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221640, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 1.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221640, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 1.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221640, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221640, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5.12
+      objectReference: {fileID: 0}
     - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: IsInvincible
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: DefendingCoolDown
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 681565054710221642, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_RootOrder
