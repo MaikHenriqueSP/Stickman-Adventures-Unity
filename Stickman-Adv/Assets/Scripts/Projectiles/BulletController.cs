@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    private Rigidbody2D rigidbody2D;
+    [Header("Projectile Settings")]
     public float DurationTime;
-    public Vector2 ShootDirection;
+    public float speed;
     public int Damage = 1;
+    
+    private Rigidbody2D rigidbody2D;
+    public Vector2 ShootDirection;
     private float BulletLifeSpanTime;
 
+    [Header("Hit Effect Settings")]
     public GameObject ParticleExplosion;
     public GameObject HitExplosion;
-
-    public float speed;
-
     public AudioSource Explosion;
+
+
     private Renderer renderer;
     void Awake()
     {

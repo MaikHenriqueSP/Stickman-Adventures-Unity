@@ -10,6 +10,8 @@ public class BossLvlThreeController : EnemyController
     private bool isEnraged;
     private int currentStage; //@TODO: create enum class for this
     private bool isBulletDetected;
+
+    [Header("Distance To Player Settings")]
     public float minimumDistance;
     
 

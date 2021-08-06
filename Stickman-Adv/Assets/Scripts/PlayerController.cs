@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Moving Settings")]
     public float MovementSpeed;
-
+    private bool isTurnedRight;
     private float horizontalMovement;
 
     [Header("Jumping Settings")]
@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
     public int NumberOfJumps;
     private bool isJumping;
     private int currentNumberOfJumps;
-
-    private bool isTurnedRight;
 
     [Header("Shooting Settings")]
     public int Damage;

@@ -5,33 +5,34 @@ using UnityEngine;
 public class BossLvlTwoController : EnemyController
 {
     public Transform player;
-    public float TargetDistanceToPlayer;
-    public float RetreatDistance;
     private Rigidbody2D rigidbody2D;
     private BoxCollider2D boxCollider2D;
+    private bool IsDefeated;
+    
+    //Animation related variables
+    private Animator animator;
+    private float actionTimer;
+
+    [Header("Moving Settings")]
     public float MovementSpeed;
     public float JumpSpeed;
     private bool isPlayerToTheLeft;
     private bool isTurnedLeft;
     private bool IsJumping;
-    private bool IsDefeated;
 
+    [Header("Combat Settings")]
+    public float TargetDistanceToPlayer;
+    public float RetreatDistance;
+    public float viewDistance;
     public float MeleeAttackDistance;    
 
-    //Shooting related variables
+    [Header("Shooting Settings")]
     public GameObject ShurikenPrefab;
     public Transform ShurikenGizmod;
     public int ShurikenDamage;
     private bool isShooting;
 
-    //Animation related variables
-    private Animator animator;
-    private float actionTimer;
-
-    //Field of view
-    public float viewDistance;
-
-    //Shooting detection
+    [Header("Shot Reaction Settings")]
     public float shotReactionDelay = 0.5f;
     private float reactionWindowWhenShotAt;
     private bool isDefendingFromShot;

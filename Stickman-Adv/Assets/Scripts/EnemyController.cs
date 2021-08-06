@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public int LifePoints;
-    public int CurrentLifePoints;
-    public bool IsInvincible;
-    public int TouchDamage;
-    private Transform player;
     private bool isPlayerToTheLeft;
     private bool isTurnedLeft;
     private BoxCollider2D boxCollider2D;
+    
+    [Header("Life Settings")]
+    public int LifePoints;
+    public int CurrentLifePoints;
+    public bool IsInvincible;
+    private Transform player;
+
+    [Header("Touch Damage Settings")]
+    public int TouchDamage;
     public float AllowedDistanceToPlayer;
 
     protected void Start()

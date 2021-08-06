@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [Header("Sliding Settings")]
     public Transform Player;
     public Transform Enemy;
     public float SlideEffectFactor;
