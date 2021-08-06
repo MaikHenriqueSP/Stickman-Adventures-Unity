@@ -149,10 +149,14 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateDefending()
     {
+        if (DefendingAvailableLevel > LevelStateHolder.CurrentLevel) 
+        {
+            return;
+        }
         if (isDefending)
         {
             defendingTimer -= Time.deltaTime;
-        }        
+        }
         
         if (defendingTimer <= 0 && isDefending)
         {
@@ -163,7 +167,6 @@ public class PlayerController : MonoBehaviour
         
         if (isDefendingKeyPressed && !isDefending)
         {
-            Debug.Log("calling defend");
             Defend();
         }
     }
@@ -174,7 +177,6 @@ public class PlayerController : MonoBehaviour
 
         if (isDefending)
         {
-            Debug.Log("next anim");
             nextAnimationName = "Player_Defend";
         }
         else if (isRolling)
