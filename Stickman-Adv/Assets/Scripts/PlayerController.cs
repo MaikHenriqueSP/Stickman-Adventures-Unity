@@ -267,7 +267,7 @@ public class PlayerController : MonoBehaviour
 
         BulletController bulletController = bullet.GetComponent<BulletController>();
         Vector2 shootDirection = isTurnedRight ? Vector2.right : Vector2.left;
-        bulletController.ShootDirection = shootDirection;
+        bulletController.SetShootDirection(shootDirection);
         bulletController.Damage = this.Damage;
         bulletController.Shoot();
     }
