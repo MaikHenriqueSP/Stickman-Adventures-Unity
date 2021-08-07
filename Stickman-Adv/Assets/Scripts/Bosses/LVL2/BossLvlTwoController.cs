@@ -5,7 +5,6 @@ using UnityEngine;
 public class BossLvlTwoController : EnemyController
 {
     private Rigidbody2D rigidbody2D;
-    private bool IsDefeated;
     
     //Animation related variables
     private Animator animator;
@@ -37,9 +36,6 @@ public class BossLvlTwoController : EnemyController
     {
         base.Start();
         reactionWindowWhenShotAt = 0;
-        isPlayerToTheLeft = true;
-        isTurnedLeft = true;
-        boxCollider2D = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
@@ -50,7 +46,7 @@ public class BossLvlTwoController : EnemyController
         reactionWindowWhenShotAt -= Time.deltaTime;
         UpdateDefeated();
 
-        if (IsDefeated)
+        if (IsDead())
         {
             return;
         }
@@ -84,9 +80,8 @@ public class BossLvlTwoController : EnemyController
 
     private void UpdateDefeated()
     {
-        if (CurrentLifePoints <= 0)
+        if (IsDead())
         {
-            IsDefeated = true;
             animator.Play("Boss_Dying");
         }
 
@@ -94,10 +89,8 @@ public class BossLvlTwoController : EnemyController
 
     private void UpdateBulletDetection()
     {
-        Debug.Log(IsBulletDetected());
         if (IsBulletDetected())
-        {
-            
+        {            
             reactionWindowWhenShotAt = shotReactionDelay;            
         }
     }
@@ -185,17 +178,6 @@ public class BossLvlTwoController : EnemyController
 
     }
 
-    private void TurnToPlayer()
-    {        
-        isPlayerToTheLeft = player.transform.position.x < transform.position.x;
-
-        if ( (isPlayerToTheLeft && !isTurnedLeft) || (!isPlayerToTheLeft && isTurnedLeft)  )
-        {
-            transform.Rotate(0f, 180f, 0f);
-            isTurnedLeft = !isTurnedLeft;
-        }
-    }
-
     public void Jump()
     {
         if (IsJumping)
@@ -228,8 +210,7 @@ public class BossLvlTwoController : EnemyController
 
     private bool IsPlayerFarAway()
     {
-        float distance = GetDistanceToPlayer();
-        
+        float distance = GetDistanceToPlayer();        
         return distance > TargetDistanceToPlayer;
     }
 

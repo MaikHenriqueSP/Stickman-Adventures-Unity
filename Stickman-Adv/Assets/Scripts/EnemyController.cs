@@ -27,6 +27,7 @@ public class EnemyController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         boxCollider2D = GetComponent<BoxCollider2D>();
         isTurnedLeft = true;
+        isPlayerToTheLeft = true;
     }
 
     public virtual void ReceiveDamage(int damage)
