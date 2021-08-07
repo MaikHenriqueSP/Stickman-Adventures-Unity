@@ -11,23 +11,18 @@ public class AttackBehavior : StateMachineBehaviour
     {
         bossController = animator.GetComponent<BossLvlThreeController>();        
     }
-
     
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        
+    {        
         if (!bossController.IsCloseToThePlayer())
         {
             animator.SetTrigger(RunTriggerName);
-        }
-       
+        }       
     }
-
     
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger(RunTriggerName); 
-    
+        animator.ResetTrigger(RunTriggerName);     
     }
 
 }

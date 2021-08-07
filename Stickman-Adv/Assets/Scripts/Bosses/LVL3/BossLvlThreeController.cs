@@ -5,7 +5,6 @@ using UnityEngine;
 public class BossLvlThreeController : EnemyController
 {
     private Animator animator;
-    private Transform player;
     private Rigidbody2D rigidbody2D;
     private bool isEnraged;
     private int currentStage; //@TODO: create enum class for this
@@ -18,7 +17,6 @@ public class BossLvlThreeController : EnemyController
     void Start()
     {
         base.Start();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
     }

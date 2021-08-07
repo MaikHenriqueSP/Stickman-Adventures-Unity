@@ -11,7 +11,6 @@ public class RunningBehavior : StateMachineBehaviour
     public string AttackTriggerName;
     public string ReactToBulletTriggerName;
     protected float NextActionProbability;
-
     
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -37,7 +36,6 @@ public class RunningBehavior : StateMachineBehaviour
             animator.SetTrigger(ReactToBulletTriggerName);
             return;
         } 
-
     }
     
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
