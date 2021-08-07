@@ -12,6 +12,6 @@ public class LevelStateHolder : MonoBehaviour
 
     public static void ResetLevel()
     {
-        CurrentLevel = 0;
+        CurrentLevel = 1;
     }
 }

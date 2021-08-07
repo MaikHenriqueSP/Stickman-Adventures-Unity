@@ -15,12 +15,7 @@ public class GameCoverScript : MonoBehaviour
         animator.Play("Fade_Out");
         
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         SceneDuration -= Time.deltaTime;
