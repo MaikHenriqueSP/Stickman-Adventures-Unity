@@ -10,13 +10,13 @@ public class Projectile : MonoBehaviour
     public int Damage = 1;
     private Vector2 ShootDirection;
     private float LifeSpanTime;
-    protected Rigidbody2D rigidbody2D;   
-    protected Renderer renderer;
+    protected Rigidbody2D rb2D;   
+    protected Renderer render;
 
     void Awake()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();        
-        renderer = GetComponent<Renderer>();
+        rb2D = GetComponent<Rigidbody2D>();        
+        render = GetComponent<Renderer>();
     }
 
     void Update()
@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
 
     public void Shoot()
     {
-        rigidbody2D.velocity = ShootDirection * Speed;
+        rb2D.velocity = ShootDirection * Speed;
         LifeSpanTime = DurationTime;
         UpdateSpriteDirection();        
     }

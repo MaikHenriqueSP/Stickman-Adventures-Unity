@@ -13,13 +13,12 @@ public class BulletController : Projectile
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy") && renderer.enabled)
+        if (other.gameObject.CompareTag("Enemy") && render.enabled)
         {
             EnemyController enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyController>();
             Instantiate(ParticleExplosion, transform.position, Quaternion.identity);
             Instantiate(HitExplosion, transform.position, Quaternion.identity);
             Explosion.Play();
-
             
             if (enemy != null)
             {
@@ -29,7 +28,7 @@ public class BulletController : Projectile
 
         if (!other.gameObject.CompareTag("Player"))
         {
-            renderer.enabled = false;
+            render.enabled = false;
             Destroy(gameObject, 1f);
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossLvlTwoController : EnemyController
 {
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D rb2D;
     
     //Animation related variables
     private Animator animator;
@@ -32,12 +32,12 @@ public class BossLvlTwoController : EnemyController
     private float reactionWindowWhenShotAt;
     private bool isDefendingFromShot;
 
-    void Start()
+    new void Start()
     {
         base.Start();
         reactionWindowWhenShotAt = 0;
         animator = GetComponent<Animator>();
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -187,7 +187,7 @@ public class BossLvlTwoController : EnemyController
 
         IsJumping = true;
         WaitForAnimation("Boss_Jump");
-        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, JumpSpeed);
+        rb2D.velocity = new Vector2(rb2D.velocity.x, JumpSpeed);
     }
 
     public void MeleeAttack()
@@ -199,11 +199,11 @@ public class BossLvlTwoController : EnemyController
     {
         if (IsPlayerFarAway())
         {
-            rigidbody2D.velocity = isPlayerToTheLeft ? Vector2.left * MovementSpeed : Vector2.right * MovementSpeed;
+            rb2D.velocity = isPlayerToTheLeft ? Vector2.left * MovementSpeed : Vector2.right * MovementSpeed;
             WaitForAnimation("Boss_Walking");
         } else
         {
-            rigidbody2D.velocity = Vector2.zero;
+            rb2D.velocity = Vector2.zero;
             WaitForAnimation("Boss_Idle");
         }
     }

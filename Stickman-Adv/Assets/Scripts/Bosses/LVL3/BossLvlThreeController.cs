@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossLvlThreeController : EnemyController
 {
     private Animator animator;
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D rb2D;
     private bool isEnraged;
     private int currentStage; //@TODO: create enum class for this
     private bool isBulletDetected;
@@ -14,11 +14,11 @@ public class BossLvlThreeController : EnemyController
     public float minimumDistance;
     
 
-    void Start()
+    new void Start()
     {
         base.Start();
         animator = GetComponent<Animator>();
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -40,7 +40,7 @@ public class BossLvlThreeController : EnemyController
 
     public bool IsCloseToThePlayer()   //@TODO: refactor it to be reusable on enemy controller
     {
-        return Mathf.Abs(player.position.x - rigidbody2D.position.x) <= minimumDistance;
+        return Mathf.Abs(player.position.x - rb2D.position.x) <= minimumDistance;
     }
 
 }

@@ -7,7 +7,7 @@ public class BossController : EnemyController
     private Animator animator;
     public Animator cameraAnimator;
 
-    void Start()
+    new void Start()
     {
         base.Start();
         animator = GetComponent<Animator>(); 
