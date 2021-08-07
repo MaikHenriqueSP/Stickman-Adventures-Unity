@@ -45,7 +45,7 @@ public class BossLvlThreeController : EnemyController
 
     public override void UnFreeze()
     {
-        Debug.Log("Todo");
+        animator.SetTrigger("Run");
     }
 
 }
