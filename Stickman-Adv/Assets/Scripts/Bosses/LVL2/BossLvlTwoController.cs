@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class BossLvlTwoController : EnemyController
 {
-    public Transform player;
-    private Rigidbody2D rigidbody2D;
-    private BoxCollider2D boxCollider2D;
-    private bool IsDefeated;
+    private Rigidbody2D rb2D;
     
     //Animation related variables
     private Animator animator;
@@ -16,8 +13,6 @@ public class BossLvlTwoController : EnemyController
     [Header("Moving Settings")]
     public float MovementSpeed;
     public float JumpSpeed;
-    private bool isPlayerToTheLeft;
-    private bool isTurnedLeft;
     private bool IsJumping;
 
     [Header("Combat Settings")]
@@ -37,15 +32,12 @@ public class BossLvlTwoController : EnemyController
     private float reactionWindowWhenShotAt;
     private bool isDefendingFromShot;
 
-    void Start()
+    new void Start()
     {
         base.Start();
         reactionWindowWhenShotAt = 0;
-        isPlayerToTheLeft = true;
-        isTurnedLeft = true;
-        boxCollider2D = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -54,7 +46,7 @@ public class BossLvlTwoController : EnemyController
         reactionWindowWhenShotAt -= Time.deltaTime;
         UpdateDefeated();
 
-        if (IsDefeated)
+        if (IsDead())
         {
             return;
         }
@@ -82,64 +74,34 @@ public class BossLvlTwoController : EnemyController
 
     void FixedUpdate()
     {
-        DetectCollision();
-        CheckIfOnTheGround();  
+        UpdateBulletDetection();
+        UpdateJumping();  
     }
 
     private void UpdateDefeated()
     {
-        if (CurrentLifePoints <= 0)
+        if (IsDead())
         {
-            IsDefeated = true;
             animator.Play("Boss_Dying");
         }
 
     }
 
-    private void DetectCollision()
+    private void UpdateBulletDetection()
     {
-        Vector2 boxScale = new Vector2(1f , transform.localScale.y);
-        Vector2 direction = Vector2.right;
-        float horizontalLengthCollider = transform.localScale.x;
-        float yBoxStartPosition = boxCollider2D.bounds.min.y;
-        Vector2 startPosition = new Vector2(transform.position.x + horizontalLengthCollider , yBoxStartPosition);
-        
-        if (isTurnedLeft)
-        {
-            direction = Vector2.left;
-            startPosition = new Vector2(transform.position.x - horizontalLengthCollider, yBoxStartPosition);
-        }
-
-        RaycastHit2D hitInfo = Physics2D.BoxCast(startPosition, boxScale, 0f,  direction, viewDistance);
-
-        if (hitInfo.collider != null)
-        {   
-            if (hitInfo.collider.CompareTag("Bullet"))         
-            {
-                reactionWindowWhenShotAt = shotReactionDelay;
-            }
+        if (IsBulletDetected())
+        {            
+            reactionWindowWhenShotAt = shotReactionDelay;            
         }
     }
 
-    private void CheckIfOnTheGround() 
+    private void UpdateJumping() 
     {
         IsJumping = true;
 
-        int groundLayer = 1 << LayerMask.NameToLayer("Ground");
-        float groundDetectionDistance = 0.05f;
-
-        Vector3 boxColliderCenter = boxCollider2D.bounds.center;
-        boxColliderCenter.y = boxCollider2D.bounds.min.y + boxCollider2D.bounds.extents.y;
-        
-        Vector3 boxSize = boxCollider2D.bounds.size;
-        float collisionAngle = 0f;
-        Vector2 collisionDetectionDirection = Vector2.down;
-
-        RaycastHit2D raycastHit2D = Physics2D.BoxCast(boxColliderCenter, boxSize, collisionAngle, collisionDetectionDirection, groundDetectionDistance, groundLayer);
-
-        if (raycastHit2D.collider != null) 
+        if (IsOnTheGround())
         {
-            IsJumping = false;
+            IsJumping = false;            
         }
     }
 
@@ -216,17 +178,6 @@ public class BossLvlTwoController : EnemyController
 
     }
 
-    private void TurnToPlayer()
-    {        
-        isPlayerToTheLeft = player.transform.position.x < transform.position.x;
-
-        if ( (isPlayerToTheLeft && !isTurnedLeft) || (!isPlayerToTheLeft && isTurnedLeft)  )
-        {
-            transform.Rotate(0f, 180f, 0f);
-            isTurnedLeft = !isTurnedLeft;
-        }
-    }
-
     public void Jump()
     {
         if (IsJumping)
@@ -236,7 +187,7 @@ public class BossLvlTwoController : EnemyController
 
         IsJumping = true;
         WaitForAnimation("Boss_Jump");
-        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, JumpSpeed);
+        rb2D.velocity = new Vector2(rb2D.velocity.x, JumpSpeed);
     }
 
     public void MeleeAttack()
@@ -248,19 +199,18 @@ public class BossLvlTwoController : EnemyController
     {
         if (IsPlayerFarAway())
         {
-            rigidbody2D.velocity = isPlayerToTheLeft ? Vector2.left * MovementSpeed : Vector2.right * MovementSpeed;
+            rb2D.velocity = isPlayerToTheLeft ? Vector2.left * MovementSpeed : Vector2.right * MovementSpeed;
             WaitForAnimation("Boss_Walking");
         } else
         {
-            rigidbody2D.velocity = Vector2.zero;
+            rb2D.velocity = Vector2.zero;
             WaitForAnimation("Boss_Idle");
         }
     }
 
     private bool IsPlayerFarAway()
     {
-        float distance = GetDistanceToPlayer();
-        
+        float distance = GetDistanceToPlayer();        
         return distance > TargetDistanceToPlayer;
     }
 
@@ -286,9 +236,9 @@ public class BossLvlTwoController : EnemyController
     public void ThrowShuriken()
     {
         GameObject shuriken = Instantiate(ShurikenPrefab, ShurikenGizmod.position, Quaternion.identity);
-        ShurikenController shurikenController = shuriken.GetComponent<ShurikenController>();
+        EnemyProjectile shurikenController = shuriken.GetComponent<EnemyProjectile>();
         Vector2 shootDirection = isTurnedLeft ? Vector2.left : Vector2.right;
-        shurikenController.ShootDirection = shootDirection;
+        shurikenController.SetShootDirection(shootDirection);
         shurikenController.Damage = ShurikenDamage;
         shurikenController.Shoot();
     }

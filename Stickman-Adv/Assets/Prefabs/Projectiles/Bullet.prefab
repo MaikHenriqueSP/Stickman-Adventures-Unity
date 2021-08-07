@@ -121,11 +121,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DurationTime: 5
-  ShootDirection: {x: 0, y: 0}
+  Speed: 15
   Damage: 2
   ParticleExplosion: {fileID: 745602967377557416, guid: 303ae040fc69b1444933acf5d8f6cceb, type: 3}
   HitExplosion: {fileID: 5834891745031241817, guid: 953164b701c0abe4f96126083b4d9df7, type: 3}
-  speed: 15
   Explosion: {fileID: 2069553260071066715}
 --- !u!58 &4365653548612730191
 CircleCollider2D:

@@ -5,12 +5,12 @@ using UnityEngine;
 public class CloudBehavior : MonoBehaviour
 {
     private float speed;
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D rb2D;
     private float deadEndX;
     private SpriteRenderer sprite;
     void Awake()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rb2D = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
     }
 
@@ -23,7 +23,7 @@ public class CloudBehavior : MonoBehaviour
     }    
     public void Move(float speed, float deadEndX, float scale, float xPosition, float yPosition, float alpha)
     {
-        this.rigidbody2D.velocity = Vector3.right * speed;
+        this.rb2D.velocity = Vector3.right * speed;
         this.deadEndX = deadEndX;
 
         SetPosition(xPosition, yPosition);

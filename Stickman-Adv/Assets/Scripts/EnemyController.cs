@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    private bool isPlayerToTheLeft;
-    private bool isTurnedLeft;
-    private BoxCollider2D boxCollider2D;
+    protected bool isPlayerToTheLeft;
+    protected bool isTurnedLeft;
+    protected BoxCollider2D boxCollider2D;
     
     [Header("Life Settings")]
     public int LifePoints;
     public int CurrentLifePoints;
     public bool IsInvincible;
-    private Transform player;
+    protected Transform player;
 
     [Header("Touch Damage Settings")]
     public int TouchDamage;
@@ -27,6 +27,7 @@ public class EnemyController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         boxCollider2D = GetComponent<BoxCollider2D>();
         isTurnedLeft = true;
+        isPlayerToTheLeft = true;
     }
 
     public virtual void ReceiveDamage(int damage)
@@ -96,7 +97,7 @@ public class EnemyController : MonoBehaviour
 
     public bool IsBulletDetected()
     {
-        Vector2 boxScale = new Vector2(0.01f , transform.localScale.y + Mathf.Abs(transform.localScale.y / 2));
+        Vector2 boxScale = new Vector2(0.01f , transform.localScale.y * 2);
         Vector2 direction = Vector2.right;
         float horizontalLengthCollider = transform.localScale.x;
         float yBoxStartPosition = boxCollider2D.bounds.max.y;
@@ -124,6 +125,31 @@ public class EnemyController : MonoBehaviour
     public bool GetIsTurnedLeft()
     {
         return isTurnedLeft;
+    }
+
+    protected void UpdateHealthbar() {
+        float remainingLifePointsPercentage = CurrentLifePoints / (float) LifePoints;
+        BossHealthBar.BossHealthbarSingleton.SetValue(remainingLifePointsPercentage);
+    }
+
+    public float HalfBossLife()
+    {
+        return LifePoints / 2;
+    }
+
+    public void BecomeUnbeatable()
+    {
+        IsInvincible = true;
+    }
+
+    public void BecomeBeatable()
+    {
+        IsInvincible = false;
+    }
+
+    public bool IsDead()
+    {
+        return CurrentLifePoints <= 0;
     }
 
 

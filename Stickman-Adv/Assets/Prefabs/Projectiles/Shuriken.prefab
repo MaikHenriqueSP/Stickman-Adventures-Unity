@@ -95,14 +95,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 609177897253989816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ad263d1f645a8649acf3538a4cb3a78, type: 3}
+  m_Script: {fileID: 11500000, guid: 2925213f31eb0f94f8632030b05e4736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 0
-  Rigidbody2D: {fileID: 0}
-  speed: 30
-  ShootDirection: {x: 0, y: 0}
   DurationTime: 2
+  Speed: 2
+  Damage: 30
 --- !u!50 &609177897253989813
 Rigidbody2D:
   serializedVersion: 4
