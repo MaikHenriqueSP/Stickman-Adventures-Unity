@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    private bool isPlayerToTheLeft;
-    private bool isTurnedLeft;
-    private BoxCollider2D boxCollider2D;
+    protected bool isPlayerToTheLeft;
+    protected bool isTurnedLeft;
+    protected BoxCollider2D boxCollider2D;
     
     [Header("Life Settings")]
     public int LifePoints;
     public int CurrentLifePoints;
     public bool IsInvincible;
-    private Transform player;
+    protected Transform player;
 
     [Header("Touch Damage Settings")]
     public int TouchDamage;
@@ -126,7 +126,7 @@ public class EnemyController : MonoBehaviour
         return isTurnedLeft;
     }
 
-    private void updateHealthbar() {
+    protected void UpdateHealthbar() {
         float remainingLifePointsPercentage = CurrentLifePoints / (float) LifePoints;
         BossHealthBar.BossHealthbarSingleton.SetValue(remainingLifePointsPercentage);
     }

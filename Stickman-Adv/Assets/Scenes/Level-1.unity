@@ -2808,6 +2808,7 @@ MonoBehaviour:
   CurrentLifePoints: 0
   IsInvincible: 0
   TouchDamage: 1
+  AllowedDistanceToPlayer: 0
   cameraAnimator: {fileID: 519420033}
 --- !u!58 &1235547834
 CircleCollider2D:
@@ -4458,6 +4459,7 @@ MonoBehaviour:
   CurrentLifePoints: 0
   IsInvincible: 0
   TouchDamage: 1
+  AllowedDistanceToPlayer: 0
 --- !u!1 &1602566874
 GameObject:
   m_ObjectHideFlags: 0
@@ -5505,6 +5507,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: IsInvincible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 681565054710221642, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_RootOrder
       value: 4

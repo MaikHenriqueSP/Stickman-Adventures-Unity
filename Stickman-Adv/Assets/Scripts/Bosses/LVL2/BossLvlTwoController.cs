@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class BossLvlTwoController : EnemyController
 {
-    public Transform player;
     private Rigidbody2D rigidbody2D;
-    private BoxCollider2D boxCollider2D;
     private bool IsDefeated;
     
     //Animation related variables
@@ -16,8 +14,6 @@ public class BossLvlTwoController : EnemyController
     [Header("Moving Settings")]
     public float MovementSpeed;
     public float JumpSpeed;
-    private bool isPlayerToTheLeft;
-    private bool isTurnedLeft;
     private bool IsJumping;
 
     [Header("Combat Settings")]

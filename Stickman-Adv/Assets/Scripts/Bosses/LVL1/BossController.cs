@@ -30,7 +30,7 @@ public class BossController : EnemyController
         if (!IsInvincible)
         {
             CurrentLifePoints -= damage;
-            updateHealthbar();
+            UpdateHealthbar();
         }
     }
 
