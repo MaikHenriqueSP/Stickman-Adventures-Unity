@@ -4,24 +4,28 @@ using UnityEngine;
 
 public class CloudMaker : MonoBehaviour
 {
+    [Header("Cloud bounds")]
     public GameObject startPoint;
     public GameObject endPoint;
+    [Header("Cloud prefabs")]
     public GameObject[] clouds;
+    [Header("Spawn Settings")]
     public float spawnIntervalMin;
     public float spawnIntervalMax;    
 
-    //cloud speed interval
+    [Header("Speed Settings")]
     public float minCloudsSpeed;
     public float maxCloudSpeed;
 
-    //cloud scale interval
+    [Header("Scale Settings")]
     public float minCloudScale;
     public float maxCloudScale;
-    public float heightVariationFactor;
 
-    //pre-start clouds number interval
+    [Header("Spawn Position Settings")]
     public int minStartClouds;
     public int maxStartClouds;
+    [Header("Random Height Spawn Variation Settings")]
+    public float heightVariationFactor;
 
     void Start()
     {
