@@ -10,9 +10,7 @@ public class Projectile : MonoBehaviour
     public int Damage = 1;
     private Vector2 ShootDirection;
     private float LifeSpanTime;
-
-    private Rigidbody2D rigidbody2D;
-   
+    protected Rigidbody2D rigidbody2D;   
     protected Renderer renderer;
 
     void Awake()
@@ -35,12 +33,12 @@ public class Projectile : MonoBehaviour
     {
         rigidbody2D.velocity = ShootDirection * Speed;
         LifeSpanTime = DurationTime;
-        UpdateBulletDirection();        
+        UpdateSpriteDirection();        
     }
 
-    private void UpdateBulletDirection()
+    private void UpdateSpriteDirection()
     {
-        if (ShootDirection.x < 0)
+        if (ShootDirection.x > 0)
         {
             gameObject.transform.Rotate(0f, 180f, 0f);  
         }        

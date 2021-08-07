@@ -19,7 +19,7 @@ public class BossShoot : MonoBehaviour
         GameObject fireball = Instantiate(FireballPrefab, FireballGizmod.position, Quaternion.identity);
         FireballController fireballController = fireball.GetComponent<FireballController>();
         Vector2 shootDirection = bossLvlThreeController.GetIsTurnedLeft() ? Vector2.left : Vector2.right;
-        fireballController.ShootDirection = shootDirection;
+        fireballController.SetShootDirection(shootDirection);
         fireballController.Damage = FireballDamage;
         fireballController.Shoot();
     }

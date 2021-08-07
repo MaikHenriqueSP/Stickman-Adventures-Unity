@@ -2,37 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShurikenController : MonoBehaviour
+public class ShurikenController : Projectile
 {
-    public int Damage;
-    public Rigidbody2D Rigidbody2D;
-    public float speed;
-    public Vector2 ShootDirection;
-    private float BulletLifeSpanTime;
-    public float DurationTime;
-
-    
-    void Awake()
-    {
-        Rigidbody2D = GetComponent<Rigidbody2D>();        
-    }
-        
-    void Update()
-    {
-        BulletLifeSpanTime -= Time.deltaTime;
-
-        if (BulletLifeSpanTime < 0) 
-        {
-            Destroy(gameObject);
-        }        
-    }
-
-    public void Shoot()
-    {
-        Rigidbody2D.velocity = ShootDirection * speed;
-        BulletLifeSpanTime = DurationTime;
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -50,8 +21,5 @@ public class ShurikenController : MonoBehaviour
            //Destroy(gameObject, 0.02f);
         }
     }
-    public void SetShootDirection(Vector2 direction) 
-    {
-        this.ShootDirection = direction;
-    }
+
 }
