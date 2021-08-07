@@ -78,8 +78,8 @@ public class BossLvlTwoController : EnemyController
 
     void FixedUpdate()
     {
-        DetectCollision();
-        CheckIfOnTheGround();  
+        UpdateBulletDetection();
+        UpdateJumping();  
     }
 
     private void UpdateDefeated()
@@ -92,50 +92,23 @@ public class BossLvlTwoController : EnemyController
 
     }
 
-    private void DetectCollision()
+    private void UpdateBulletDetection()
     {
-        Vector2 boxScale = new Vector2(1f , transform.localScale.y);
-        Vector2 direction = Vector2.right;
-        float horizontalLengthCollider = transform.localScale.x;
-        float yBoxStartPosition = boxCollider2D.bounds.min.y;
-        Vector2 startPosition = new Vector2(transform.position.x + horizontalLengthCollider , yBoxStartPosition);
-        
-        if (isTurnedLeft)
+        Debug.Log(IsBulletDetected());
+        if (IsBulletDetected())
         {
-            direction = Vector2.left;
-            startPosition = new Vector2(transform.position.x - horizontalLengthCollider, yBoxStartPosition);
-        }
-
-        RaycastHit2D hitInfo = Physics2D.BoxCast(startPosition, boxScale, 0f,  direction, viewDistance);
-
-        if (hitInfo.collider != null)
-        {   
-            if (hitInfo.collider.CompareTag("Bullet"))         
-            {
-                reactionWindowWhenShotAt = shotReactionDelay;
-            }
+            
+            reactionWindowWhenShotAt = shotReactionDelay;            
         }
     }
 
-    private void CheckIfOnTheGround() 
+    private void UpdateJumping() 
     {
         IsJumping = true;
 
-        int groundLayer = 1 << LayerMask.NameToLayer("Ground");
-        float groundDetectionDistance = 0.05f;
-
-        Vector3 boxColliderCenter = boxCollider2D.bounds.center;
-        boxColliderCenter.y = boxCollider2D.bounds.min.y + boxCollider2D.bounds.extents.y;
-        
-        Vector3 boxSize = boxCollider2D.bounds.size;
-        float collisionAngle = 0f;
-        Vector2 collisionDetectionDirection = Vector2.down;
-
-        RaycastHit2D raycastHit2D = Physics2D.BoxCast(boxColliderCenter, boxSize, collisionAngle, collisionDetectionDirection, groundDetectionDistance, groundLayer);
-
-        if (raycastHit2D.collider != null) 
+        if (IsOnTheGround())
         {
-            IsJumping = false;
+            IsJumping = false;            
         }
     }
 
