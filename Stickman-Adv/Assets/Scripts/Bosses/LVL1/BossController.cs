@@ -39,7 +39,7 @@ public class BossController : EnemyController
         cameraAnimator.SetTrigger("Earthquake");
     }
 
-    public void UnFreeze()
+    public override void UnFreeze()
     {
         animator.SetTrigger("jump");
     }

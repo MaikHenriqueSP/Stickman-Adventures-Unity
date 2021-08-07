@@ -43,4 +43,9 @@ public class BossLvlThreeController : EnemyController
         return Mathf.Abs(player.position.x - rb2D.position.x) <= minimumDistance;
     }
 
+    public override void UnFreeze()
+    {
+        Debug.Log("Todo");
+    }
+
 }

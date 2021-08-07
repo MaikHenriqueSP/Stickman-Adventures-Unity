@@ -5,14 +5,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private PlayerController player;
-    private BossController boss;
+    private EnemyController boss;
     private GameOverMenu gameOverMenu;
     private bool IsGameOver;
 
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
-        boss = GameObject.Find("Boss-lvl-1").GetComponent<BossController>();
+        boss = GameObject.FindWithTag("Enemy").GetComponent<EnemyController>();
         gameOverMenu = GameObject.Find("Canvas").GetComponent<GameOverMenu>();
     }
 

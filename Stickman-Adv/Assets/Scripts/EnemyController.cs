@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public abstract class EnemyController : MonoBehaviour
 {
     protected bool isPlayerToTheLeft;
     protected bool isTurnedLeft;
@@ -151,6 +151,8 @@ public class EnemyController : MonoBehaviour
     {
         return CurrentLifePoints <= 0;
     }
+
+    public abstract void UnFreeze();
 
 
 }

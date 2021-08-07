@@ -14,7 +14,7 @@ public class DialogManager : MonoBehaviour
     private Queue<Sentence> sentences;
 
     public PlayerController PlayerController;
-    public BossController BossController;
+    public EnemyController EnemyController;
 
     public void InitDialog(Dialogue dialog)
     {
@@ -60,7 +60,7 @@ public class DialogManager : MonoBehaviour
     private void FinishDialog()
     {
         PlayerController.UnFreeze();
-        BossController.UnFreeze();
+        EnemyController.UnFreeze();
         DialogAnimator.SetTrigger("Close_Dialog");
     }
 

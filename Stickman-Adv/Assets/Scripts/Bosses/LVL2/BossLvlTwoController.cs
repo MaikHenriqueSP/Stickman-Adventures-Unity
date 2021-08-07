@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossLvlTwoController : EnemyController
 {
     private Rigidbody2D rb2D;
+    private bool isFrozen;
     
     //Animation related variables
     private Animator animator;
@@ -35,6 +36,7 @@ public class BossLvlTwoController : EnemyController
     new void Start()
     {
         base.Start();
+        isFrozen = true;
         reactionWindowWhenShotAt = 0;
         animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
@@ -42,6 +44,11 @@ public class BossLvlTwoController : EnemyController
 
     void Update()
     {
+        if (isFrozen)
+        {
+            return;
+        }
+
         TurnToPlayer();
         reactionWindowWhenShotAt -= Time.deltaTime;
         UpdateDefeated();
@@ -257,5 +264,11 @@ public class BossLvlTwoController : EnemyController
         {
             CurrentLifePoints -= damage;
         }
+    }
+
+    public override void UnFreeze()
+    {
+        isFrozen = false;
+        animator.SetTrigger("idle");
     }
 }

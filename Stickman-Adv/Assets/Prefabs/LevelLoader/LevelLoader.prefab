@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnimatorController: {fileID: 5978046987899341861}
-  transitionDuration: 2.5
+  transitionDuration: 0.5
 --- !u!1 &5484259070971321127
 GameObject:
   m_ObjectHideFlags: 0
