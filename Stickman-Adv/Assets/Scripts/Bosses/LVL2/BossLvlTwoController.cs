@@ -236,7 +236,7 @@ public class BossLvlTwoController : EnemyController
     public void ThrowShuriken()
     {
         GameObject shuriken = Instantiate(ShurikenPrefab, ShurikenGizmod.position, Quaternion.identity);
-        ShurikenController shurikenController = shuriken.GetComponent<ShurikenController>();
+        EnemyProjectile shurikenController = shuriken.GetComponent<EnemyProjectile>();
         Vector2 shootDirection = isTurnedLeft ? Vector2.left : Vector2.right;
         shurikenController.SetShootDirection(shootDirection);
         shurikenController.Damage = ShurikenDamage;

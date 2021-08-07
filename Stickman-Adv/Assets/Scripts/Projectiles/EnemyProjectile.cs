@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireballController : Projectile
+public class EnemyProjectile : Projectile
 {
- 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -22,5 +21,4 @@ public class FireballController : Projectile
            //Destroy(gameObject, 0.02f);
         }
     }
-
 }
