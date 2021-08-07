@@ -2718,6 +2718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 5267335540341740785, guid: f870d508411d7b04e893b84ad02d3d39, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f870d508411d7b04e893b84ad02d3d39, type: 3}
 --- !u!1001 &3405913931037163702
@@ -2914,6 +2918,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2096862894}
+    - target: {fileID: 8228313039413023809, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8228313040186216529, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
