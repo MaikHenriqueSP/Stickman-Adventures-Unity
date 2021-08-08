@@ -3,57 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
    public static bool IsGamePaused = false;
    public GameObject PauseMenuUI;
+   public GameObject ControllersUI;
+   public MenuManager MenuManager;
 
-   public GameObject firstPauseButton;
+   public Button FirstActiveButton;
 
-    void Update()
+    void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (IsGamePaused)
-            {
-                Resume();
-            }
-            else 
-            {
-                Pause();
-            }
-        }
+        SetFirstSelectedButton();
     }
 
-    public void Resume()
+    public void OpenControllersMenu()
     {
+        ControllersUI.SetActive(true);
         PauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        IsGamePaused = false;        
     }
-
-    void Pause()
+    private void SetFirstSelectedButton()
     {
-        PauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        IsGamePaused = true;
-        setFirstSelectedButton();
-
-    }
-
-    private void setFirstSelectedButton()
-    {
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(firstPauseButton);
+        FirstActiveButton.Select();
+        FirstActiveButton.OnSelect(null);
     }
 
     public void LoadMenu()
     {
         Time.timeScale = 1f;
         IsGamePaused = false;
-        PauseMenuUI.SetActive(false);
-        
+        PauseMenuUI.SetActive(false);        
         SceneManager.LoadScene("Menu");
     }
 

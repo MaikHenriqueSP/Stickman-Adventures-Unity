@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &109521028 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8228313039717860008, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+  m_PrefabInstance: {fileID: 8228313038767173510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &236489925 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8228313039002542915, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
@@ -175,6 +180,26 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8228313039413023820, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
   m_PrefabInstance: {fileID: 8228313038767173510}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &648872191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8228313040186216533, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+  m_PrefabInstance: {fileID: 8228313038767173510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &648872195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648872191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1000d8841eb09945a6d7a8aac8f1c06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseMenuUI: {fileID: 109521028}
+  ControllersUI: {fileID: 1319983089}
+  FirstActiveButton: {fileID: 0}
 --- !u!1 &757273429
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,6 +746,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1319983089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1785594014, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+  m_PrefabInstance: {fileID: 8228313038767173510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1438527218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,12 +1483,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 478054955, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: ControllersUI
+      value: 
+      objectReference: {fileID: 1319983089}
+    - target: {fileID: 1785594014, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_Name
+      value: ControllersMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785594014, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851366934, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 478054955, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+    - target: {fileID: 1851366934, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8228313039162952559, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2096862894}
-    - target: {fileID: 8228313039413023809, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
-      propertyPath: m_SizeDelta.y
+    - target: {fileID: 8228313039717860008, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_Name
+      value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313039717860008, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8228313040186216529, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
@@ -1549,7 +1603,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8228313040186216542, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+    - {fileID: 478054959, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
 --- !u!1001 &8286834559625570936
 PrefabInstance:
