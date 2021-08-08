@@ -1036,7 +1036,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: IsInvincible
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 681565054710221642, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_RootOrder
@@ -1202,7 +1202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5267335540341740785, guid: f870d508411d7b04e893b84ad02d3d39, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f870d508411d7b04e893b84ad02d3d39, type: 3}
@@ -1679,6 +1679,10 @@ PrefabInstance:
       propertyPath: DialogAnimator
       value: 
       objectReference: {fileID: 646134730}
+    - target: {fileID: 9035230527179855211, guid: 6224ce395c40f054294e610cde721ea9, type: 3}
+      propertyPath: EnemyController
+      value: 
+      objectReference: {fileID: 1235547833}
     - target: {fileID: 9035230527179855211, guid: 6224ce395c40f054294e610cde721ea9, type: 3}
       propertyPath: PlayerController
       value: 
