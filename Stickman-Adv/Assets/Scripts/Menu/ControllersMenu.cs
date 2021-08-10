@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ControllersMenu : MonoBehaviour
 {
-    public GameObject PauseMenuUI;
+    public GameObject BackwardsMenuUI;
     public GameObject ControllersUI;
     public Button FirstActiveButton;
 
@@ -32,7 +32,7 @@ public class ControllersMenu : MonoBehaviour
 
     public void LoadPauseMenu()
     {
-        PauseMenuUI.SetActive(true);
+        BackwardsMenuUI.SetActive(true);
         ControllersUI.SetActive(false);
     }
 
