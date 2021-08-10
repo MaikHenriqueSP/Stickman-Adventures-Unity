@@ -420,12 +420,11 @@ MonoBehaviour:
   CurrentLifePoints: 0
   IsInvincible: 0
   TouchDamage: 0
-  AllowedDistanceToPlayer: 0
+  ShootDistanceView: 0
   MovementSpeed: 6
   JumpSpeed: 6
   TargetDistanceToPlayer: 8
   RetreatDistance: 6
-  viewDistance: 0.5
   MeleeAttackDistance: 2.3
   ShurikenPrefab: {fileID: 609177897253989816, guid: 606cfcc56df0c32478bc806b44e6aa4a, type: 3}
   ShurikenGizmod: {fileID: 1081783394}
@@ -709,6 +708,26 @@ PrefabInstance:
       propertyPath: dialogManager
       value: 
       objectReference: {fileID: 1330474139}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].phrase
+      value: "O seu amigo j\xE1 foi e voc\xEA e o pr\xF3ximo!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1].phrase
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].SpeakerName
+      value: Stick Guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1].SpeakerName
+      value: Silent Ninja
+      objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213718, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: m_Name
       value: DialogueTrigger

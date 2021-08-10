@@ -397,6 +397,91 @@ PrefabInstance:
       propertyPath: dialogManager
       value: 
       objectReference: {fileID: 59457359}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].phrase
+      value: "Ent\xE3o voc\xEA que \xE9 o mestre?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1].phrase
+      value: "N\xE3o \xE9 poss\xEDvel que aqueles imprest\xE1veis se deixaram derrota
+        por voc\xEA "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2].phrase
+      value: "Espero que seja um oponente a altura\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[3].phrase
+      value: "Eu como Rei, estou apenas querendo a sobreviv\xEAncia de meu povo..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[4].phrase
+      value: "Sobreviv\xEAncia as custas de nossas cabe\xE7as e nosso mundo!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[5].phrase
+      value: "\xC9 o processo natural..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[6].phrase
+      value: "N\xE3o \xE9 nada pessoal contra voc\xEA ou seu povo..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[7].phrase
+      value: "Sua arrog\xE2ncia me d\xE1 nos nervos!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[8].phrase
+      value: Vamos resolver isso logo!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[9].phrase
+      value: Como quiser ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].SpeakerName
+      value: Stick Guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1].SpeakerName
+      value: King Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2].SpeakerName
+      value: King Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[3].SpeakerName
+      value: King Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[4].SpeakerName
+      value: Stick Guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[5].SpeakerName
+      value: King Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[6].SpeakerName
+      value: King Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[7].SpeakerName
+      value: Stick Guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[8].SpeakerName
+      value: Stick Guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[9].SpeakerName
+      value: King Knight
+      objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213718, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: m_Name
       value: DialogueTrigger

@@ -1217,6 +1217,66 @@ PrefabInstance:
       propertyPath: dialogManager
       value: 
       objectReference: {fileID: 2096862894}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].phrase
+      value: "O que voc\xEAs est\xE3o planejando?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1].phrase
+      value: "Por qual motivo est\xE3o destruindo tudo?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2].phrase
+      value: "Nosso mundo est\xE1 super populoso, nossos recursos est\xE3o escassos"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[3].phrase
+      value: "Nosso rei decidiu que \xE9 hora de expandir ou entraremos em colapso"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[4].phrase
+      value: "Quem \xE9 seu rei? "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[5].phrase
+      value: "N\xE3o te interessa quem \xE9 meu rei, palito insignificante!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[6].phrase
+      value: "Chega de conversa, me mostre do que \xE9 capaz!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].SpeakerName
+      value: Stick Guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1].SpeakerName
+      value: Stick Guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2].SpeakerName
+      value: Metal Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[3].SpeakerName
+      value: Metal ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[4].SpeakerName
+      value: Stick Guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[5].SpeakerName
+      value: Metal ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
+      propertyPath: dialogue.sentences.Array.data[6].SpeakerName
+      value: Metal ball
+      objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213718, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: m_Name
       value: DialogueTrigger
