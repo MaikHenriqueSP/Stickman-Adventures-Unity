@@ -1139,7 +1139,7 @@ MonoBehaviour:
   CurrentLifePoints: 0
   IsInvincible: 0
   TouchDamage: 0
-  AllowedDistanceToPlayer: 1.5
+  ShootDistanceView: 1.5
   minimumDistance: 3
 --- !u!114 &1317436833
 MonoBehaviour:

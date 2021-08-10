@@ -16,7 +16,9 @@ public abstract class EnemyController : MonoBehaviour
 
     [Header("Touch Damage Settings")]
     public int TouchDamage;
-    public float AllowedDistanceToPlayer;
+
+    [Header("Shooting Settings")]
+    public float ShootDistanceView;
 
     protected void Start()
     {
@@ -109,7 +111,7 @@ public abstract class EnemyController : MonoBehaviour
             startPosition = new Vector2(transform.position.x - horizontalLengthCollider, yBoxStartPosition);
         }
 
-        RaycastHit2D hitInfo = Physics2D.BoxCast(startPosition, boxScale, 0f,  direction, AllowedDistanceToPlayer);
+        RaycastHit2D hitInfo = Physics2D.BoxCast(startPosition, boxScale, 0f,  direction, ShootDistanceView);
 
         if (hitInfo.collider != null)
         {   

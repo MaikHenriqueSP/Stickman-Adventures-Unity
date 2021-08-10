@@ -19,7 +19,6 @@ public class BossLvlTwoController : EnemyController
     [Header("Combat Settings")]
     public float TargetDistanceToPlayer;
     public float RetreatDistance;
-    public float viewDistance;
     public float MeleeAttackDistance;    
 
     [Header("Shooting Settings")]
