@@ -19,6 +19,15 @@ public class LevelManager : MonoBehaviour
     {
         yield return new WaitForSeconds(SceneDuration);
         LevelStateHolder.GoNextLevel();
+        Debug.Log($"{LevelStateHolder.CurrentLevel} - {LevelStateHolder.AvailableLevels}");
+        
+        
+        if (LevelStateHolder.CurrentLevel > LevelStateHolder.AvailableLevels) 
+        {
+            SceneManager.LoadScene("GameVictory");
+            yield break;
+        } 
+        
         SceneManager.LoadScene($"Level-{LevelStateHolder.CurrentLevel}");
     }
 }

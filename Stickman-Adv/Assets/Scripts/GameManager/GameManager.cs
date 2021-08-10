@@ -30,8 +30,7 @@ public class GameManager : MonoBehaviour
         }
 
         if (boss.IsDead())
-        {
-            Debug.Log("A");
+        {            
             LevelLoader.Instance.LoadNextScene();
         }
     }

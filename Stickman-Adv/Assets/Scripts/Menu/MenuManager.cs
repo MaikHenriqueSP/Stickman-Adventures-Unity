@@ -8,13 +8,6 @@ public class MenuManager : MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject ControllersUI;
 
-    void Start()
-    {
-        Debug.Log(ControllersUI == null);
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
