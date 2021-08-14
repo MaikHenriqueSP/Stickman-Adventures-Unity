@@ -48,12 +48,13 @@ public class DialogManager : MonoBehaviour
     private IEnumerator TypeSentences (Sentence sentence )
     {
         SpeakerName.text = sentence.SpeakerName;
+        yield return new WaitForSeconds(0.2f);
         DialogContent.text = "";
 
         foreach (char character in sentence.phrase.ToCharArray())
         {
             DialogContent.text += character;
-            yield return null;
+            yield return new WaitForSeconds(0.02f);
         }
     }
 
