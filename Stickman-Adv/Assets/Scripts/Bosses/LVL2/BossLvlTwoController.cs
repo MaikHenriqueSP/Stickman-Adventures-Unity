@@ -145,22 +145,7 @@ public class BossLvlTwoController : EnemyController
 
         if (IsPlayerFarAway())
         {
-            if (probability <= 90)
-            {
-               Move();
-            } 
-            else if (probability <= 93)
-            {
-                Jump();
-            }
-            else if (probability <= 97) //@TODO: AND shoot delay
-            {
-                Shoot();
-            }
-            else if (probability <= 100)
-            {
-                Defend();
-            }
+            Move();
         } 
         else
         {
@@ -204,9 +189,9 @@ public class BossLvlTwoController : EnemyController
     public void Move()
     {
         if (IsPlayerFarAway())
-        {
-            rb2D.velocity = isPlayerToTheLeft ? Vector2.left * MovementSpeed : Vector2.right * MovementSpeed;
-            WaitForAnimation("Boss_Walking");
+        {            
+            rb2D.velocity = new Vector2(HorizontalMoveTowardsPlayer() * MovementSpeed, 0);            
+            WaitForAnimation("Boss_Walking", 0);
         } else
         {
             rb2D.velocity = Vector2.zero;

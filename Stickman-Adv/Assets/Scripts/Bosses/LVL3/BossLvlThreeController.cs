@@ -30,6 +30,10 @@ public class BossLvlThreeController : EnemyController
             currentStage++;
         }
 
+        if (CurrentLifePoints <= 0) 
+        {
+            animator.SetTrigger("Die");
+        }
     }
 
     //Called at the end of idle animation

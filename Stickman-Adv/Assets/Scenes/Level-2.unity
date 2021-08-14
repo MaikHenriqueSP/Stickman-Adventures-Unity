@@ -380,7 +380,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -425,12 +425,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifePoints: 10
-  CurrentLifePoints: 0
+  CurrentLifePoints: 10
   IsInvincible: 0
   TouchDamage: 0
-  ShootDistanceView: 0
-  MovementSpeed: 6
-  JumpSpeed: 6
+  ShootDistanceView: 0.5
+  MovementSpeed: 8
+  JumpSpeed: 18
   TargetDistanceToPlayer: 8
   RetreatDistance: 6
   MeleeAttackDistance: 2.3
@@ -845,6 +845,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221643, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 2cd8ba80e06edbe44b4a557f32724da7, type: 2}
     - target: {fileID: 681565054710221652, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_Name
       value: Player
