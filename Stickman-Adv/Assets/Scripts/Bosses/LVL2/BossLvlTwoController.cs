@@ -80,6 +80,7 @@ public class BossLvlTwoController : EnemyController
 
     void FixedUpdate()
     {
+                Debug.Log(IsBulletDetected());
         UpdateBulletDetection();
         UpdateJumping();  
     }

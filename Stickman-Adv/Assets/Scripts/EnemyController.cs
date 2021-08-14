@@ -91,7 +91,7 @@ public abstract class EnemyController : MonoBehaviour
 
     public bool IsBulletDetected()
     {
-        Vector2 boxScale = new Vector2(0.01f , transform.localScale.y * 2);
+        Vector2 boxScale = new Vector2(0.01f , transform.localScale.y );
         Vector2 direction = Vector2.right;
         float horizontalLengthCollider = transform.localScale.x;
         float yBoxStartPosition = boxCollider2D.bounds.max.y;
@@ -104,13 +104,10 @@ public abstract class EnemyController : MonoBehaviour
         }
 
         RaycastHit2D hitInfo = Physics2D.BoxCast(startPosition, boxScale, 0f,  direction, ShootDistanceView);
-
-        if (hitInfo.collider != null)
+ 
+        if (hitInfo.collider != null && hitInfo.collider.CompareTag("Bullet"))
         {   
-            if (hitInfo.collider.CompareTag("Bullet"))         
-            {
-                return true;
-            }
+            return true;
         }
 
         return false;
