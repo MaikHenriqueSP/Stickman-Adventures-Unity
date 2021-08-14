@@ -373,7 +373,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55579959}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -425,12 +425,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifePoints: 10
-  CurrentLifePoints: 10
+  CurrentLifePoints: 901
   IsInvincible: 0
   TouchDamage: 1
-  ShootDistanceView: 0.5
+  ShootDistanceView: 2
   MovementSpeed: 8
-  JumpSpeed: 18
+  JumpSpeed: 23
   TargetDistanceToPlayer: 8
   RetreatDistance: 6
   MeleeAttackDistance: 2.3
@@ -880,6 +880,10 @@ PrefabInstance:
     - target: {fileID: 681565054710221643, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_GravityScale
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221644, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 681565054710221652, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_Name

@@ -30,8 +30,7 @@ public class RunningBehavior : StateMachineBehaviour
         }
         
         NextActionProbability = Random.Range(0, 100);
-        Debug.Log(bossController.IsBulletDetected());
-
+Debug.Log(bossController.IsBulletDetected());
         if (bossController.IsBulletDetected() && NextActionProbability < ReactToBulletProbability)
         {
             animator.SetTrigger(ReactToBulletTriggerName);

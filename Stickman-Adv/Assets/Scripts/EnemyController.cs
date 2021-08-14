@@ -92,16 +92,10 @@ public abstract class EnemyController : MonoBehaviour
     public bool IsBulletDetected()
     {
         Vector2 boxScale = new Vector2(0.01f , transform.localScale.y );
-        Vector2 direction = Vector2.right;
-        float horizontalLengthCollider = transform.localScale.x;
+        Vector2 direction = Vector2.right * HorizontalMoveTowardsPlayer();
+        float horizontalLengthCollider = (transform.localScale.x / 2) * HorizontalMoveTowardsPlayer() ;
         float yBoxStartPosition = boxCollider2D.bounds.max.y;
-        Vector2 startPosition = new Vector2(transform.position.x + horizontalLengthCollider , yBoxStartPosition);
-        
-        if (isTurnedLeft)
-        {
-            direction = Vector2.left;
-            startPosition = new Vector2(transform.position.x - horizontalLengthCollider, yBoxStartPosition);
-        }
+        Vector2 startPosition = new Vector2(transform.position.x + ShootDistanceView * HorizontalMoveTowardsPlayer(), yBoxStartPosition);
 
         RaycastHit2D hitInfo = Physics2D.BoxCast(startPosition, boxScale, 0f,  direction, ShootDistanceView);
  

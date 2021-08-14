@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     public bool IsTakingDamage;
 
     [Header("Sound Effect Settings")]
-    public AudioSource WinSound;
+    public AudioSource DefeatSound;
 
     [Header("Dash Settings")]
     public float IntervalBetweenTapsForRollingDash;
@@ -293,7 +293,7 @@ public class PlayerController : MonoBehaviour
     {
         if (CurrentLifePoints <= 0)
         {
-            WinSound.Play();
+            DefeatSound.Play();
         }
         else if (!IsTakingDamage)
         {

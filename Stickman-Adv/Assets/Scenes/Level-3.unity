@@ -668,6 +668,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8228313039413023820, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
   m_PrefabInstance: {fileID: 326071604}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &374210976 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 681565053668095340, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+  m_PrefabInstance: {fileID: 2125884421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &390355033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,8 +1192,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 7
-  m_Material: {fileID: 0}
+  m_GravityScale: 5
+  m_Material: {fileID: 6200000, guid: 2cd8ba80e06edbe44b4a557f32724da7, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -1228,7 +1233,7 @@ MonoBehaviour:
   CurrentLifePoints: 0
   IsInvincible: 0
   TouchDamage: 0
-  ShootDistanceView: 1.5
+  ShootDistanceView: 3
   minimumDistance: 3
 --- !u!114 &1317436833
 MonoBehaviour:
@@ -1580,7 +1585,7 @@ BoxCollider2D:
   m_Offset: {x: 0.053650856, y: 0.60333884}
   m_SpriteTilingProperty:
     border: {x: 2.22, y: 0.11, z: 2, w: 1.18}
-    pivot: {x: 0.5250934, y: -0.0053687575}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 5.12, y: 2.56}
     newSize: {x: 5.12, y: 2.56}
     adaptiveTilingThreshold: 0.5
@@ -1647,7 +1652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5267335540341740785, guid: f870d508411d7b04e893b84ad02d3d39, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f870d508411d7b04e893b84ad02d3d39, type: 3}
@@ -1820,35 +1825,67 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 681565054710221640, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 681565054710221640, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_SpriteTilingProperty.border.w
-      value: 1.1899999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 681565054710221640, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_SpriteTilingProperty.border.x
-      value: 1.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 681565054710221640, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_SpriteTilingProperty.border.y
-      value: 1.36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 681565054710221640, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_SpriteTilingProperty.border.z
-      value: 1.41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 681565054710221640, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 5.12
+      value: 2.15
       objectReference: {fileID: 0}
     - target: {fileID: 681565054710221640, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 5.12
+      value: 4.74
       objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: WinSound
+      value: 
+      objectReference: {fileID: 2125884422}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: JumpSpeed
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: DefeatSound
+      value: 
+      objectReference: {fileID: 2125884422}
     - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: IsInvincible
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: bulletGizmod
+      value: 
+      objectReference: {fileID: 374210976}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: MovementSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: NumberOfJumps
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: rollingDistance
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: CurrentLifePoints
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: DefendingCoolDown
@@ -1908,3 +1945,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+--- !u!82 &2125884422 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 681565054710221644, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+  m_PrefabInstance: {fileID: 2125884421}
+  m_PrefabAsset: {fileID: 0}

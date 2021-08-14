@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f89df7fd4e4e09479d688e782cbc9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 7
+  MovementSpeed: 8
   ReactToBulletProbability: 70
   AttackTriggerName: Strike
   ReactToBulletTriggerName: Defend
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f89df7fd4e4e09479d688e782cbc9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 4
+  MovementSpeed: 7
   ReactToBulletProbability: 40
   AttackTriggerName: Attack
   ReactToBulletTriggerName: Jump
@@ -938,7 +938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1b0dac776992434a9a546de4e485968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpSpeed: 30
+  JumpSpeed: 25
 --- !u!1101 &6423279025450088820
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840753fd697fad94884a452184d261fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 6
+  MovementSpeed: 7
   ReactToBulletProbability: 70
   AttackTriggerName: Strike
   ReactToBulletTriggerName: Defend

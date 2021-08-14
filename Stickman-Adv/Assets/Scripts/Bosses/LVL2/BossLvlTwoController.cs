@@ -154,14 +154,6 @@ public class BossLvlTwoController : EnemyController
             {
                 Shoot();
             }
-            else if (probability <= 75)
-            {
-                Defend();
-            }
-            else if (probability <= 85)
-            {
-                Jump();
-            }
             else if (probability <= 100)
             {
                 Move();
