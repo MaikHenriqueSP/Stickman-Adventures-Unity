@@ -257,13 +257,6 @@ public class BossLvlTwoController : EnemyController
         actionTimer = preDefinedActionTimer ?? animationInfo[0].clip.length;
     }
 
-    public override void ReceiveDamage(int damage)
-    {
-        if (!IsInvincible)
-        {
-            CurrentLifePoints -= damage;
-        }
-    }
 
     public override void UnFreeze()
     {

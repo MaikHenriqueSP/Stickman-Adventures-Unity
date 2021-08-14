@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8228313039413023808, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313039413023809, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8228313040186216529, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -416,7 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0510f2106ff8f1c47a47b9e816519d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifePoints: 999
+  LifePoints: 10
   CurrentLifePoints: 0
   IsInvincible: 0
   TouchDamage: 0

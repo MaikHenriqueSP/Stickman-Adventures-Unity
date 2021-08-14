@@ -37,15 +37,7 @@ public abstract class EnemyController : MonoBehaviour
         if (!IsInvincible)
         {
             CurrentLifePoints -= damage;
-            CheckAndDestroyIfDefeated();
-        }
-    }
-
-    public void CheckAndDestroyIfDefeated()
-    {
-        if (CurrentLifePoints <= 0)
-        {
-            Destroy(gameObject);
+            UpdateHealthbar();
         }
     }
 

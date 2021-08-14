@@ -286,7 +286,7 @@ public class PlayerController : MonoBehaviour
     private void updateHealthbar() 
     {
         float remainingLifePointsPercentage = CurrentLifePoints / (float) LifePoints;
-//        Healthbar.HealthbarSingleton.SetValue(remainingLifePointsPercentage); @TODO: fix nullpointer 
+        Healthbar.HealthbarSingleton.SetValue(remainingLifePointsPercentage); 
     }
 
     public void HandleReceivedDamage(float enemyHorizontalPosition)
