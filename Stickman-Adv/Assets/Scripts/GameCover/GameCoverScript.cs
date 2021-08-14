@@ -10,10 +10,8 @@ public class GameCoverScript : MonoBehaviour
 
     void Awake()
     {
-
         animator = GetComponent<Animator>();
-        animator.Play("Fade_Out");
-        
+        animator.Play("Fade_Out");        
     }
     
     void Update()
@@ -22,11 +20,14 @@ public class GameCoverScript : MonoBehaviour
         if (SceneDuration <= 0)
         {
             animator.Play("Fade_In");
+            StartCoroutine(LoadMenu());
         }        
     }
 
-    public void LoadMenu()
+    public IEnumerator LoadMenu()
     {
+        float animationDuration = AnimationUtilities.GetAnimationLength(animator);
+        yield return new WaitForSeconds(animationDuration);
         SceneManager.LoadScene("Menu");
     }
 }

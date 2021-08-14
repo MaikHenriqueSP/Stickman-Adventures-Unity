@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     private EnemyController boss;
     private GameOverMenu gameOverMenu;
     private bool IsGameOver;
-
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
@@ -30,8 +29,9 @@ public class GameManager : MonoBehaviour
         }
 
         if (boss.IsDead())
-        {            
+        {
             LevelLoader.Instance.LoadNextScene();
         }
     }
+
 }

@@ -12,6 +12,8 @@ public class LevelLoader : MonoBehaviour
 
     public static LevelLoader Instance { get { return instance; }}
 
+    public float TimerUntilFadeIn;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -30,12 +32,21 @@ public class LevelLoader : MonoBehaviour
 
     private IEnumerator LoadLevel()
     {
-        yield return new WaitForSeconds(transitionDuration);
+        yield return new WaitForSeconds(TimerUntilFadeIn);
 
         transitionAnimatorController.SetTrigger("Exit");
+        float animationDuration = AnimationUtilities.GetAnimationLength(transitionAnimatorController);
 
-        yield return new WaitForSeconds(transitionDuration);
+        yield return new WaitForSeconds(animationDuration);
 
         SceneManager.LoadScene("LevelProgressScene");
     }
+/*
+    private float GetAnimationLength(string animationClipName)
+    {
+        transitionAnimatorController.Play(animationClipName);
+        AnimatorClipInfo[] animationInfo = transitionAnimatorController.GetCurrentAnimatorClipInfo(0);
+        return animationInfo[0].clip.length;
+    }
+    */
 }
