@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f89df7fd4e4e09479d688e782cbc9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 7
+  MovementSpeed: 6
   ReactToBulletProbability: 40
   AttackTriggerName: Attack
   ReactToBulletTriggerName: Jump
