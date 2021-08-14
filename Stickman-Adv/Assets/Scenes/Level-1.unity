@@ -241,6 +241,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &823898716 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 681565054710221644, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+  m_PrefabInstance: {fileID: 681565053165103546}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1120238501 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8228313039878476835, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
@@ -1035,6 +1040,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: DefeatSound
+      value: 
+      objectReference: {fileID: 823898716}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: IsInvincible
       value: 0
       objectReference: {fileID: 0}
@@ -1509,6 +1518,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8228313039162952559, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2096862894}
+    - target: {fileID: 8228313039162952559, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextSentence
+      objectReference: {fileID: 0}
     - target: {fileID: 8228313039413023808, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_IsActive
       value: 1

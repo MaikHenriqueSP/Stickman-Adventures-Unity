@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         if (player.IsPlayerDead())
         {
             IsGameOver = true;
+            LevelStateHolder.ResetLevel();
             gameOverMenu.StartGameOverMenu();
         }
 

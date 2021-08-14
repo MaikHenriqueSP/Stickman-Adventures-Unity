@@ -7,6 +7,7 @@ public class GameCoverScript : MonoBehaviour
 {
     private Animator animator;
     public float SceneDuration;
+    private bool dispose;
 
     void Awake()
     {
@@ -16,9 +17,15 @@ public class GameCoverScript : MonoBehaviour
     
     void Update()
     {
+        if (dispose) 
+        {
+            return;
+        }
+
         SceneDuration -= Time.deltaTime;
         if (SceneDuration <= 0)
         {
+            dispose = true;
             animator.Play("Fade_In");
             StartCoroutine(LoadMenu());
         }        

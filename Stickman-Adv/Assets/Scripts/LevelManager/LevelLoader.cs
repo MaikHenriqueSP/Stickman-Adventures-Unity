@@ -41,12 +41,5 @@ public class LevelLoader : MonoBehaviour
 
         SceneManager.LoadScene("LevelProgressScene");
     }
-/*
-    private float GetAnimationLength(string animationClipName)
-    {
-        transitionAnimatorController.Play(animationClipName);
-        AnimatorClipInfo[] animationInfo = transitionAnimatorController.GetCurrentAnimatorClipInfo(0);
-        return animationInfo[0].clip.length;
-    }
-    */
+
 }

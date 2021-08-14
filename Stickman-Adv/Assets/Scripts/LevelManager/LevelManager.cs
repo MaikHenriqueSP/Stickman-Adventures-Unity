@@ -11,7 +11,6 @@ public class LevelManager : MonoBehaviour
     void Awake()
     {
         LevelsProgressUIs[LevelStateHolder.CurrentLevel].SetActive(true);
-        //@TODO: Go to the next lvl
         StartCoroutine(LoadNextLevel());
     }
 
