@@ -427,7 +427,7 @@ MonoBehaviour:
   LifePoints: 10
   CurrentLifePoints: 10
   IsInvincible: 0
-  TouchDamage: 0
+  TouchDamage: 1
   ShootDistanceView: 0.5
   MovementSpeed: 8
   JumpSpeed: 18
@@ -436,7 +436,7 @@ MonoBehaviour:
   MeleeAttackDistance: 2.3
   ShurikenPrefab: {fileID: 609177897253989816, guid: 606cfcc56df0c32478bc806b44e6aa4a, type: 3}
   ShurikenGizmod: {fileID: 1081783394}
-  ShurikenDamage: 0
+  ShurikenDamage: 2
   shotReactionDelay: 0.5
 --- !u!82 &55579966
 AudioSource:
@@ -798,8 +798,36 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: JumpSpeed
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: IsInvincible
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: MovementSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: NumberOfJumps
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: rollingDistance
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: CurrentLifePoints
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: DefendingCoolDown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: DefendingAvailableLevel
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 681565054710221642, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_RootOrder
@@ -849,6 +877,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 2cd8ba80e06edbe44b4a557f32724da7, type: 2}
+    - target: {fileID: 681565054710221643, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 681565054710221652, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: m_Name
       value: Player

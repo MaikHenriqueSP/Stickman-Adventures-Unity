@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DurationTime: 2
-  Speed: 2
-  Damage: 30
+  Speed: 20
+  Damage: 1
 --- !u!50 &609177897253989813
 Rigidbody2D:
   serializedVersion: 4
@@ -116,7 +116,7 @@ Rigidbody2D:
   m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

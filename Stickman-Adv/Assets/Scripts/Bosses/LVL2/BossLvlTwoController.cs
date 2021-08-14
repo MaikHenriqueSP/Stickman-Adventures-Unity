@@ -191,7 +191,7 @@ public class BossLvlTwoController : EnemyController
         if (IsPlayerFarAway())
         {            
             rb2D.velocity = new Vector2(HorizontalMoveTowardsPlayer() * MovementSpeed, 0);            
-            WaitForAnimation("Boss_Walking", 0);
+            WaitForAnimation("Boss_Walking", 0.1f);
         } else
         {
             rb2D.velocity = Vector2.zero;
