@@ -10,6 +10,7 @@ public class VictoryScreenScript : MonoBehaviour
 
     public void LoadGameCoverScene()
     {
+        LevelStateHolder.ResetLevel();
         SceneManager.LoadScene("GameCover");
     }
 

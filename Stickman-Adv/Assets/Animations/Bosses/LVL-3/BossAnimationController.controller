@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 8
-  ReactToBulletProbability: 70
+  ReactToBulletProbability: 40
   AttackTriggerName: Strike
   ReactToBulletTriggerName: Defend
 --- !u!114 &-132521000773787461
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 6
-  ReactToBulletProbability: 40
+  ReactToBulletProbability: 20
   AttackTriggerName: Attack
   ReactToBulletTriggerName: Jump
 --- !u!91 &9100000
@@ -1026,12 +1026,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840753fd697fad94884a452184d261fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 7
-  ReactToBulletProbability: 70
+  MovementSpeed: 6
+  ReactToBulletProbability: 30
   AttackTriggerName: Strike
   ReactToBulletTriggerName: Defend
   ShootFireballTriggerName: Fireball
-  ShootFireBallProbability: 3
+  ShootFireBallProbability: 40
 --- !u!1101 &7617388778344335248
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

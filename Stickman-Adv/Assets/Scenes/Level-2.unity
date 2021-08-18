@@ -858,6 +858,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+      propertyPath: DefeatSound
+      value: 
+      objectReference: {fileID: 425469699}
+    - target: {fileID: 681565054710221641, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
       propertyPath: IsInvincible
       value: 0
       objectReference: {fileID: 0}
@@ -958,6 +962,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f16c9a69c7fa84048aa5472aa17c9c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &425469699 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 681565054710221644, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
+  m_PrefabInstance: {fileID: 425469697}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &585336905 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 681565054710221642, guid: 53c68bec69fe2634a880611ad45d1307, type: 3}
