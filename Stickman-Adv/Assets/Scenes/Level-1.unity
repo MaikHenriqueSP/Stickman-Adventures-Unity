@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VOLTAR
+  m_text: RETURN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1516,6 +1516,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5267335540341740785, guid: f870d508411d7b04e893b84ad02d3d39, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301113932369330506, guid: f870d508411d7b04e893b84ad02d3d39, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1537,31 +1541,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[0].phrase
-      value: "O que voc\xEAs est\xE3o planejando?"
+      value: What are you planning?
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[1].phrase
-      value: "Por qual motivo est\xE3o destruindo tudo?"
+      value: Why are you destroying everything?
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[2].phrase
-      value: "Nosso mundo est\xE1 super populoso, nossos recursos est\xE3o escassos"
+      value: Our world is overpopulated
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[3].phrase
-      value: "Nosso rei decidiu que \xE9 hora de expandir ou entraremos em colapso"
+      value: So our king decided that it's time to conquer
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[4].phrase
-      value: "Quem \xE9 seu rei? "
+      value: Who's your king?
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[5].phrase
-      value: "N\xE3o te interessa quem \xE9 meu rei, palito insignificante!"
+      value: It does not matter, you insignificant stick
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[6].phrase
-      value: "Chega de conversa, me mostre do que \xE9 capaz!"
+      value: Enough of talking, it's time to fight!
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[0].SpeakerName
@@ -1827,6 +1831,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 680064385, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -424.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 680064385, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 128.79782
+      objectReference: {fileID: 0}
+    - target: {fileID: 680064386, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: DEFEND
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026695459, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -400.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026695460, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: SHOOT
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079658163, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 440.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079658164, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: SPACE
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153423395, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -414.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153423395, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 125.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153423396, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: JUMP
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282864427, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: CONTROLS
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603945921, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: CONTROLS
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623064461, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 419.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623064462, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: ARROWS
+      objectReference: {fileID: 0}
     - target: {fileID: 1785594014, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1835,6 +1895,10 @@ PrefabInstance:
       propertyPath: FirstActiveButton
       value: 
       objectReference: {fileID: 1822291942}
+    - target: {fileID: 1826068162, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: RETURN
+      objectReference: {fileID: 0}
     - target: {fileID: 1975641470, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1863,6 +1927,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -129.3919
       objectReference: {fileID: 0}
+    - target: {fileID: 2118209318, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -410.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118209319, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: MOVE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313039108438319, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: MAIN MENU
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313039108438319, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_fontSize
+      value: 41.95
+      objectReference: {fileID: 0}
     - target: {fileID: 8228313039162952559, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1870,6 +1950,10 @@ PrefabInstance:
     - target: {fileID: 8228313039162952559, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: NextSentence
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313039172816060, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: QUIT
       objectReference: {fileID: 0}
     - target: {fileID: 8228313039413023808, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_IsActive
@@ -1880,6 +1964,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8228313039717860008, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313039882833039, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_Text
+      value: CONTINUE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313039885755678, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1970,6 +2062,22 @@ PrefabInstance:
     - target: {fileID: 8228313040186216533, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313040186216533, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313040274487531, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: CONTINUE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313040369194330, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: MAIN MENU
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313040477678535, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: QUIT
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}

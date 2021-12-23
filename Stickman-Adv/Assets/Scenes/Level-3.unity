@@ -403,44 +403,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[0].phrase
-      value: "Ent\xE3o voc\xEA que \xE9 o mestre?"
+      value: So, are you the king?
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[1].phrase
-      value: "N\xE3o \xE9 poss\xEDvel que aqueles imprest\xE1veis se deixaram derrota
-        por voc\xEA "
+      value: That useless warriors, I don't believe that they lost for a random stick!
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[2].phrase
-      value: "Espero que seja um oponente a altura\r"
+      value: I hope that you at least give me some fun in our fight!
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[3].phrase
-      value: "Eu como Rei, estou apenas querendo a sobreviv\xEAncia de meu povo..."
+      value: As king, I'm only fighting for the survival of my people
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[4].phrase
-      value: "Sobreviv\xEAncia as custas de nossas cabe\xE7as e nosso mundo!"
+      value: Survival at the cost of our heads and world!
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[5].phrase
-      value: "\xC9 o processo natural..."
+      value: That's the natural way...
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[6].phrase
-      value: "N\xE3o \xE9 nada pessoal contra voc\xEA ou seu povo..."
+      value: It's not something personal against you or your people
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[7].phrase
-      value: "Sua arrog\xE2ncia me d\xE1 nos nervos!"
+      value: You're quite an arrogant fellow
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[8].phrase
-      value: Vamos resolver isso logo!
+      value: Enough talking! Let's solve this!
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[9].phrase
-      value: Como quiser ...
+      value: As you wish ...
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[0].SpeakerName
@@ -672,6 +671,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 680064385, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -452.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 680064386, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: DEFEND
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026695459, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -424.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026695460, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: SHOOT
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079658163, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 441.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079658164, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: SPACE
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153423396, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: JUMP
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153423396, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_fontSize
+      value: 32.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282864427, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: CONTROLS
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603945921, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: CONTROLS
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603945921, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_fontSize
+      value: 88.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623064461, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 421.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623064462, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: ARROWS
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623064462, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_fontSize
+      value: 32.7
+      objectReference: {fileID: 0}
     - target: {fileID: 1785594014, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -700,6 +755,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -126.68506
       objectReference: {fileID: 0}
+    - target: {fileID: 2118209319, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: MOVE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313039108438319, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: MAIN MENU
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313039108438319, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_fontSize
+      value: 41.95
+      objectReference: {fileID: 0}
     - target: {fileID: 8228313039162952559, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -708,8 +775,24 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: NextSentence
       objectReference: {fileID: 0}
+    - target: {fileID: 8228313039172816060, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: QUIT
+      objectReference: {fileID: 0}
     - target: {fileID: 8228313039413023809, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313039717860008, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313039882833039, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_Text
+      value: CONTINUE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313039885755678, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8228313040186216529, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
@@ -799,6 +882,26 @@ PrefabInstance:
     - target: {fileID: 8228313040186216533, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313040229632449, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: PAUSE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313040274487531, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: CONTINUE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313040274487531, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_fontSize
+      value: 42.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313040369194330, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: MAIN MENU
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228313040477678535, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_text
+      value: QUIT
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
@@ -902,7 +1005,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VOLTAR
+  m_text: RETURN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

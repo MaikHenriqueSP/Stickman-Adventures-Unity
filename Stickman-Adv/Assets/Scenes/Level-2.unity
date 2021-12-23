@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8228313039882833039, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
+      propertyPath: m_Text
+      value: CONTINUE
+      objectReference: {fileID: 0}
     - target: {fileID: 8228313040186216529, guid: 750dd1fd47382b14aba214c730cefb7c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -774,7 +778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[0].phrase
-      value: "O seu amigo j\xE1 foi e voc\xEA e o pr\xF3ximo!"
+      value: Your friend is already gone and you're the next!
       objectReference: {fileID: 0}
     - target: {fileID: 3405913931469213716, guid: 745663a58b26ec746a0a2ba2f2dea53a, type: 3}
       propertyPath: dialogue.sentences.Array.data[1].phrase
