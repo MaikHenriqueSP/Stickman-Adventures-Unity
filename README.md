@@ -16,5 +16,7 @@ Demo gameplay: https://youtu.be/Uq7468_4L2E
 - Open the cover scene: Assets/Scenes/GameCover.unity
 - Press play
 
+### Disclaimer
 
+This project was developed as a project assignment and therefore is a non-profit application.
 
