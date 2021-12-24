@@ -12,7 +12,7 @@ Demo gameplay: https://youtu.be/Uq7468_4L2E
 ## Development Setup
 
 - Clone the project: `git clone https://github.com/MaikHenriqueSP/Unity-2D-Game.git`
-- Open the project with Unity
+- Import the project with Unity: File -> Open Projec
 - Open the cover scene: Assets/Scenes/GameCover.unity
 - Press play
 
